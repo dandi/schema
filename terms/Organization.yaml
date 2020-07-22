@@ -10,15 +10,25 @@
       "@id": schema:Organization
   - "@id": schema:identifier
     schema:domainIncludes: dandi:Organization
-  - "@id": schema:name
-    schema:domainIncludes: dandi:Organization
   - "@id": schema:email
     schema:domainIncludes: dandi:Organization
-  - "@id": schema:sameAs
-    schema:domainIncludes: schema:Thing
+  - "@id": schema:url
+    schema:domainIncludes: dandi:Organization
+  - "@id": schema:roleName
+    schema:domainIncludes: dandi:Organization
+    schema:rangeIncludes: dandi:RoleType
+  - "@id": dandi:includeInCitation
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Organization
+    schema:rangeIncludes: schema:Boolean
+  - "@id": dandi:awardNumber
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Organization
+    schema:rangeIncludes: schema:Text
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Organization
   - "@id": schema:contactPoint
     schema:domainIncludes: dandi:Organization
-  - "@id": schema:schemaVersion
-    schema:domainIncludes: dandi:Organization
+
 
 

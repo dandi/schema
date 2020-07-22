@@ -48,7 +48,6 @@ Identifier = Union[str, AnyUrl, PropertyValue]
 
 class Contributor(BaseModel):
     identifier: Identifier = None
-    name: str = Field(description="Use the format: lastname, firstname ...", title="Name")
     email: EmailStr = None
     url: AnyUrl = None
     roleName: List[RoleType]
@@ -57,10 +56,12 @@ class Contributor(BaseModel):
 
 
 class Person(Contributor):
+    name: str = Field(description="Use the format: lastname, firstname ...", title="Name")
     affiliation: List[str]
 
 
 class Organization(Contributor):
+    name: str = Field(title="Name")
     contactPoint: str = None
 
 
@@ -129,19 +130,21 @@ class Dandiset(BaseModel):
 
     license: License = Field(title="License",
                              description="A license document that applies to this "
-                                         "content, typically indicated by URL.")
+                                         "content, typically indicated by URL.",
+                             prefix="schema")
     keywords: List[str] = Field(title="Keywords",
                                 description="Keywords or tags used to describe "
                                             "this content. Multiple entries in a "
                                             "keywords list are typically delimited "
                                             "by commas.")
-    access: List[AccessRequirements]
     about: List[About] = None
     studyTarget: List[Union[str, AnyUrl]] = None
     protocol: List[str] = None
     ethicsApproval: List[EthicsApproval] = None
-    relatedResource: List[Resource] = None
     acknowledgement: str = None
+
+    access: List[AccessRequirements]
+    relatedResource: List[Resource] = None
 
     # From assets
     dandisetStats: DandisetStat = Field(readonly=True)
@@ -149,6 +152,9 @@ class Dandiset(BaseModel):
     modality: List[str] = Field(readonly=True)
     measurementTechnique: List[str] = Field(readonly=True)
     variableMeasure: List[PropertyValue] = Field(None, readonly=True)
+
+    # From server
+    manifestLocation: List[AnyUrl] = Field(readonly=True)
 
 
 class PublishedDandiset(Dandiset):
@@ -158,7 +164,6 @@ class PublishedDandiset(Dandiset):
     url: AnyUrl = Field(readonly=True)
     contentSize: str = Field(readonly=True)
     repository: AnyUrl = Field(readonly=True)
-    manifestLocation: Union[AnyUrl, List[AnyUrl]] = Field(readonly=True)
     generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
 
 

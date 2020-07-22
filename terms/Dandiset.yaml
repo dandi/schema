@@ -22,16 +22,12 @@
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:description
     schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:contributor
-    "@type":
-    - rdf:Property
-    - prov:wasAttributedTo
-    rdfs:subClassOf:
-      "@id": schema:contributor
-    rdfs:comment: A contributor to a Dandiset
-    rdfs:label: Data contributor
+  - "@id": schema:contributor
+    "@type": prov:wasAttributedTo
     schema:domainIncludes: dandi:Dandiset
-    schema:rangeIncludes: dandi:Contributor
+    schema:rangeIncludes:
+    - dandi:Person
+    - dandi:Organization
   - "@id": schema:license
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:keywords
@@ -51,6 +47,10 @@
     "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
     schema:rangeIncludes: dandi:EthicsApproval
+  - "@id": dandi:acknowledgement
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: schema:Text
   - "@id": dandi:access
     "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
@@ -59,10 +59,36 @@
     "@type": rdf:Property
     schema:domainIncludes: dandi:Dandiset
     schema:rangeIncludes: dandi:Resource
-  - "@id": dandi:acknowledgement
-    "@type": rdf:Property
+
+  - "@id": dandi:dataStandard
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:modality
     schema:domainIncludes: dandi:Dandiset
     schema:rangeIncludes: schema:Text
+  - "@id": schema:measurementTechnigue
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:variableMeasured
+    schema:domainIncludes: dandi:Dandiset
+
+  # All of the following properties are calculated. Should these be at the
+  # top level or in a structure?
+  - "@id": dandi:numberOfFiles
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:numberOfSubjects
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:numberOfSamples
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:numberOfCells
+    schema:domainIncludes: dandi:Dandiset
+
+  - "@id": dandi:manifestLocation
+    "@type": rdf:Property
+    rdfs:comment: |
+      A resolvable URL that returns infromation about assets in this Dandiset.
+    rdfs:label: Asset manifest location
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: schema:URL
+
   - "@id": schema:version
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:datePublished
@@ -70,8 +96,6 @@
   - "@id": schema:url
     schema:domainIncludes: dandi:Dandiset
   - "@id": schema:contentSize
-    schema:domainIncludes: dandi:Dandiset
-  - "@id": schema:distribution
     schema:domainIncludes: dandi:Dandiset
   - "@id": dandi:repository
     "@type": rdf:Property
@@ -91,19 +115,4 @@
       "@id": schema:identifier
     schema:domainIncludes: dandi:Dandiset
     schema:rangeIncludes: dandi:Project
-  # All of the following properties are calculated. Should these be at the
-  # top level or in a structure?
-  - "@id": dandi:numberOfSubjects
-    schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:numberOfSamples
-    schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:numberOfCells
-    schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:dataStandard
-    schema:domainIncludes: dandi:Dandiset
-  - "@id": dandi:modality
-    schema:domainIncludes: dandi:Dandiset
-  - "@id": schema:measurementTechnigue
-    schema:domainIncludes: dandi:Dandiset
-  - "@id": schema:variableMeasured
-    schema:domainIncludes: dandi:Dandiset
+
