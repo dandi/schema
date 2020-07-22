@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "void": "http://rdfs.org/ns/void#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcmitype": "http://purl.org/dc/dcmitype/",
+    "dandi": "http://schema.dandiarchive.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "crypto": "http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/",
+    "md5": "crypto:md5",
+    "sha1": "crypto:sha1",
+    "sha256": "crypto:sha256",
+    "sha512": "crypto:sha512",
+    "attributedTo": "prov:wasAttributedTo"
+  }
+}

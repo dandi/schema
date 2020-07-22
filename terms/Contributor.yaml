@@ -1,0 +1,28 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:Contributor
+    "@type":
+    - rdfs:Class
+    - prov:Agent
+    http://www.w3.org/2002/07/owl#equivalentClass:
+      - "@id": http://xmlns.com/foaf/0.1/Person
+    rdfs:comment: A contributor, a person or organization, to a project.
+    rdfs:label: Contributor
+    rdfs:subClassOf:
+      "@id": schema:Thing
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Contributor
+    schema:rangeIncludes:
+    - dandi:Person
+    - dandi:Organization
+  - "@id": schema:roleName
+    schema:domainIncludes: dandi:Contributor
+    schema:rangeIncludes: dandi:RoleType
+  - "@id": dandi:awardNumber
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Contributor
+    schema:rangeIncludes: schema:Text
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Person
+
+

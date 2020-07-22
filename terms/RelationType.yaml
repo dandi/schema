@@ -1,0 +1,141 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:RelationType
+    "@type": rdfs:Class
+    rdfs:comment: An enumeration of resource relations
+    rdfs:label: Resource relation type
+    rdfs:subClassOf:
+      "@id": schema:Enumeration
+    prov:wasDerivedFrom: https://schema.datacite.org/meta/kernel-4.2/doc/DataCite-MetadataKernel_v4.2.pdf
+  - "@id": dandi:IsCitedBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates that B includes A in a citation
+    rdfs:label: IsCitedBy
+  - "@id": dandi:Cites
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates that A includes B in a citation
+    rdfs:label: Cites
+  - "@id": dandi:IsSupplementTo
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates that A is a supplement to B
+    rdfs:label: IsSupplementTo
+  - "@id": dandi:IsSupplementedBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates that B is a supplement to A
+    rdfs:label: IsSupplementedBy
+  - "@id": dandi:IsContinuedBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is continued by the work B
+    rdfs:label: IsContinuedBy
+  - "@id": dandi:Continues
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is a continuation of the work B
+    rdfs:label: Continues
+  - "@id": dandi:Describes
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A describes B
+    rdfs:label: Describes
+  - "@id": dandi:IsDescribedBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is described by B
+    rdfs:label: IsDescribedBy
+  - "@id": dandi:HasMetadata
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates resource A has additional metadata B
+    rdfs:label: HasMetadata
+  - "@id": dandi:IsMetadataFor
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates additional metadata A for a resource B
+    rdfs:label: IsMetadataFor
+  - "@id": dandi:HasVersion
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A has a version (B)
+    rdfs:label: HasVersion
+  - "@id": dandi:IsVersionOf
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is a version of B
+    rdfs:label: IsVersionOf
+  - "@id": dandi:IsNewVersionOf
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is a new edition of B
+    rdfs:label: IsNewVersionOf
+  - "@id": dandi:IsPreviousVersionOf
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is a previous edition of B
+    rdfs:label: IsPreviousVersionOf
+  - "@id": dandi:IsPartOf
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is a portion of B
+    rdfs:label: IsPartOf
+  - "@id": dandi:HasPart
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A includes the part B
+    rdfs:label: HasPart
+  - "@id": dandi:IsReferencedBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is used as a source of information by B
+    rdfs:label: IsReferencedBy
+  - "@id": dandi:References
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates B is used as a source of information for A
+    rdfs:label: References
+  - "@id": dandi:IsDocumentedBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates B is documentation about/explaining A
+    rdfs:label: IsDocumentedBy
+  - "@id": dandi:Documents
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is documentation about B
+    rdfs:label: Documents
+  - "@id": dandi:IsCompiledBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates B is used to compile or create A
+    rdfs:label: IsCompiledBy
+  - "@id": dandi:Compiles
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates B is the result of a compile or creation event using A
+    rdfs:label: Compiles
+  - "@id": dandi:IsVariantFormOf
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is a variant or different form of B
+    rdfs:label: IsVariantFormOf
+  - "@id": dandi:IsOriginalFormOf
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is the original form of B
+    rdfs:label: IsOriginalFormOf
+  - "@id": dandi:IsIdenticalTo
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates that A is identical to B
+    rdfs:label: IsIdenticalTo
+  - "@id": dandi:IsReviewedBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates that A is reviewed by B
+    rdfs:label: IsReviewedBy
+  - "@id": dandi:Reviews
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates that A is a review of B
+    rdfs:label: Reviews
+  - "@id": dandi:IsDerivedFrom
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates B is a source upon which A is based
+    rdfs:label: IsDerivedFrom
+  - "@id": dandi:IsSourceOf
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is a source upon which B is based
+    rdfs:label: IsSourceOf
+  - "@id": dandi:IsRequiredBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is required by B
+    rdfs:label: IsRequiredBy
+  - "@id": dandi:Requires
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A requires B
+    rdfs:label: Requires
+  - "@id": dandi:Obsoletes
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A replaces B
+    rdfs:label: Obsoletes
+  - "@id": dandi:IsObsoletedBy
+    "@type": dandi:RelationType
+    rdfs:comment: Indicates A is replaced by B
+    rdfs:label: IsObsoletedBy

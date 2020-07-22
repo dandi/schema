@@ -1,0 +1,18 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:EthicsApproval
+    "@type":
+    - rdfs:Class
+    - prov:Entity
+    rdfs:comment: Information about ethics approvals
+    rdfs:label: Ethics approval
+    rdfs:subClassOf:
+      "@id": schema:Thing
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:EthicsApproval
+  - "@id": schema:name
+    schema:domainIncludes: dandi:EthicsApproval
+  - "@id": schema:url
+    schema:domainIncludes: dandi:EthicsApproval
+
+

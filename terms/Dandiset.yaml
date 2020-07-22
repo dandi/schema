@@ -1,0 +1,109 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:Dandiset
+    "@type":
+    - rdfs:Class
+    - prov:Entity
+    http://purl.org/dc/terms/source:
+      "@id": http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass
+    http://www.w3.org/2002/07/owl#equivalentClass:
+      - "@id": http://rdfs.org/ns/void#Dataset
+      - "@id": http://www.w3.org/ns/dcat#Dataset
+      - "@id": http://purl.org/dc/dcmitype/Dataset
+    rdfs:comment: A body of structured information describing a DANDI dataset
+    rdfs:label: Dandiset
+    rdfs:subClassOf:
+      "@id": schema:Dataset
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:description
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:contributor
+    "@type":
+    - rdf:Property
+    - prov:wasAttributedTo
+    rdfs:subClassOf:
+      "@id": schema:contributor
+    rdfs:comment: A contributor to a Dandiset
+    rdfs:label: Data contributor
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:Contributor
+  - "@id": schema:license
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:keywords
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:about
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:study_target
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes:
+      - "@id": schema:Thing
+      - "@id": schema:URL
+      - "@id": schema:Text
+  - "@id": dandi:protocol
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:ethicsApproval
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:EthicsApproval
+  - "@id": dandi:access
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:AccessRequirements
+  - "@id": dandi:relatedResource
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:Resource
+  - "@id": dandi:acknowledgement
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: schema:Text
+  - "@id": schema:version
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:datePublished
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:url
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:contentSize
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:distribution
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:repository
+    "@type": rdf:Property
+    rdfs:comment: An identifier of a repository in which an entity is housed
+    rdfs:label: Repository
+    rdfs:subClassOf:
+      "@id": schema:identifier
+    schema:domainIncludes: dandi:Dandiset
+  # Provenance records. Attribution is already covered earlier
+  - "@id": dandi:generatedBy
+    "@type":
+    - rdf:Property
+    - prov:wasGeneratedBy
+    rdfs:comment: Describes the activity that generated this dataset
+    rdfs:label: Generating activity
+    rdfs:subClassOf:
+      "@id": schema:identifier
+    schema:domainIncludes: dandi:Dandiset
+    schema:rangeIncludes: dandi:Project
+  # All of the following properties are calculated. Should these be at the
+  # top level or in a structure?
+  - "@id": dandi:numberOfSubjects
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:numberOfSamples
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:numberOfCells
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:dataStandard
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": dandi:modality
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:measurementTechnigue
+    schema:domainIncludes: dandi:Dandiset
+  - "@id": schema:variableMeasured
+    schema:domainIncludes: dandi:Dandiset

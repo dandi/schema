@@ -1,0 +1,24 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:Organization
+    "@type":
+    - rdfs:Class
+    - prov:Organization
+    rdfs:comment: An organization such as a university, company, funding body, etc.,.
+    rdfs:label: Organization
+    rdfs:subClassOf:
+      "@id": schema:Organization
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Organization
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Organization
+  - "@id": schema:email
+    schema:domainIncludes: dandi:Organization
+  - "@id": schema:sameAs
+    schema:domainIncludes: schema:Thing
+  - "@id": schema:contactPoint
+    schema:domainIncludes: dandi:Organization
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Organization
+
+

@@ -1,0 +1,41 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:Asset
+    "@type": rdfs:Class
+    rdfs:comment: An item describing the contents of a binary blob or file.
+    rdfs:label: Asset
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:contentUrl
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:contentSize
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:encodingFormat
+    schema:domainIncludes: dandi:Asset
+  - "@id": dandi:digest
+    "@type":
+    - rdf:Property
+    rdfs:comment: A list of checksums for an Asset
+    rdfs:label: Dandi asset digest
+    schema:domainIncludes: dandi:Asset
+    schema:rangeIncludes: dandi:Digest
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:sameAs
+    schema:domainIncludes: schema:Thing
+  - "@id": dandi:access
+    schema:domainIncludes: dandi:Asset
+  - "@id": dandi:relatedResource
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:datePublished
+    schema:domainIncludes: dandi:Asset
+  - "@id": dandi:modality
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:measurementTechnigue
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:variableMeasured
+    schema:domainIncludes: dandi:Asset
+
+

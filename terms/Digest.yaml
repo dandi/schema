@@ -1,0 +1,20 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:Digest
+    "@type":
+    - rdfs:Class
+    rdfs:comment: A digest
+    rdfs:label: Digest
+    rdfs:subClassOf:
+      "@id": schema:Thing
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Asset
+  - "@id": schema:value
+    schema:domainIncludes: dandi:Asset
+  - "@id": dandi:cryptoType
+    "@type": rdf:Property
+    rdfs:comment: Which cryptographic checksum is used
+    rdfs:label: Cryptographic method used
+    schema:domainIncludes: dandi:Asset
+    schema:rangeIncludes: dandi:DigestType
+

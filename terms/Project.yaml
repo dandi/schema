@@ -1,0 +1,42 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:Project
+    "@type":
+    - rdfs:Class
+    - prov:Activity
+    http://www.w3.org/2002/07/owl#equivalentClass:
+      - "@id": http://xmlns.com/foaf/0.1/Person
+    rdfs:comment: A project that has a start and end date
+    rdfs:label: Project
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Project
+  - "@id": schema:sameAs
+    schema:domainIncludes: schema:Thing
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Project
+  - "@id": schema:description
+    schema:domainIncludes: dandi:Project
+  - "@id": schema:startDate
+    schema:domainIncludes: dandi:Project
+  - "@id": schema:endDate
+    schema:domainIncludes: dandi:Project
+  - "@id": schema:hasPart
+    schema:domainIncludes: dandi:Project
+    schema:rangeIncludes: dandi:Project
+  - "@id": schema:isPartOf
+    schema:domainIncludes: dandi:Project
+    schema:rangeIncludes: dandi:Project
+  - "@id": dandi:association
+    "@type":
+    - rdf:Property
+    - prov:wasAssociatedWith
+    rdfs:subClassOf:
+      "@id": schema:contributor
+    rdfs:comment: A contributor to a Project
+    rdfs:label: Project contributor
+    schema:domainIncludes: dandi:Project
+    schema:rangeIncludes: dandi:Contributor
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Project
+
+
