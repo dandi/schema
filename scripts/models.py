@@ -173,7 +173,7 @@ class Asset(BaseModel):
     Derived from C2M2 (Level 0 and 1) and schema.org
     """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
-    identifier: Identifier = Field(readonly=True)
+    identifier: Identifier = Field(readonly=True)  # yoh: might be UUID
     contentSize: str
     encodingFormat: Union[str, AnyUrl]
     digest: Digest
