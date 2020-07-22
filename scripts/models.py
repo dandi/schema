@@ -38,7 +38,7 @@ class PropertyValue(BaseModel):
     unitCode: Union[str, AnyUrl] = None
     unitText: str = None
     value: Union[bool, float, str, int, List[Union[bool, float, str, int]]] = None
-    valueReference: PropertyValue = None
+    valueReference: PropertyValue = None   # Note: recursive (circular or not)
     propertyID: Union[IdentifierType, AnyUrl, str] = None
 
 
