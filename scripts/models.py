@@ -92,11 +92,22 @@ class AccessRequirements(BaseModel):
     embargoedUntil: date = None
 
 
-class DandisetStat(BaseModel):
-    numberOfFiles: int = Field(readonly=True)
-    numberOfSubjects: int = Field(readonly=True)
-    numberOfSamples: int = Field(None, readonly=True)
+class AssetsSummary(BaseModel):
+    """Summary over assets contained in a dandiset (published or not)"""
+
+    # stats which are not stats
+    numberOfBytes: int = Field(readonly=True, sameas="schema:contentSize")
+    numberOfFiles: int = Field(readonly=True)  # universe
+    numberOfSubjects: int = Field(readonly=True)  # NWB + BIDS
+    numberOfSamples: int = Field(None, readonly=True)  # more of NWB
     numberOfCells: int = Field(None, readonly=True)
+
+    dataStandard: List[str] = Field(readonly=True)  # TODO: types of things NWB, BIDS
+    # Web UI: icons per each modality?
+    modality: List[str] = Field(readonly=True)  # TODO: types of things, BIDS etc...
+    # Web UI: could be an icon with number, which if hovered on  show a list?
+    measurementTechnique: List[str] = Field(readonly=True)
+    variableMeasured: List[PropertyValue] = Field(None, readonly=True)
 
 
 class Digest(BaseModel):
@@ -146,14 +157,14 @@ class Dandiset(BaseModel):
     access: List[AccessRequirements]
     relatedResource: List[Resource] = None
 
-    # From assets
-    dandisetStats: DandisetStat = Field(readonly=True)
-    dataStandard: List[str] = Field(readonly=True)
-    modality: List[str] = Field(readonly=True)
-    measurementTechnique: List[str] = Field(readonly=True)
-    variableMeasure: List[PropertyValue] = Field(None, readonly=True)
+    # Linking to this dandiset or the larger thing
+    url: AnyUrl = Field(readonly=True, description="permalink to the dandiset")
+    repository: AnyUrl = Field(readonly=True, description="location of the ")
 
-    # From server
+    # From assets
+    assetsSummary: AssetsSummary = Field(readonly=True)
+
+    # From server (requested by users even for drafts)
     manifestLocation: List[AnyUrl] = Field(readonly=True)
 
 
@@ -161,10 +172,8 @@ class PublishedDandiset(Dandiset):
     # On publish
     version: str = Field(readonly=True)
     datePublished: date = Field(readonly=True)
-    url: AnyUrl = Field(readonly=True)
-    contentSize: str = Field(readonly=True)
-    repository: AnyUrl = Field(readonly=True)
-    generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
+    publishedBy: AnyUrl = Field(None, readonly=True)  # TODO: formalize "publish" activity to at least the Actor
+    doi: Optional[Union[str, AnyUrl]] = Field(None, readonly=True)
 
 
 class Asset(BaseModel):
