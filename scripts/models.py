@@ -128,7 +128,7 @@ class Dandiset(BaseModel):
               description="The people or organizations who have"
                           "contributed to creating this dataset")
 
-    license: License = Field(title="License",
+    license: List[License] = Field(title="License",
                              description="A license document that applies to this "
                                          "content, typically indicated by URL.",
                              prefix="schema")
