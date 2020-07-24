@@ -179,6 +179,8 @@ if __name__ == "__main__":
     else:
         filename = "scripts/dandiset_000004.json"
     newmeta = convertv1(filename)
+    newmeta["@context"] = "https://raw.githubusercontent.com/dandi/schema/master/context/dandi.json"
+    newmeta["@type"] = "Dandiset"
 
     # validate via the model
     from models import PublishedDandiset
