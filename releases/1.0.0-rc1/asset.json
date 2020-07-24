@@ -1,0 +1,562 @@
+{
+  "title": "Asset",
+  "description": "Metadata used to describe an asset.\n\nDerived from C2M2 (Level 0 and 1) and schema.org",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "title": "Schemaversion",
+      "default": "0.0.0",
+      "readonly": true,
+      "type": "string"
+    },
+    "identifier": {
+      "title": "Identifier",
+      "readonly": true,
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        }
+      ]
+    },
+    "contentSize": {
+      "title": "Contentsize",
+      "type": "string"
+    },
+    "encodingFormat": {
+      "title": "Encodingformat",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      ]
+    },
+    "digest": {
+      "$ref": "#/definitions/Digest"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "path": {
+      "title": "Path",
+      "type": "string"
+    },
+    "isPartOf": {
+      "title": "Ispartof",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        {
+          "$ref": "#/definitions/PropertyValue"
+        }
+      ]
+    },
+    "dataType": {
+      "title": "Datatype",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "sameAs": {
+      "title": "Sameas",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "access": {
+      "title": "Access",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
+    },
+    "relatedResource": {
+      "title": "Relatedresource",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "modality": {
+      "title": "Modality",
+      "readonly": true,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "measurementTechnique": {
+      "title": "Measurementtechnique",
+      "readonly": true,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "variableMeasured": {
+      "title": "Variablemeasured",
+      "readonly": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PropertyValue"
+      }
+    },
+    "generatedBy": {
+      "title": "Generatedby",
+      "readonly": true,
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "wasDerivedFrom": {
+      "$ref": "#/definitions/BioSample"
+    },
+    "contentUrl": {
+      "title": "Contenturl",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 65536,
+        "format": "uri"
+      }
+    },
+    "datePublished": {
+      "title": "Datepublished",
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "identifier",
+    "contentSize",
+    "encodingFormat",
+    "digest",
+    "name",
+    "isPartOf",
+    "dataType",
+    "modality",
+    "measurementTechnique",
+    "variableMeasured",
+    "contentUrl",
+    "datePublished"
+  ],
+  "definitions": {
+    "PropertyValue": {
+      "title": "PropertyValue",
+      "type": "object",
+      "properties": {
+        "maxValue": {
+          "title": "Maxvalue",
+          "type": "number"
+        },
+        "minValue": {
+          "title": "Minvalue",
+          "type": "number"
+        },
+        "unitCode": {
+          "title": "Unitcode",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "unitText": {
+          "title": "Unittext",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "valueReference": {
+          "$ref": "#/definitions/PropertyValue"
+        },
+        "propertyID": {
+          "title": "Propertyid",
+          "anyOf": [
+            {
+              "enum": [
+                "idorg:doi",
+                "idorg:orcid",
+                "https://ror.org/",
+                "idorg:dandi",
+                "idorg:rrid"
+              ]
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "Digest": {
+      "title": "Digest",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "cryptoType": {
+          "title": "Cryptotype",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      },
+      "required": [
+        "value",
+        "cryptoType"
+      ]
+    },
+    "AccessRequirements": {
+      "title": "AccessRequirements",
+      "type": "object",
+      "properties": {
+        "status": {
+          "title": "Status",
+          "enum": [
+            "Open",
+            "Embargoed",
+            "Restricted"
+          ]
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "embargoedUntil": {
+          "title": "Embargoeduntil",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "repository": {
+          "title": "Repository",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "relation": {
+          "title": "Relation",
+          "enum": [
+            "IsCitedBy",
+            "Cites",
+            "IsSupplementTo",
+            "IsSupplementedBy",
+            "IsContinuedBy",
+            "Continues",
+            "Describes",
+            "IsDescribedBy",
+            "HasMetadata",
+            "IsMetadataFor",
+            "HasVersion",
+            "IsVersionOf",
+            "IsNewVersionOf",
+            "IsPreviousVersionOf",
+            "IsPartOf",
+            "HasPart",
+            "IsReferencedBy",
+            "References",
+            "IsDocumentedBy",
+            "Documents",
+            "IsCompiledBy",
+            "Compiles",
+            "IsVariantFormOf",
+            "IsOriginalFormOf",
+            "IsIdenticalTo",
+            "IsReviewedBy",
+            "Reviews",
+            "IsDerivedFrom",
+            "IsSourceOf",
+            "IsRequiredBy",
+            "Requires",
+            "Obsoletes",
+            "IsObsoletedBy"
+          ]
+        }
+      },
+      "required": [
+        "url",
+        "relation"
+      ]
+    },
+    "Organization": {
+      "title": "Organization",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "roleName": {
+          "title": "Rolename",
+          "type": "array",
+          "items": {
+            "enum": [
+              "Author",
+              "Conceptualization",
+              "ContactPerson",
+              "DataCollector",
+              "DataCurator",
+              "DataManager",
+              "FormalAnalysis",
+              "FundingAcquisition",
+              "Investigation",
+              "Maintainer",
+              "Methodology",
+              "Producer",
+              "ProjectLeader",
+              "ProjectManager",
+              "ProjectMember",
+              "ProjectAdministration",
+              "Researcher",
+              "Resources",
+              "Software",
+              "Supervision",
+              "Validation",
+              "Visualization",
+              "Funder",
+              "Sponsor",
+              "StudyParticipant",
+              "Other"
+            ]
+          }
+        },
+        "includeInCitation": {
+          "title": "Includeincitation",
+          "default": true,
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Awardnumber",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "type": "string"
+        }
+      },
+      "required": [
+        "roleName",
+        "name"
+      ]
+    },
+    "BioSample": {
+      "title": "BioSample",
+      "type": "object",
+      "properties": {
+        "assayType": {
+          "title": "Assaytype",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "anatomy": {
+          "title": "Anatomy",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "strain": {
+          "title": "Strain",
+          "type": "string"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "vendor": {
+          "$ref": "#/definitions/Organization"
+        },
+        "age": {
+          "title": "Age",
+          "type": "string"
+        },
+        "sex": {
+          "title": "Sex",
+          "type": "string"
+        },
+        "species": {
+          "title": "Species",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assayType",
+        "anatomy"
+      ]
+    }
+  }
+}

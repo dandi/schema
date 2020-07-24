@@ -1,0 +1,762 @@
+{
+  "title": "PublishedDandiset",
+  "description": "A body of structured information describing a DANDI dataset.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "title": "Schemaversion",
+      "default": "0.0.0",
+      "readonly": true,
+      "type": "string"
+    },
+    "identifier": {
+      "title": "Identifier",
+      "readonly": true,
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        }
+      ]
+    },
+    "name": {
+      "title": "Title",
+      "description": "Name of this dataset",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "description": "A",
+      "type": "string"
+    },
+    "contributor": {
+      "title": "Contributors",
+      "description": "The people or organizations who havecontributed to creating this dataset",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Person"
+          },
+          {
+            "$ref": "#/definitions/Organization"
+          }
+        ]
+      }
+    },
+    "license": {
+      "title": "License",
+      "description": "A license document that applies to this content, typically indicated by URL.",
+      "prefix": "schema",
+      "type": "array",
+      "items": {
+        "enum": [
+          "https://creativecommons.org/publicdomain/zero/1.0/",
+          "https://creativecommons.org/licenses/by/4.0/",
+          "https://creativecommons.org/licenses/by-nc/4.0"
+        ]
+      }
+    },
+    "keywords": {
+      "title": "Keywords",
+      "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "about": {
+      "title": "About",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/About"
+      }
+    },
+    "studyTarget": {
+      "title": "Studytarget",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 65536,
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    "protocol": {
+      "title": "Protocol",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ethicsApproval": {
+      "title": "Ethicsapproval",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EthicsApproval"
+      }
+    },
+    "acknowledgement": {
+      "title": "Acknowledgement",
+      "type": "string"
+    },
+    "access": {
+      "title": "Access",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
+    },
+    "relatedResource": {
+      "title": "Relatedresource",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "url": {
+      "title": "Url",
+      "description": "permalink to the dandiset",
+      "readonly": true,
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "repository": {
+      "title": "Repository",
+      "description": "location of the ",
+      "readonly": true,
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "assetsSummary": {
+      "title": "Assetssummary",
+      "readonly": true,
+      "allOf": [
+        {
+          "$ref": "#/definitions/AssetsSummary"
+        }
+      ]
+    },
+    "manifestLocation": {
+      "title": "Manifestlocation",
+      "readonly": true,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 65536,
+        "format": "uri"
+      }
+    },
+    "version": {
+      "title": "Version",
+      "readonly": true,
+      "type": "string"
+    },
+    "datePublished": {
+      "title": "Datepublished",
+      "readonly": true,
+      "type": "string",
+      "format": "date"
+    },
+    "publishedBy": {
+      "title": "Publishedby",
+      "readonly": true,
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "doi": {
+      "title": "Doi",
+      "readonly": true,
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      ]
+    }
+  },
+  "required": [
+    "identifier",
+    "name",
+    "description",
+    "contributor",
+    "license",
+    "keywords",
+    "access",
+    "url",
+    "repository",
+    "assetsSummary",
+    "manifestLocation",
+    "version",
+    "datePublished"
+  ],
+  "definitions": {
+    "PropertyValue": {
+      "title": "PropertyValue",
+      "type": "object",
+      "properties": {
+        "maxValue": {
+          "title": "Maxvalue",
+          "type": "number"
+        },
+        "minValue": {
+          "title": "Minvalue",
+          "type": "number"
+        },
+        "unitCode": {
+          "title": "Unitcode",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "unitText": {
+          "title": "Unittext",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "valueReference": {
+          "$ref": "#/definitions/PropertyValue"
+        },
+        "propertyID": {
+          "title": "Propertyid",
+          "anyOf": [
+            {
+              "enum": [
+                "idorg:doi",
+                "idorg:orcid",
+                "https://ror.org/",
+                "idorg:dandi",
+                "idorg:rrid"
+              ]
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "Person": {
+      "title": "Person",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "roleName": {
+          "title": "Rolename",
+          "type": "array",
+          "items": {
+            "enum": [
+              "Author",
+              "Conceptualization",
+              "ContactPerson",
+              "DataCollector",
+              "DataCurator",
+              "DataManager",
+              "FormalAnalysis",
+              "FundingAcquisition",
+              "Investigation",
+              "Maintainer",
+              "Methodology",
+              "Producer",
+              "ProjectLeader",
+              "ProjectManager",
+              "ProjectMember",
+              "ProjectAdministration",
+              "Researcher",
+              "Resources",
+              "Software",
+              "Supervision",
+              "Validation",
+              "Visualization",
+              "Funder",
+              "Sponsor",
+              "StudyParticipant",
+              "Other"
+            ]
+          }
+        },
+        "includeInCitation": {
+          "title": "Includeincitation",
+          "default": true,
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Awardnumber",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "Use the format: lastname, firstname ...",
+          "type": "string"
+        },
+        "affiliation": {
+          "title": "Affiliation",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "roleName",
+        "name",
+        "affiliation"
+      ]
+    },
+    "Organization": {
+      "title": "Organization",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "roleName": {
+          "title": "Rolename",
+          "type": "array",
+          "items": {
+            "enum": [
+              "Author",
+              "Conceptualization",
+              "ContactPerson",
+              "DataCollector",
+              "DataCurator",
+              "DataManager",
+              "FormalAnalysis",
+              "FundingAcquisition",
+              "Investigation",
+              "Maintainer",
+              "Methodology",
+              "Producer",
+              "ProjectLeader",
+              "ProjectManager",
+              "ProjectMember",
+              "ProjectAdministration",
+              "Researcher",
+              "Resources",
+              "Software",
+              "Supervision",
+              "Validation",
+              "Visualization",
+              "Funder",
+              "Sponsor",
+              "StudyParticipant",
+              "Other"
+            ]
+          }
+        },
+        "includeInCitation": {
+          "title": "Includeincitation",
+          "default": true,
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Awardnumber",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "type": "string"
+        }
+      },
+      "required": [
+        "roleName",
+        "name"
+      ]
+    },
+    "About": {
+      "title": "About",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      }
+    },
+    "EthicsApproval": {
+      "title": "EthicsApproval",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url"
+      ]
+    },
+    "AccessRequirements": {
+      "title": "AccessRequirements",
+      "type": "object",
+      "properties": {
+        "status": {
+          "title": "Status",
+          "enum": [
+            "Open",
+            "Embargoed",
+            "Restricted"
+          ]
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "embargoedUntil": {
+          "title": "Embargoeduntil",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "repository": {
+          "title": "Repository",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "relation": {
+          "title": "Relation",
+          "enum": [
+            "IsCitedBy",
+            "Cites",
+            "IsSupplementTo",
+            "IsSupplementedBy",
+            "IsContinuedBy",
+            "Continues",
+            "Describes",
+            "IsDescribedBy",
+            "HasMetadata",
+            "IsMetadataFor",
+            "HasVersion",
+            "IsVersionOf",
+            "IsNewVersionOf",
+            "IsPreviousVersionOf",
+            "IsPartOf",
+            "HasPart",
+            "IsReferencedBy",
+            "References",
+            "IsDocumentedBy",
+            "Documents",
+            "IsCompiledBy",
+            "Compiles",
+            "IsVariantFormOf",
+            "IsOriginalFormOf",
+            "IsIdenticalTo",
+            "IsReviewedBy",
+            "Reviews",
+            "IsDerivedFrom",
+            "IsSourceOf",
+            "IsRequiredBy",
+            "Requires",
+            "Obsoletes",
+            "IsObsoletedBy"
+          ]
+        }
+      },
+      "required": [
+        "url",
+        "relation"
+      ]
+    },
+    "AssetsSummary": {
+      "title": "AssetsSummary",
+      "description": "Summary over assets contained in a dandiset (published or not)",
+      "type": "object",
+      "properties": {
+        "numberOfBytes": {
+          "title": "Numberofbytes",
+          "readonly": true,
+          "sameas": "schema:contentSize",
+          "type": "integer"
+        },
+        "numberOfFiles": {
+          "title": "Numberoffiles",
+          "readonly": true,
+          "type": "integer"
+        },
+        "numberOfSubjects": {
+          "title": "Numberofsubjects",
+          "readonly": true,
+          "type": "integer"
+        },
+        "numberOfSamples": {
+          "title": "Numberofsamples",
+          "readonly": true,
+          "type": "integer"
+        },
+        "numberOfCells": {
+          "title": "Numberofcells",
+          "readonly": true,
+          "type": "integer"
+        },
+        "dataStandard": {
+          "title": "Datastandard",
+          "readonly": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "modality": {
+          "title": "Modality",
+          "readonly": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "measurementTechnique": {
+          "title": "Measurementtechnique",
+          "readonly": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "variableMeasured": {
+          "title": "Variablemeasured",
+          "readonly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PropertyValue"
+          }
+        }
+      },
+      "required": [
+        "numberOfBytes",
+        "numberOfFiles",
+        "numberOfSubjects",
+        "dataStandard",
+        "modality",
+        "measurementTechnique"
+      ]
+    }
+  }
+}

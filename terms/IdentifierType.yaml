@@ -1,0 +1,23 @@
+"@context": ../context/base.json
+"@graph":
+- "@id": dandi:IdentifierType
+  "@type": rdfs:Class
+  rdfs:comment: An enumeration of identifiers
+  rdfs:label: License type
+  rdfs:subClassOf:
+    "@id": schema:Enumeration
+- "@id": idorg:doi
+  "@type": dandi:IdentifierType
+  rdfs:label: DOI
+- "@id": idorg:orcid
+  "@type": dandi:IdentifierType
+  rdfs:label: ORCID
+- "@id": https://ror.org/
+  "@type": dandi:IdentifierType
+  rdfs:label: ROR
+- "@id": idorg:dandi
+  "@type": dandi:IdentifierType
+  rdfs:label: DANDI
+- "@id": idorg:rrid
+  "@type": dandi:IdentifierType
+  rdfs:label: RRID

@@ -1,0 +1,3221 @@
+{
+  "dandiset": {
+    "access": {
+      "access_contact_email": "nand.chandravadia@cshs.org",
+      "status": "open"
+    },
+    "age": {
+      "maximum": "70",
+      "minimum": "16",
+      "units": "Year"
+    },
+    "associatedData": [
+      {
+        "identifier": "DOI:10.17605/OSF.IO/HV7JA",
+        "name": "A NWB-based Dataset and Processing Pipeline of Human Single-Neuron Activity During a Declarative Memory Task",
+        "repository": "Open Science Framework",
+        "url": "https://osf.io/hv7ja/"
+      }
+    ],
+    "associated_anatomy": [
+      {
+        "identifier": "MTL",
+        "name": "Medial Temporal Lobe"
+      }
+    ],
+    "contributors": [
+      {
+        "affiliations": [
+          "Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA"
+        ],
+        "email": "nand.chandravadia@cshs.org",
+        "name": "Nand Chandravadia",
+        "orcid": "0000-0003-0161-4007",
+        "roles": [
+          "Author",
+          "ContactPerson",
+          "DataCurator",
+          "DataManager",
+          "Formal Analysis",
+          "Investigation",
+          "Maintainer",
+          "Methodology",
+          "ProjectLeader",
+          "ProjectManager",
+          "ProjectMember",
+          "Researcher",
+          "Software",
+          "Validation",
+          "Visualization"
+        ]
+      },
+      {
+        "affiliations": [
+          "Institute for Interdisciplinary Brain and Behavioral Sciences, Crean College of Health and Behavioral Sciences, Schmid College of Science and Technology, Chapman University, Orange, CA, USA"
+        ],
+        "email": "liang134@mail.chapman.edu",
+        "name": "Dehua Liang",
+        "orcid": "",
+        "roles": [
+          "Author",
+          "Methodology",
+          "ProjectMember",
+          "Software",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada"
+        ],
+        "email": "Andrea.Schjetan@uhnresearch.ca",
+        "name": "Andrea Gomez Palacio Schjetnan",
+        "orcid": "0000-0002-4319-7689",
+        "roles": [
+          "Author",
+          "Data Collector",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA"
+        ],
+        "email": "april.carlson@tufts.edu",
+        "name": "April Carlson",
+        "orcid": "0000-0002-9207-7069",
+        "roles": [
+          "Author",
+          "DataCurator",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA"
+        ],
+        "email": "mailyscm.faraut@gmail.com",
+        "name": "Mailys Faraut",
+        "roles": [
+          "Author",
+          "Data Collector",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA"
+        ],
+        "email": "Jeffrey.Chung@cshs.org",
+        "name": "Jeffrey M. Chung",
+        "roles": [
+          "Author",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA"
+        ],
+        "email": "Chrystal.Reed@csmc.edu",
+        "name": "Chrystal M. Reed",
+        "roles": [
+          "Author",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Biological Systems & Engineering Division, Lawrence Berkeley National Laboratory, Berkeley, CA, USA",
+          "Department of Neurosurgery, Stanford University, Stanford, CA, USA"
+        ],
+        "email": "ben.dichter@gmail.com",
+        "name": "Ben Dichter",
+        "roles": [
+          "Author",
+          "Software",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Institute for Interdisciplinary Brain and Behavioral Sciences, Crean College of Health and Behavioral Sciences, Schmid College of Science and Technology, Chapman University, Orange, CA, USA",
+          "Division of Biology and Biological Engineering, California Institute of Technology, Pasadena, CA, USA"
+        ],
+        "email": "maoz.uri@gmail.com",
+        "name": "Uri Maoz",
+        "roles": [
+          "Author",
+          "Conceptualization",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto, Canada",
+          "Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada"
+        ],
+        "email": "suneil.kalia@uhn.ca",
+        "name": "Suneil K. Kalia",
+        "roles": [
+          "Author",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Krembil Brain Institute, Toronto Western Hospital, Toronto, Canada",
+          "Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto, Canada"
+        ],
+        "email": "Taufik.Valiante@uhn.ca",
+        "name": "Taufik A. Valiante",
+        "roles": [
+          "Author",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA"
+        ],
+        "email": "Adam.Mamelak@cshs.org",
+        "name": "Adam N. Mamelak",
+        "roles": [
+          "Author",
+          "ProjectMember",
+          "Validation"
+        ]
+      },
+      {
+        "affiliations": [
+          "Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA",
+          "Department of Neurology, Cedars-Sinai Medical Center, Los Angeles, CA, USA",
+          "Division of Biology and Biological Engineering, California Institute of Technology, Pasadena, CA, USA",
+          "Computational and Neural Systems Program, California Institute of Technology, Pasadena, CA, USA",
+          "Center for Neural Science and Medicine, Department of Biomedical Science, Cedars-Sinai Medical Center, Los Angeles, CA, USA"
+        ],
+        "email": "Ueli.Rutishauser@cshs.org",
+        "name": "Ueli Rutishauser",
+        "orcid": "0000-0002-9207-7069",
+        "roles": [
+          "Author",
+          "Conceptualization",
+          "Funding acquisition",
+          "ProjectMember",
+          "Resources",
+          "Software",
+          "Supervision",
+          "Validation"
+        ]
+      }
+    ],
+    "description": "A challenge for data sharing in systems neuroscience is the multitude of different data formats used. Neurodata Without Borders: Neurophysiology 2.0 (NWB:N) has emerged as a standardized data format for the storage of cellular-level data together with meta-data, stimulus information, and behavior. A key next step to facilitate NWB:N adoption is to provide easy to use processing pipelines to import/export data from/to NWB:N. Here, we present a NWB-formatted dataset of 1863 single neurons recorded from the medial temporal lobes of 59 human subjects undergoing intracranial monitoring while they performed a recognition memory task. We provide code to analyze and export/import stimuli, behavior, and electrophysiological recordings to/from NWB in both MATLAB and Python. The data files are NWB:N compliant, which affords interoperability between programming languages and operating systems. This combined data and code release is a case study for how to utilize NWB:N for human single-neuron recordings and enables easy re-use of this hard-to-obtain data for both teaching and research on the mechanisms of human memory.",
+    "identifier": "000004",
+    "keywords": [
+      "cognitive neuroscience",
+      "data standardization",
+      "decision making",
+      "declarative memory",
+      "neurophysiology",
+      "neurosurgery",
+      "NWB",
+      "open source",
+      "single-neurons"
+    ],
+    "language": "English",
+    "license": "CC-BY-4.0",
+    "name": "A NWB-based dataset and processing pipeline of human single-neuron activity during a declarative memory task",
+    "number_of_subjects": 59,
+    "organism": [
+      {
+        "species": "Homo sapiens"
+      }
+    ],
+    "publications": [
+      {
+        "identifier": "DOI:10.1038/s41597-020-0415-9",
+        "relation": "Initial Publication",
+        "url": "https://www.nature.com/articles/s41597-020-0415-9"
+      }
+    ],
+    "sex": [
+      "F",
+      "M"
+    ],
+    "sponsors": [
+      {
+        "awardNumber": "U01NS103792",
+        "name": "National Institute of Neurological Disorders and Stroke"
+      },
+      {
+        "awardNumber": "1554105",
+        "name": "National Science Foundation"
+      },
+      {
+        "awardNumber": "R01MH110831",
+        "name": "National Institute of Mental Health"
+      },
+      {
+        "name": "McKnight Endowment for Neuroscience"
+      },
+      {
+        "name": "NARSAD Young Investigator grant from the Brain & Behavior Research Foundation"
+      },
+      {
+        "name": "Kavli Foundation"
+      },
+      {
+        "awardNumber": "U19NS104590",
+        "name": "BRAIN initiative"
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "5ed9c840e82be273d48e4160",
+      "name": "sub-P10HMH_ses-20060901_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73156888,
+        "ctime": "2020-06-05T04:21:20.024000+00:00",
+        "mtime": "2020-05-26T19:08:31.131259-07:00"
+      },
+      "path": "000004/sub-P10HMH/sub-P10HMH_ses-20060901_ecephys+image.nwb",
+      "metadata": {
+        "age": "37",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h10_7",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "b55460bf53db29b3d612448511644b74",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 7. ",
+        "session_start_time": "2006-09-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "00d01513b93b7b2f6c2bf66f644c34adddee8d32",
+        "sha256": "c4994d36fe0c7f0c19917b452c9355567ade7f449f17156dffea5cd5e53e519f",
+        "sha512": "c86a6860312fe17a0e7db3769a7852717bcecbaeb7878ee04ba4b2ded21ea053672346f71a94e0ca56dc121d70fd1dcf7212bbcf7ef055c834b62ea6598c482d",
+        "species": "human",
+        "subject_id": "p10hmh",
+        "uploaded_datetime": "2020-06-04T21:21:20.614520-07:00",
+        "uploaded_mtime": "2020-05-26T19:08:31.131259-07:00",
+        "uploaded_nwb_object_id": "c167d0a8-3ab0-4ef8-a92b-42a5eb0b9060",
+        "uploaded_size": 73156888
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c840e82be273d48e4160",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/b5/d2/b5d2056f95514929bae43afa3447dc48"
+    },
+    {
+      "id": "5ed9c827e82be273d48e415a",
+      "name": "sub-P11HMH_ses-20061101_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72628704,
+        "ctime": "2020-06-05T04:20:55.491000+00:00",
+        "mtime": "2020-05-26T19:08:36.077983-07:00"
+      },
+      "path": "000004/sub-P11HMH/sub-P11HMH_ses-20061101_ecephys+image.nwb",
+      "metadata": {
+        "age": "16",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h11_9",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "5c6325f0a7a24908b938584632960bf8",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 9. ",
+        "session_start_time": "2006-11-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "b3f09641677eda28676b1fa8ab9d12a3c8d33a15",
+        "sha256": "ed70cbaa4c9ac65a4365bb805e4fb2f8689de7e0f867f9a8247285980acf7781",
+        "sha512": "521f8e039ca3e2a6b9dbfc786694238a50def189da9ae0187303e3e6124441cc7a526dd4ccc76fbfb145efdf73b2d90b914aa07ca485628b0eead19b2332733e",
+        "species": "human",
+        "subject_id": "p11hmh",
+        "uploaded_datetime": "2020-06-04T21:20:56.186273-07:00",
+        "uploaded_mtime": "2020-05-26T19:08:36.077983-07:00",
+        "uploaded_nwb_object_id": "c901af2a-ac8d-45d7-b4ff-00142ec7dad5",
+        "uploaded_size": 72628704
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c827e82be273d48e415a",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/6b/0c/6b0c0fcc53584af9aa7593ab2f8a4c27"
+    },
+    {
+      "id": "5ed9c827e82be273d48e4159",
+      "name": "sub-P14HMH_ses-20070601_obj-1t8wrd5_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73186832,
+        "ctime": "2020-06-05T04:20:55.390000+00:00",
+        "mtime": "2020-05-26T19:08:43.741395-07:00"
+      },
+      "path": "000004/sub-P14HMH/sub-P14HMH_ses-20070601_obj-1t8wrd5_ecephys+image.nwb",
+      "metadata": {
+        "age": "31",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h14_17",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "51908682c5259a687b831854d4098a0c",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 17. ",
+        "session_start_time": "2007-06-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "334d73643d0c56572006163e5e3ad6cacee7dcef",
+        "sha256": "3483afd0275f396fd5097d317534e8cce7a2563a053e12b4f3ad21ee12b54eb9",
+        "sha512": "fc68b8fc54b8257830623eb49ad2e675fbdc389bb48db0009490423b423dcca0e508bc698885b45fae924d5c1fb49916d5e7dbfc5e9ab63bf219795f01e32538",
+        "species": "human",
+        "subject_id": "p14hmh",
+        "uploaded_datetime": "2020-06-04T21:20:56.017730-07:00",
+        "uploaded_mtime": "2020-05-26T19:08:43.741395-07:00",
+        "uploaded_nwb_object_id": "0e659395-e2c0-4d40-b226-ce95a49df522",
+        "uploaded_size": 73186832
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c827e82be273d48e4159",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/97/e4/97e4d8fd8a6b48d4a5a599a11d0f46cb"
+    },
+    {
+      "id": "5ed9c7b4e82be273d48e414f",
+      "name": "sub-P14HMH_ses-20070601_obj-7studd_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 55262212,
+        "ctime": "2020-06-05T04:19:00.835000+00:00",
+        "mtime": "2020-05-26T19:08:48.668680-07:00"
+      },
+      "path": "000004/sub-P14HMH/sub-P14HMH_ses-20070601_obj-7studd_ecephys+image.nwb",
+      "metadata": {
+        "age": "31",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h14_18",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "a4e7766a4b270a6aef28bd66f2fc26d6",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 18. ",
+        "session_start_time": "2007-06-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "281f6f66275ea654acb4e68c433017f4d607dd3a",
+        "sha256": "925d670f06139d5eddde83d2bbc8b560f9c12041fb06110035e6f1eb957231a7",
+        "sha512": "87e9bf4d2f2ffadfbd1c9185e922a544bce85b8fceebd0125435ef7277898d77f3630473d7390db98f0670fbef60f5ba1ac6cac5830fda05bd9a35ce19ce894f",
+        "species": "human",
+        "subject_id": "p14hmh",
+        "uploaded_datetime": "2020-06-04T21:19:01.547191-07:00",
+        "uploaded_mtime": "2020-05-26T19:08:48.668680-07:00",
+        "uploaded_nwb_object_id": "c95bd959-c068-4011-b1b4-055836f3716a",
+        "uploaded_size": 55262212
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c7b4e82be273d48e414f",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/96/af/96af9e7bf8a44753865b3c0fae0fba32"
+    },
+    {
+      "id": "5ed9c7afe82be273d48e4149",
+      "name": "sub-P15HMH_ses-20070901_obj-a5xz9n_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 55060760,
+        "ctime": "2020-06-05T04:18:55.632000+00:00",
+        "mtime": "2020-05-26T19:08:59.283514-07:00"
+      },
+      "path": "000004/sub-P15HMH/sub-P15HMH_ses-20070901_obj-a5xz9n_ecephys+image.nwb",
+      "metadata": {
+        "age": "45",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h15_21",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "17928bd61b3e3178863b6a9d5edc05b8",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 21. ",
+        "session_start_time": "2007-09-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "18ac29df2ef9901ce4b3644503d370780ff7e508",
+        "sha256": "ec0181cbf443849d0a80f9206694d657d8c7e22ddaab94a7be9c2fbe8ba1eee4",
+        "sha512": "e72be019b9846c96b5e719b326715388f5c5f29b91e57a62be15f1c697d61d83875e7610aa29646dfdf79fdb4ac7927b58f386dc6f8ee9df60dc64f7309e3e3c",
+        "species": "human",
+        "subject_id": "p15hmh",
+        "uploaded_datetime": "2020-06-04T21:18:56.433867-07:00",
+        "uploaded_mtime": "2020-05-26T19:08:59.283514-07:00",
+        "uploaded_nwb_object_id": "82e02a58-400f-4505-8ab5-63f9ed167b01",
+        "uploaded_size": 55060760
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c7afe82be273d48e4149",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/98/b7/98b707d8b8e441ac9089354b1ad79bae"
+    },
+    {
+      "id": "5ed9c7b5e82be273d48e4150",
+      "name": "sub-P15HMH_ses-20070901_obj-bdd49u_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 54677088,
+        "ctime": "2020-06-05T04:19:01.761000+00:00",
+        "mtime": "2020-05-26T19:08:53.067356-07:00"
+      },
+      "path": "000004/sub-P15HMH/sub-P15HMH_ses-20070901_obj-bdd49u_ecephys+image.nwb",
+      "metadata": {
+        "age": "45",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h15_20",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "2ead61a1af859410958d7630fa581246",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 20. ",
+        "session_start_time": "2007-09-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "0d33543a3b63049028bb032af92d7eacda9224b0",
+        "sha256": "c335b95ff47adb43d705964b1b206090b7225b1ea458f6095c178e56929d1edb",
+        "sha512": "da9e085bd1ee192a9ad70f34926df94ec3d4a82c6c7f63c99c663f5c6117500820936d6d538744c50d91fce600fab29afb807ca1ac717cdfd578af56dc1b8d82",
+        "species": "human",
+        "subject_id": "p15hmh",
+        "uploaded_datetime": "2020-06-04T21:19:02.563473-07:00",
+        "uploaded_mtime": "2020-05-26T19:08:53.067356-07:00",
+        "uploaded_nwb_object_id": "0d16218f-c6e0-4fe3-bcf2-dd5ace43c714",
+        "uploaded_size": 54677088
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c7b5e82be273d48e4150",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/41/cd/41cd1f22c663462e91f24bfc315dda45"
+    },
+    {
+      "id": "5ed9c7aee82be273d48e4148",
+      "name": "sub-P16HMH_ses-20071001_obj-12ambkj_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 54648464,
+        "ctime": "2020-06-05T04:18:54.236000+00:00",
+        "mtime": "2020-05-26T19:09:03.975875-07:00"
+      },
+      "path": "000004/sub-P16HMH/sub-P16HMH_ses-20071001_obj-12ambkj_ecephys+image.nwb",
+      "metadata": {
+        "age": "34",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h16_23",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "c923c56bdc43ea2de1750e16970eda48",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 23. ",
+        "session_start_time": "2007-10-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "03b00b184e00a5c484f5daed2a83448c4728c506",
+        "sha256": "4d758e6e9705fbfba3693cd542587c70b5258bc6502f1184f89b83aac5dfb92b",
+        "sha512": "002c494006489f4ce931e5f55c84078eb863561fb30e9e81032c74f79b316479c12b6690cb1128b6ba24fd58f7d0319f4b01583bc771a4359a1e4afbed29b45e",
+        "species": "human",
+        "subject_id": "p16hmh",
+        "uploaded_datetime": "2020-06-04T21:18:54.933878-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:03.975875-07:00",
+        "uploaded_nwb_object_id": "c24d5e74-a1ca-493c-9a2c-995bc3f2fd76",
+        "uploaded_size": 54648464
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c7aee82be273d48e4148",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/8e/a3/8ea3d6f98ad44835938558e690196525"
+    },
+    {
+      "id": "5ed9c87be82be273d48e4167",
+      "name": "sub-P16HMH_ses-20071001_obj-1jfnx96_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73367344,
+        "ctime": "2020-06-05T04:22:18.529000+00:00",
+        "mtime": "2020-05-26T19:09:14.033751-07:00"
+      },
+      "path": "000004/sub-P16HMH/sub-P16HMH_ses-20071001_obj-1jfnx96_ecephys+image.nwb",
+      "metadata": {
+        "age": "34",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h16_24",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "d35c9759a512916c4fb7f5dbd8fa801d",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 24. ",
+        "session_start_time": "2007-10-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "50e27280effc5d168f29d1cbe14309b369b462db",
+        "sha256": "29ff7b0cede49b731de90b3741ff456d1cf4220944ccb88f364b5924d39bae2c",
+        "sha512": "afab2dfd6614aeadd0bcd6c6eb39f5cd58f1fcdf2eb0f1a5ce5d7060788a86936ea5b965df494518efd7b710d6e1066f235712e0e2948f45c61fa6eefc302d6d",
+        "species": "human",
+        "subject_id": "p16hmh",
+        "uploaded_datetime": "2020-06-04T21:22:19.567122-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:14.033751-07:00",
+        "uploaded_nwb_object_id": "44aa2a44-a46e-4a5d-b962-2ff2bf326fdc",
+        "uploaded_size": 73367344
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c87be82be273d48e4167",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/8a/7e/8a7e6207856a4d94ba528d670b9c8efd"
+    },
+    {
+      "id": "5ed9c846e82be273d48e4163",
+      "name": "sub-P17HMH_ses-20080501_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73147936,
+        "ctime": "2020-06-05T04:21:26.147000+00:00",
+        "mtime": "2020-05-26T19:09:35.788249-07:00"
+      },
+      "path": "000004/sub-P17HMH/sub-P17HMH_ses-20080501_ecephys+image.nwb",
+      "metadata": {
+        "age": "19",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h17_32",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "e342621543fbe5e1973bb6af9cd28e8a",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 32. ",
+        "session_start_time": "2008-05-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "ed07c282c60b182ec414f988b5f3c0c140af46d4",
+        "sha256": "25b4be1538366a1423d17952eecfb33889d0f5add8a9d7a74ca824bf06b7dc17",
+        "sha512": "7be32bc43a3b07700d3feebfb56169c4db70a2fd942ff565799531e367aba06bad0d96e7125daf6172823f1d2ce42597bbc5375009e08622ba223e65cece7b39",
+        "species": "human",
+        "subject_id": "p17hmh",
+        "uploaded_datetime": "2020-06-04T21:21:26.797750-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:35.788249-07:00",
+        "uploaded_nwb_object_id": "d0bde5c9-c08e-46db-9297-49c455d18c8e",
+        "uploaded_size": 73147936
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c846e82be273d48e4163",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/66/cb/66cbac488347491f817104e63014941e"
+    },
+    {
+      "id": "5ed9c7b2e82be273d48e414c",
+      "name": "sub-P18HMH_ses-20080601_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 54940368,
+        "ctime": "2020-06-05T04:18:58.842000+00:00",
+        "mtime": "2020-05-26T19:09:18.898816-07:00"
+      },
+      "path": "000004/sub-P18HMH/sub-P18HMH_ses-20080601_ecephys+image.nwb",
+      "metadata": {
+        "age": "40",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h18_26",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "b4772604181824cd74441c17a8cd4ae2",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 26. ",
+        "session_start_time": "2008-06-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "ea2012c1c7c3d8eb1398c53d7620d02c88140f56",
+        "sha256": "1473ce51775dc32f29bfc9818bffed847febd1b5f15b31b00e8f4d1990b5e809",
+        "sha512": "826624866cb6a0ce10c9f9e63a200b5cc50c7bc1db2c30f74a176db89842c62bb6a0848e41a6b61846b3e290ffc1784040825a7fed46ce008f39508f98d20efa",
+        "species": "human",
+        "subject_id": "p18hmh",
+        "uploaded_datetime": "2020-06-04T21:18:59.492687-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:18.898816-07:00",
+        "uploaded_nwb_object_id": "871dac8a-6e6d-4572-bbc8-10ba684b563f",
+        "uploaded_size": 54940368
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c7b2e82be273d48e414c",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/35/7e/357e77d4104844c9a595d8b40c37af8a"
+    },
+    {
+      "id": "5ed9c9cce82be273d48e4177",
+      "name": "sub-P19HMH_ses-20080601_obj-1tmj21e_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72614400,
+        "ctime": "2020-06-05T04:27:56.838000+00:00",
+        "mtime": "2020-05-26T19:09:29.750717-07:00"
+      },
+      "path": "000004/sub-P19HMH/sub-P19HMH_ses-20080601_obj-1tmj21e_ecephys+image.nwb",
+      "metadata": {
+        "age": "34",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h19_28",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "ebf19de272749e84ee5c9d25d92e7ab1",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 28. ",
+        "session_start_time": "2008-06-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "0bd913ecbd0b663b6deeb16441c05234f262b6c1",
+        "sha256": "451697a72654a4d742c872a66edc56ab59f94cfdbfa1cbb37f93f0a70b39f998",
+        "sha512": "8070c4aae618566f06b2520ade74d4d8c9cb94b1704e65b5a801a3b0f3d0625bf7d22ebd91175cc493cd9f020897010a7fbcf959fc1503aba63eda3cfa4efe4e",
+        "species": "human",
+        "subject_id": "p19hmh",
+        "uploaded_datetime": "2020-06-04T21:27:57.445868-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:29.750717-07:00",
+        "uploaded_nwb_object_id": "a7d3442d-5d56-484e-9073-7b7b395d4a28",
+        "uploaded_size": 72614400
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c9cce82be273d48e4177",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/e4/5e/e45e50f4fe7a43728721f0a9d6d4ebbf"
+    },
+    {
+      "id": "5ed9c957e82be273d48e416a",
+      "name": "sub-P19HMH_ses-20080601_obj-uw5up9_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 54425024,
+        "ctime": "2020-06-05T04:25:58.985000+00:00",
+        "mtime": "2020-05-26T19:09:24.044774-07:00"
+      },
+      "path": "000004/sub-P19HMH/sub-P19HMH_ses-20080601_obj-uw5up9_ecephys+image.nwb",
+      "metadata": {
+        "age": "34",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h19_27",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "ae380755d3da18cacdd9d91da9ff2a9e",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 27. ",
+        "session_start_time": "2008-06-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "53ab90c04bd65f2950e27ed460b99927aae1064d",
+        "sha256": "f54f82d2588b71da15ab5fe8a6a9d6e4516413b99a66583854d119c631e36cdc",
+        "sha512": "7c4671a303edffd9bee49db9c9bda3ca914ff900775846f9e235728963abcccbd899d46dc53b1f13d8117ae74518e26e87c61e7a11b9764b11edca0e7e68dd2c",
+        "species": "human",
+        "subject_id": "p19hmh",
+        "uploaded_datetime": "2020-06-04T21:25:59.609113-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:24.044774-07:00",
+        "uploaded_nwb_object_id": "3f5567f0-07aa-47f2-aa9c-11b0b7cd2192",
+        "uploaded_size": 54425024
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c957e82be273d48e416a",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/3c/0d/3c0dbcbfa4ad40898363b70ec9ff1cad"
+    },
+    {
+      "id": "5ed9c9c9e82be273d48e4175",
+      "name": "sub-P21HMH_ses-20090101_obj-1femyyi_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72505896,
+        "ctime": "2020-06-05T04:27:53.727000+00:00",
+        "mtime": "2020-05-26T19:09:42.980109-07:00"
+      },
+      "path": "000004/sub-P21HMH/sub-P21HMH_ses-20090101_obj-1femyyi_ecephys+image.nwb",
+      "metadata": {
+        "age": "20",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h21_38",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "2173d71bcb6ffffa51d7d13ae241e1e4",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 38. ",
+        "session_start_time": "2009-01-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "52d65c3316a36197fe99f2927df7cca002aafc06",
+        "sha256": "ef0133f88fae7b8d51531b6463cd1f1fcc16e1d33775016caa28f707abb95bcf",
+        "sha512": "ffa2a18753fdf829ed2a1cf08fee0b10663b5dafa8b8bc3e952a987f76a195997dbc4cc212880f8b1d35c0a079725f19c04ff1da6d4a6d39ce97918f2320cbdf",
+        "species": "human",
+        "subject_id": "p21hmh",
+        "uploaded_datetime": "2020-06-04T21:27:54.334020-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:42.980109-07:00",
+        "uploaded_nwb_object_id": "23ed8c8b-f227-4fdb-8844-02b5c830c3e0",
+        "uploaded_size": 72505896
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c9c9e82be273d48e4175",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/c8/9a/c89aa50a211341abb57c4d727db76419"
+    },
+    {
+      "id": "5ed9c9cee82be273d48e4178",
+      "name": "sub-P21HMH_ses-20090101_obj-3ljvpn_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72396072,
+        "ctime": "2020-06-05T04:27:58.263000+00:00",
+        "mtime": "2020-05-26T19:09:58.952711-07:00"
+      },
+      "path": "000004/sub-P21HMH/sub-P21HMH_ses-20090101_obj-3ljvpn_ecephys+image.nwb",
+      "metadata": {
+        "age": "20",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h21_41",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "1f664cf2ec2b27932686da0ecd3f6fbf",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 41. ",
+        "session_start_time": "2009-01-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "621017c0a9b61a2e921494e74f22c1f6e8fe71e1",
+        "sha256": "36a19783804a304e66cdbdecee0348534c8e294023dc19286debefb424036512",
+        "sha512": "913687dbae2aed6de146177337125edeb170e81acce1b16421a3a2d53090fe601b92eac4e5577d386cf0e8879bd01cf709802e7d86164e80c1ff682b472253b3",
+        "species": "human",
+        "subject_id": "p21hmh",
+        "uploaded_datetime": "2020-06-04T21:27:59.057558-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:58.952711-07:00",
+        "uploaded_nwb_object_id": "f64911a3-4893-48d8-a4f2-561dca6aba12",
+        "uploaded_size": 72396072
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c9cee82be273d48e4178",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/43/be/43be9146319d4ae985e8f87ebe52bd89"
+    },
+    {
+      "id": "5ed9c9b7e82be273d48e416e",
+      "name": "sub-P21HMH_ses-20090101_obj-slgaak_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72419120,
+        "ctime": "2020-06-05T04:27:35.327000+00:00",
+        "mtime": "2020-05-26T19:09:47.850074-07:00"
+      },
+      "path": "000004/sub-P21HMH/sub-P21HMH_ses-20090101_obj-slgaak_ecephys+image.nwb",
+      "metadata": {
+        "age": "20",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h21_39",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "a4225c8bf4d5a855df13fc6fb433cfbb",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 39. ",
+        "session_start_time": "2009-01-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "be9b4c6c46e4d848c448749fd05bde2643d1a74a",
+        "sha256": "d77a573b649278e28ba820462cb836bddda44555325bacfd406c940e15f7633d",
+        "sha512": "9ab1f958731a2d91b908f98b428ccca722637df5708395b794be07f0ab59c315500ca28af9e462cdf1edfa7b346b34f7ffa6c7554a8ed4ab3d35f5728c8bef1d",
+        "species": "human",
+        "subject_id": "p21hmh",
+        "uploaded_datetime": "2020-06-04T21:27:35.911564-07:00",
+        "uploaded_mtime": "2020-05-26T19:09:47.850074-07:00",
+        "uploaded_nwb_object_id": "084e91b3-bad1-4051-8da8-7f42ec14646e",
+        "uploaded_size": 72419120
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c9b7e82be273d48e416e",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/38/24/382466af93414a66b83736cf7e2516cf"
+    },
+    {
+      "id": "5ed9ca36e82be273d48e4180",
+      "name": "sub-P23HMH_ses-20090201_obj-1k3199e_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72891960,
+        "ctime": "2020-06-05T04:29:42.658000+00:00",
+        "mtime": "2020-05-26T19:10:04.526876-07:00"
+      },
+      "path": "000004/sub-P23HMH/sub-P23HMH_ses-20090201_obj-1k3199e_ecephys+image.nwb",
+      "metadata": {
+        "age": "40",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h23_43",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "1d40b7dce1a9651b7a866f572f70960c",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 43. ",
+        "session_start_time": "2009-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "57aea9c7da3a4b710cb1bee5c8c351c80d66c862",
+        "sha256": "a3347b12de590b865f69f803231f5f00e14e830ed2b6d4cb7b0a59fc5cba6a7c",
+        "sha512": "e56f937e4c363778832e41474191f39c3bc53524069aa4bc4aac62936de4917b99a005ef781a50f47ef8a3e16cc05038ba842f61940f8b5558f4463668732ec6",
+        "species": "human",
+        "subject_id": "p23hmh",
+        "uploaded_datetime": "2020-06-04T21:29:43.222202-07:00",
+        "uploaded_mtime": "2020-05-26T19:10:04.526876-07:00",
+        "uploaded_nwb_object_id": "522ba823-4056-449b-88eb-ab2103cd33dd",
+        "uploaded_size": 72891960
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ca36e82be273d48e4180",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/ed/04/ed048259c1ce496c9903863d5cdfee9f"
+    },
+    {
+      "id": "5ed9c9bee82be273d48e4170",
+      "name": "sub-P23HMH_ses-20090201_obj-1tm3w39_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 54862280,
+        "ctime": "2020-06-05T04:27:42.037000+00:00",
+        "mtime": "2020-05-26T19:10:10.093124-07:00"
+      },
+      "path": "000004/sub-P23HMH/sub-P23HMH_ses-20090201_obj-1tm3w39_ecephys+image.nwb",
+      "metadata": {
+        "age": "40",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h23_44",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "eb0d01b32f05be84a8d718dc2c95d2dc",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 44. ",
+        "session_start_time": "2009-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "e405c2f3c0cc3f61c595c3b14cada3e09b48e64f",
+        "sha256": "69af72e7f92e03e7245fd7b3788df4cb43439632b7fe1cf16236bbb07687ea5b",
+        "sha512": "e5bfb1b025b100fd5aab178a2511535a5d93034bf679f1f8f357d29ff79e08d3fcf8988f2a82e1bdde74a4abb7d2c79a26c1be0067939a49f59694bc5d497e03",
+        "species": "human",
+        "subject_id": "p23hmh",
+        "uploaded_datetime": "2020-06-04T21:27:42.780715-07:00",
+        "uploaded_mtime": "2020-05-26T19:10:10.093124-07:00",
+        "uploaded_nwb_object_id": "ee4785f3-0d2b-41e9-8f37-5fd29c44501e",
+        "uploaded_size": 54862280
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9c9bee82be273d48e4170",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/7e/d5/7ed5ec7e50354889bc99f69499200ae4"
+    },
+    {
+      "id": "5ed9ca8ce82be273d48e418b",
+      "name": "sub-P23HMH_ses-20090201_obj-q3na3m_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72569848,
+        "ctime": "2020-06-05T04:31:08.037000+00:00",
+        "mtime": "2020-05-26T19:10:20.197932-07:00"
+      },
+      "path": "000004/sub-P23HMH/sub-P23HMH_ses-20090201_obj-q3na3m_ecephys+image.nwb",
+      "metadata": {
+        "age": "40",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h23_47",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "a0019f6885f2a8fc506798d6f817682b",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 47. ",
+        "session_start_time": "2009-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "14c0e5c37cce5f9912f37cc6b08c8797509da2bc",
+        "sha256": "449317db3775a2b7bfa1ccc7929416083dc29ca9d280da51bf83720e7bff0d6c",
+        "sha512": "d370b454318a2f60cac9b6198095929f9097cc07bbcbd8733a6289abcef958f3f71145cc184cbf3a976c22d2940ee1077c0ea4b774dc643efeebc539370f965f",
+        "species": "human",
+        "subject_id": "p23hmh",
+        "uploaded_datetime": "2020-06-04T21:31:09.128044-07:00",
+        "uploaded_mtime": "2020-05-26T19:10:20.197932-07:00",
+        "uploaded_nwb_object_id": "23a09cae-0c12-4f43-a0e6-fe853e0254bd",
+        "uploaded_size": 72569848
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ca8ce82be273d48e418b",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/07/d3/07d3897bedb1432c810075ea3d862287"
+    },
+    {
+      "id": "5ed9ca5ce82be273d48e4184",
+      "name": "sub-P24CS_ses-20120901_obj-enj8r0_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72883440,
+        "ctime": "2020-06-05T04:30:20.302000+00:00",
+        "mtime": "2020-05-26T19:11:33.325856-07:00"
+      },
+      "path": "000004/sub-P24CS/sub-P24CS_ses-20120901_obj-enj8r0_ecephys+image.nwb",
+      "metadata": {
+        "age": "57",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs24_60",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "ab63ba84871edf6751fd266f0b78a3bf",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 60. ",
+        "session_start_time": "2012-09-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "e8bab65ec60d5317becebcfff9091b3dce77159b",
+        "sha256": "c78ada20cef87217332d39533d35e413ae999a4a5dd2ddb65fdb1fa95345bb5e",
+        "sha512": "1d3eb38fdd3590e637671fde6f8ec4789f95d6d1e0c98e7ee99d08872a9cda3485e09e7018f494692f50597bf9bf373cea47a926a2532debac3387b9bb487264",
+        "species": "human",
+        "subject_id": "p24cs",
+        "uploaded_datetime": "2020-06-04T21:30:20.979335-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:33.325856-07:00",
+        "uploaded_nwb_object_id": "471a941a-da3a-4f8f-8601-5bfba822b138",
+        "uploaded_size": 72883440
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ca5ce82be273d48e4184",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/fe/a4/fea4a3cf90ef48eba2166db17ff060e8"
+    },
+    {
+      "id": "5ed9ca82e82be273d48e4188",
+      "name": "sub-P24CS_ses-20120901_obj-j6ja42_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72513656,
+        "ctime": "2020-06-05T04:30:58.029000+00:00",
+        "mtime": "2020-05-26T19:11:24.762241-07:00"
+      },
+      "path": "000004/sub-P24CS/sub-P24CS_ses-20120901_obj-j6ja42_ecephys+image.nwb",
+      "metadata": {
+        "age": "57",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs24_59",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "e346d25c9134983c50b412136627804b",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 59. ",
+        "session_start_time": "2012-09-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "62030a274e6aebfd5cf38c52a9c40510a0f0e53d",
+        "sha256": "1af57a997b474c7a51cbaf61a543bd7dc3cbad28cf8f19dea069262be956fd20",
+        "sha512": "ad50aa5cd2ae9e7494eee9d72a5453c3f4aaadf80d6ee91d51c0ee047f14bacc7231fe1705c69449c18af26f8fe6688b70869bb6e9f18fd0b27b44850c1901d7",
+        "species": "human",
+        "subject_id": "p24cs",
+        "uploaded_datetime": "2020-06-04T21:30:58.693608-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:24.762241-07:00",
+        "uploaded_nwb_object_id": "f7a7345f-2dcc-4ee2-8558-29a6f7154ba4",
+        "uploaded_size": 72513656
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ca82e82be273d48e4188",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/97/ae/97ae14639ddc4ea2b08821e1892b53e1"
+    },
+    {
+      "id": "5ed9cb76e82be273d48e418f",
+      "name": "sub-P25CS_ses-20120901_obj-1nyxvwf_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72319096,
+        "ctime": "2020-06-05T04:35:01.682000+00:00",
+        "mtime": "2020-05-26T19:11:38.930079-07:00"
+      },
+      "path": "000004/sub-P25CS/sub-P25CS_ses-20120901_obj-1nyxvwf_ecephys+image.nwb",
+      "metadata": {
+        "age": "36",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs25_61",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "48a1b6978c76ce6674932e85a3573803",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 61. ",
+        "session_start_time": "2012-09-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "ec7231b7fe9c10e948c62af1cdd8fd11bfbebcd7",
+        "sha256": "1b601b0c3d186a695f3d03ce8df67ad11209ec4068f037b0b88444993a3712ee",
+        "sha512": "29fd32c40d5f6299dbbaa7c7bfa3880c90eaf5f1da9433e3f218d29c14824c7ae9e13c532eb89282f55272754bdc56351405bc628077d52353b151cd8396bdef",
+        "species": "human",
+        "subject_id": "p25cs",
+        "uploaded_datetime": "2020-06-04T21:35:02.884165-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:38.930079-07:00",
+        "uploaded_nwb_object_id": "a4724a0f-567c-40cd-8e80-b49a616570cb",
+        "uploaded_size": 72319096
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cb76e82be273d48e418f",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/82/47/824736126df24668afe43590a0b26d38"
+    },
+    {
+      "id": "5ed9cbd2e82be273d48e4193",
+      "name": "sub-P25CS_ses-20120901_obj-uhyr63_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72524008,
+        "ctime": "2020-06-05T04:36:34.057000+00:00",
+        "mtime": "2020-05-26T19:11:43.963193-07:00"
+      },
+      "path": "000004/sub-P25CS/sub-P25CS_ses-20120901_obj-uhyr63_ecephys+image.nwb",
+      "metadata": {
+        "age": "36",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs25_63",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "a94daa31e2f4d8824725a1a19891ba7c",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 63. ",
+        "session_start_time": "2012-09-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "5627a1bc713a90f623310dafd7df2c3e4aa40221",
+        "sha256": "7445795c9c61dbb99dae3c7c58801fd87a516ec4362990e24323fbe7de449a38",
+        "sha512": "5f6e7b60c11fd3990a5e871647b821413dc70d2298dbb298f09eefaec86685fdf1f8cf1f7f90ced4c03e31d8b0ba6a33b24c2bbb87a04bc1c1e731419793e71e",
+        "species": "human",
+        "subject_id": "p25cs",
+        "uploaded_datetime": "2020-06-04T21:36:34.639196-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:43.963193-07:00",
+        "uploaded_nwb_object_id": "4858d2d2-b663-4906-a32e-9eb47f17a718",
+        "uploaded_size": 72524008
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cbd2e82be273d48e4193",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/b9/8e/b98e54cb9e694cc5b688ccd52c759364"
+    },
+    {
+      "id": "5ed9cbdfe82be273d48e4197",
+      "name": "sub-P26CS_ses-20121201_obj-a9jb4x_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72616760,
+        "ctime": "2020-06-05T04:36:47.411000+00:00",
+        "mtime": "2020-05-26T19:11:48.878102-07:00"
+      },
+      "path": "000004/sub-P26CS/sub-P26CS_ses-20121201_obj-a9jb4x_ecephys+image.nwb",
+      "metadata": {
+        "age": "56",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs26_64",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "2b12c97bb4f52e698e96091bd5ea45cd",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 64. ",
+        "session_start_time": "2012-12-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "16ea953d6be25b28073399afa0029d57bf5c8eca",
+        "sha256": "0822cb785d293b8e833e56448741c7e3fb954d937dfa01913b5dc8fcda3dc1a4",
+        "sha512": "791d259e5ce8da85c6287b4148bd622c29d6cb9fd94cc45729cf6a52fc146cec3d66b6ebefb8f1196e3ecb34422134753c82c91c255ccc5fd2febf74d01c61a4",
+        "species": "human",
+        "subject_id": "p26cs",
+        "uploaded_datetime": "2020-06-04T21:36:48.081780-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:48.878102-07:00",
+        "uploaded_nwb_object_id": "cee28605-c236-48b4-8115-c767481a690e",
+        "uploaded_size": 72616760
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cbdfe82be273d48e4197",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/0a/61/0a61a0805924443a897c7258ac629c77"
+    },
+    {
+      "id": "5ed9cbe0e82be273d48e4198",
+      "name": "sub-P26CS_ses-20121201_obj-bms1d7_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72306112,
+        "ctime": "2020-06-05T04:36:48.850000+00:00",
+        "mtime": "2020-05-26T19:11:53.453950-07:00"
+      },
+      "path": "000004/sub-P26CS/sub-P26CS_ses-20121201_obj-bms1d7_ecephys+image.nwb",
+      "metadata": {
+        "age": "56",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs26_66",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "4e6035910561841d11ba71b78b846f4e",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 66. ",
+        "session_start_time": "2012-12-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "f12693b1a08e4c896a8d609e92191ada6b4f537d",
+        "sha256": "910df2a1d98f2a2bd66879ba25e52537c8777932be1668e44c4396b78d7070a5",
+        "sha512": "ce8d031da2b695dc3dea402ac82b7caada49bbd384cf922e59c8679a0fa09e719d4e4af2dd6eec50474c0d5f53b38ac14f22f698fd1e5d9dcc2b18af50e59605",
+        "species": "human",
+        "subject_id": "p26cs",
+        "uploaded_datetime": "2020-06-04T21:36:49.529906-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:53.453950-07:00",
+        "uploaded_nwb_object_id": "aa288b92-be21-4c89-86c7-e0d6598a0338",
+        "uploaded_size": 72306112
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cbe0e82be273d48e4198",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/4b/f9/4bf98262db4546369919f38086b1cc9a"
+    },
+    {
+      "id": "5ed9cbe1e82be273d48e4199",
+      "name": "sub-P27CS_ses-20130101_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72808912,
+        "ctime": "2020-06-05T04:36:49.460000+00:00",
+        "mtime": "2020-05-26T19:11:59.093078-07:00"
+      },
+      "path": "000004/sub-P27CS/sub-P27CS_ses-20130101_ecephys+image.nwb",
+      "metadata": {
+        "age": "44",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs27_67",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "700c17da6b40b06623db1f0a9d7a8a43",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 67. ",
+        "session_start_time": "2013-01-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "7c069103546506e70a3f78d182b034dbf24420e1",
+        "sha256": "edb9625cd79a877db7164770e571783926fad4351dada9015070b0b5bdec0c6f",
+        "sha512": "0f84b662a478e0c4b2d13739bb11ae3eff98363fe462f16b1019b896124fa88ce34cab0e6aebbdd7c2d760bf0898007375a6418c67b43cbef2769f0039879e3d",
+        "species": "human",
+        "subject_id": "p27cs",
+        "uploaded_datetime": "2020-06-04T21:36:50.100381-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:59.093078-07:00",
+        "uploaded_nwb_object_id": "71638b06-213e-4e4b-a829-bd4033feec0b",
+        "uploaded_size": 72808912
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cbe1e82be273d48e4199",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/9a/49/9a4923c6a431444bbe14e0f09edca839"
+    },
+    {
+      "id": "5ed9cbf9e82be273d48e41a2",
+      "name": "sub-P27HMH_ses-20100201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73421052,
+        "ctime": "2020-06-05T04:37:12.807000+00:00",
+        "mtime": "2020-05-26T19:11:18.268440-07:00"
+      },
+      "path": "000004/sub-P27HMH/sub-P27HMH_ses-20100201_ecephys+image.nwb",
+      "metadata": {
+        "age": "40",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h27_58",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "d0d3fd2c9172ca15d52d44455a29cb6b",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 58. ",
+        "session_start_time": "2010-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "1feddf6d1d2afe84ab63fde9a042fcd4a0aa689d",
+        "sha256": "dd770c7b21265cb7822a666b3c8d30bf4435e1e395266a5670aacef67f8dc06a",
+        "sha512": "374fb79d161f0f76bf4e26900c71d566d45064ff587b1426624f3ce319def63ea4e21757368e86a99c029af50a64a8f711c7b041e6f027500b6e38df22cdf266",
+        "species": "human",
+        "subject_id": "p27hmh",
+        "uploaded_datetime": "2020-06-04T21:37:13.461537-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:18.268440-07:00",
+        "uploaded_nwb_object_id": "d0718a16-1dbd-4c33-95bf-f937091f8ed4",
+        "uploaded_size": 73421052
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cbf9e82be273d48e41a2",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/10/18/1018639daacd4506936ce31c4b2cf300"
+    },
+    {
+      "id": "5ed9cc6be82be273d48e41a5",
+      "name": "sub-P28HMH_ses-20100313_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73384532,
+        "ctime": "2020-06-05T04:39:07.415000+00:00",
+        "mtime": "2020-05-26T19:10:28.335824-07:00"
+      },
+      "path": "000004/sub-P28HMH/sub-P28HMH_ses-20100313_ecephys+image.nwb",
+      "metadata": {
+        "age": "22",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h28_48",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "274ee0a1a6153f423084c8a2776781bc",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 48. ",
+        "session_start_time": "2010-03-13T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "0b4669072fc835d0398bd3cdd4a6447b552e0dca",
+        "sha256": "37d391b0e2cf1da2d010eb68ec91f319c19b6b1ea9d1027e38ce2cf3a1fc8e2e",
+        "sha512": "aa92b2b903588b2586cff0b4ecae7e1930b1766492d1ac11248c4f23750d887336891203783dd0b2aef694b2ece731a9e68f526ff871c12f3dd041627160b423",
+        "species": "human",
+        "subject_id": "p28hmh",
+        "uploaded_datetime": "2020-06-04T21:39:08.109387-07:00",
+        "uploaded_mtime": "2020-05-26T19:10:28.335824-07:00",
+        "uploaded_nwb_object_id": "11b678c9-e0ee-4b9d-9282-4b116ed4de42",
+        "uploaded_size": 73384532
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cc6be82be273d48e41a5",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/0d/fb/0dfbc2af792d427cbb5498e95a70cc43"
+    },
+    {
+      "id": "5ed9cc78e82be273d48e41a9",
+      "name": "sub-P29CS_ses-20131001_obj-1ka9ngw_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72778236,
+        "ctime": "2020-06-05T04:39:19.954000+00:00",
+        "mtime": "2020-05-26T19:12:20.063841-07:00"
+      },
+      "path": "000004/sub-P29CS/sub-P29CS_ses-20131001_obj-1ka9ngw_ecephys+image.nwb",
+      "metadata": {
+        "age": "19",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs29_70",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "b79f6445d14112d3ddf4ab70778053c4",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 70. ",
+        "session_start_time": "2013-10-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "b20076a881c66324c9edf90755317d75f9d413ae",
+        "sha256": "5a72a337f856232bfcc09685438131758521656cfdf3c82005433c1a770ac5d7",
+        "sha512": "c0d2fedf2ba89fc999fe2264bb3cd025babc60caf75e2eadbcb81a85a4dfc0364a017e5cc5a5b0aea928a64a5d5ed5c41397f338edeb933147a0548744c5066e",
+        "species": "human",
+        "subject_id": "p29cs",
+        "uploaded_datetime": "2020-06-04T21:39:20.650850-07:00",
+        "uploaded_mtime": "2020-05-26T19:12:20.063841-07:00",
+        "uploaded_nwb_object_id": "debeee3e-958b-4502-9976-4c0e98652714",
+        "uploaded_size": 72778236
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cc78e82be273d48e41a9",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/9d/1c/9d1c091783534ebfbd3513947898c099"
+    },
+    {
+      "id": "5ed9cca6e82be273d48e41ad",
+      "name": "sub-P29CS_ses-20131001_obj-r4hf2_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73475752,
+        "ctime": "2020-06-05T04:40:06.086000+00:00",
+        "mtime": "2020-05-26T19:12:10.157184-07:00"
+      },
+      "path": "000004/sub-P29CS/sub-P29CS_ses-20131001_obj-r4hf2_ecephys+image.nwb",
+      "metadata": {
+        "age": "19",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs29_69",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "57a307ae17fd05c6761bdcf5bca6808d",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 69. ",
+        "session_start_time": "2013-10-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "32887cf1dd2430927a0cb417b13a24989f53cfd0",
+        "sha256": "2e42559238e20cd80d7fa7508920e33b893740d4e9af7f9a6a2f5ab4b1263e2d",
+        "sha512": "97cc64c03df942999e2127d109ccd15642ae82e2e45a9e9c95bd81cd2a82ed842e1065df7a6ccddddf8d32c801851e91bcbfdacd4a74612538eedbe4307b6f96",
+        "species": "human",
+        "subject_id": "p29cs",
+        "uploaded_datetime": "2020-06-04T21:40:06.716737-07:00",
+        "uploaded_mtime": "2020-05-26T19:12:10.157184-07:00",
+        "uploaded_nwb_object_id": "09c75001-f870-48f2-b3a4-e752f4f296d0",
+        "uploaded_size": 73475752
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cca6e82be273d48e41ad",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/16/23/162374e7b09c4e048b53add6c9634331"
+    },
+    {
+      "id": "5ed9ccade82be273d48e41b1",
+      "name": "sub-P29HMH_ses-20101201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72735264,
+        "ctime": "2020-06-05T04:40:13.231000+00:00",
+        "mtime": "2020-05-26T19:10:33.640543-07:00"
+      },
+      "path": "000004/sub-P29HMH/sub-P29HMH_ses-20101201_ecephys+image.nwb",
+      "metadata": {
+        "age": "17",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h29_49",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "dd1ad0a89e036c95a8c280c02bc79039",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 49. ",
+        "session_start_time": "2010-12-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "72a962cd96b8182435c61383d3246f91cbdda3e8",
+        "sha256": "e95012edea9ec1ab797906c3ede619ca90017a9dbe69d748e11378082c5e1778",
+        "sha512": "841468ea946547ea5b061cda24f2cd54b1855814b144b8e32b546396da7c52b947504176bc8ea6ba5d5ac276d377d201b1b367d07b029a9b49c57205bf23d16e",
+        "species": "human",
+        "subject_id": "p29hmh",
+        "uploaded_datetime": "2020-06-04T21:40:14.083032-07:00",
+        "uploaded_mtime": "2020-05-26T19:10:33.640543-07:00",
+        "uploaded_nwb_object_id": "7085314e-1350-4eb8-b016-315b32a61979",
+        "uploaded_size": 72735264
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ccade82be273d48e41b1",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/5f/62/5f622302e0c4419a93f059e69f993553"
+    },
+    {
+      "id": "5ed9cd9fe82be273d48e41b5",
+      "name": "sub-P31CS_ses-20140201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72223864,
+        "ctime": "2020-06-05T04:44:15.405000+00:00",
+        "mtime": "2020-05-26T19:12:29.372070-07:00"
+      },
+      "path": "000004/sub-P31CS/sub-P31CS_ses-20140201_ecephys+image.nwb",
+      "metadata": {
+        "age": "32",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs31_73",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "ce2a00d03baa72c430d143a80c838c27",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 73. ",
+        "session_start_time": "2014-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "e36368762f1d943a13268f4f6f6c1582d1ad095e",
+        "sha256": "1fd749b486aa594cd5d83154034b36f108a458266515cff67c81edc799502066",
+        "sha512": "4b9502a464c316e73c2f5779c91664ce9d6bebdfbb810eb413efa2552569629f4e01cb61105737b670a26cb9b75ef8a6f950ef9f34e7d4a744109a0e4142bdd1",
+        "species": "human",
+        "subject_id": "p31cs",
+        "uploaded_datetime": "2020-06-04T21:44:16.009791-07:00",
+        "uploaded_mtime": "2020-05-26T19:12:29.372070-07:00",
+        "uploaded_nwb_object_id": "a746f32d-ad9d-4787-bab3-d3c2289f8c34",
+        "uploaded_size": 72223864
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cd9fe82be273d48e41b5",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/1d/35/1d35222920a14f0fa5885572d9d12ce7"
+    },
+    {
+      "id": "5ed9cdf1e82be273d48e41b9",
+      "name": "sub-P31HMH_ses-20110401_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72766272,
+        "ctime": "2020-06-05T04:45:37.017000+00:00",
+        "mtime": "2020-05-26T19:10:41.428471-07:00"
+      },
+      "path": "000004/sub-P31HMH/sub-P31HMH_ses-20110401_ecephys+image.nwb",
+      "metadata": {
+        "age": "30",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h31_50",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "98697e8610a2822637c0ed1941813104",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 50. ",
+        "session_start_time": "2011-04-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "042e977e4f334ac2bc1d77a14ff1182226ca3dfa",
+        "sha256": "ef0ee021790ee61f1cc0e26db8cc70ff2fea47398f34b1837816e65fd48f8be0",
+        "sha512": "08911d51d9969e296ea23fbf366b6074bfa72b95dcd39d651b07982039f9167eea81b935923f85fae72a471f64d6206284a5bc690802e3a3c6ee508af33b4480",
+        "species": "human",
+        "subject_id": "p31hmh",
+        "uploaded_datetime": "2020-06-04T21:45:37.745641-07:00",
+        "uploaded_mtime": "2020-05-26T19:10:41.428471-07:00",
+        "uploaded_nwb_object_id": "d6dd858c-8c6a-4ca4-ad81-b06218c3366b",
+        "uploaded_size": 72766272
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cdf1e82be273d48e41b9",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/46/f5/46f5dd10ad7a42579b6cdb47208fc2f0"
+    },
+    {
+      "id": "5ed9ce04e82be273d48e41bf",
+      "name": "sub-P32CS_ses-20140201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72694920,
+        "ctime": "2020-06-05T04:45:55.983000+00:00",
+        "mtime": "2020-05-26T19:12:35.493608-07:00"
+      },
+      "path": "000004/sub-P32CS/sub-P32CS_ses-20140201_ecephys+image.nwb",
+      "metadata": {
+        "age": "19",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs32_74",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "5090f96a17767381a617e36a56de30c6",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 74. ",
+        "session_start_time": "2014-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "12a70ccb899be352ae58343220648e1f5e889ae1",
+        "sha256": "de84f0ef73cf0ac8ce4127edbeed40161bb5cdbe53711271be2d7b1440022307",
+        "sha512": "0bfdbd8d4053928def29bdd420a9684c43c4b2c35b4fed74cc50e0adc189ca47540d89283bed2aa4beef41752463e32796c2c3f8fff2c7181abab0670cd36ce0",
+        "species": "human",
+        "subject_id": "p32cs",
+        "uploaded_datetime": "2020-06-04T21:45:56.536558-07:00",
+        "uploaded_mtime": "2020-05-26T19:12:35.493608-07:00",
+        "uploaded_nwb_object_id": "4bbf9ec7-b016-4f93-aaa2-9c67237846b5",
+        "uploaded_size": 72694920
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ce04e82be273d48e41bf",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/19/6f/196ff866b4f841ab90effefbfbb8bd02"
+    },
+    {
+      "id": "5ed9cdfbe82be273d48e41bc",
+      "name": "sub-P33CS_ses-20140301_obj-1ps6q26_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73238788,
+        "ctime": "2020-06-05T04:45:47.144000+00:00",
+        "mtime": "2020-05-26T19:12:45.141844-07:00"
+      },
+      "path": "000004/sub-P33CS/sub-P33CS_ses-20140301_obj-1ps6q26_ecephys+image.nwb",
+      "metadata": {
+        "age": "44",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs33_76",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "f4946f3f07d3beedbe54712f52643699",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 76. ",
+        "session_start_time": "2014-03-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "c5e0f5f5ec22910e87a586d6e242b31c91fde883",
+        "sha256": "04cf2d720cf2c384ba2675ac2f9b4b25a49a2a520831e13a78ad2eacc39ade2e",
+        "sha512": "a17ec2911fb9226fb11aa076eedd0f56115a1cdcbf357c5028a41b3eca0a96aee2c982be526263674e1efac93ffd2342c7f1a9c53c4070ba7c851d91e39e64da",
+        "species": "human",
+        "subject_id": "p33cs",
+        "uploaded_datetime": "2020-06-04T21:45:47.845294-07:00",
+        "uploaded_mtime": "2020-05-26T19:12:45.141844-07:00",
+        "uploaded_nwb_object_id": "056d182c-a05a-489a-82ca-337d25b55c00",
+        "uploaded_size": 73238788
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cdfbe82be273d48e41bc",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/9d/cf/9dcfa0b4a77e499dbf15b2b9774d60a8"
+    },
+    {
+      "id": "5ed9ce0ae82be273d48e41c3",
+      "name": "sub-P33CS_ses-20140301_obj-1xtqryy_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72852392,
+        "ctime": "2020-06-05T04:46:01.682000+00:00",
+        "mtime": "2020-05-26T19:12:52.146652-07:00"
+      },
+      "path": "000004/sub-P33CS/sub-P33CS_ses-20140301_obj-1xtqryy_ecephys+image.nwb",
+      "metadata": {
+        "age": "44",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs33_77",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "902f58187e7eb911ac050195ba3a259c",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 77. ",
+        "session_start_time": "2014-03-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "76828f520c0db717102b243472fc315511464ebb",
+        "sha256": "0c84823c88c10d8a4e7621200616ea36bcae81cbc516b22b255a282677e5c7c3",
+        "sha512": "1191b36d8bfbbe099e5952caba587cdd6330d44fc77a9ceb04d1ee2a1d99d497f8751f1c8809816293083a41ab5e03d8ba1ea2f30ace3febff3f51259776d765",
+        "species": "human",
+        "subject_id": "p33cs",
+        "uploaded_datetime": "2020-06-04T21:46:02.743958-07:00",
+        "uploaded_mtime": "2020-05-26T19:12:52.146652-07:00",
+        "uploaded_nwb_object_id": "b135585e-3217-46b1-aeaa-4a90f43898d5",
+        "uploaded_size": 72852392
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ce0ae82be273d48e41c3",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/a9/e4/a9e4623eab144445bb9c8b03057c2a9a"
+    },
+    {
+      "id": "5ed9ce0fe82be273d48e41c7",
+      "name": "sub-P33CS_ses-20140301_obj-olcyje_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72467544,
+        "ctime": "2020-06-05T04:46:06.912000+00:00",
+        "mtime": "2020-05-26T19:13:01.726513-07:00"
+      },
+      "path": "000004/sub-P33CS/sub-P33CS_ses-20140301_obj-olcyje_ecephys+image.nwb",
+      "metadata": {
+        "age": "44",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs33_78",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "4ea9a961b22ead615b178879999d83ff",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 78. ",
+        "session_start_time": "2014-03-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "7e90b3872286519990e04dabdeae9db3650ec60a",
+        "sha256": "a488712e0d848d3799f5998637e94ab7943e6e743b10a2af26e8a36398da5225",
+        "sha512": "c7c48e7a8a066b448070f58b0a97d8d5ce10df451cca3962ef5d8a025a774864869badba09d35fdcfe94ac491fc3ac5f0b5f449df76dff2507d7a25282d7ea42",
+        "species": "human",
+        "subject_id": "p33cs",
+        "uploaded_datetime": "2020-06-04T21:46:07.926098-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:01.726513-07:00",
+        "uploaded_nwb_object_id": "37e70c48-c8bc-4de0-aa09-c41f6eea1733",
+        "uploaded_size": 72467544
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ce0fe82be273d48e41c7",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/eb/0b/eb0b76bc07034034a6def1b86ba61f5d"
+    },
+    {
+      "id": "5ed9ce8ee82be273d48e41cb",
+      "name": "sub-P33HMH_ses-20110701_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73190352,
+        "ctime": "2020-06-05T04:48:13.989000+00:00",
+        "mtime": "2020-05-26T19:10:49.173751-07:00"
+      },
+      "path": "000004/sub-P33HMH/sub-P33HMH_ses-20110701_ecephys+image.nwb",
+      "metadata": {
+        "age": "30",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h33_52",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "8a0e4440cb692b1bd5b4dd5affd56f64",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 52. ",
+        "session_start_time": "2011-07-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "d83d5f36e730aea9afd70abfc27b21e8517ad21d",
+        "sha256": "9ec170035f63e9e11e50cb2b558fdc6e2d3b9861e047267d1be7efa7c7fb06ce",
+        "sha512": "443cfafa86f706f274d7b9fa47118db7f7f7f9eea5cb592c55e81427b3fbcd5b6bb46fac1474aa1acf688052d410f82ef0f29e3b8734d43fa7168447e3d3e400",
+        "species": "human",
+        "subject_id": "p33hmh",
+        "uploaded_datetime": "2020-06-04T21:48:14.558926-07:00",
+        "uploaded_mtime": "2020-05-26T19:10:49.173751-07:00",
+        "uploaded_nwb_object_id": "2e910fb1-513e-4de6-b8d1-6870c6b8fbdd",
+        "uploaded_size": 73190352
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ce8ee82be273d48e41cb",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/17/ae/17aee79334f84ec9a5edccb471994b4c"
+    },
+    {
+      "id": "5ed9ce97e82be273d48e41cd",
+      "name": "sub-P34CS_ses-20141201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72496456,
+        "ctime": "2020-06-05T04:48:23.264000+00:00",
+        "mtime": "2020-05-26T19:13:07.970889-07:00"
+      },
+      "path": "000004/sub-P34CS/sub-P34CS_ses-20141201_ecephys+image.nwb",
+      "metadata": {
+        "age": "70",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs34_85",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "05b8db6b15f53bc22e7c76557e5a0283",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 85. ",
+        "session_start_time": "2014-12-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "06c789797095850a4fcd7eb72ad1b7da2729c54e",
+        "sha256": "be3c2fd4d4d48932061128428dbf1f4c5c54a161bac87d2dca3f31abdb947c87",
+        "sha512": "6ebd6b8c55535e31fa74d97d30f4b66786aacdf7195e6cd71fe508b6c9efe85e946758e4490c2a0e0432017f49a4bf923c10c1bca8d1846ab582444387f05614",
+        "species": "human",
+        "subject_id": "p34cs",
+        "uploaded_datetime": "2020-06-04T21:48:23.851075-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:07.970889-07:00",
+        "uploaded_nwb_object_id": "d3a91af1-bf60-43ee-90f9-67741bc470ad",
+        "uploaded_size": 72496456
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ce97e82be273d48e41cd",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/4f/69/4f696e6afe0844fbb842150d2a41339e"
+    },
+    {
+      "id": "5ed9ceb5e82be273d48e41d2",
+      "name": "sub-P37CS_ses-20150301_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72446872,
+        "ctime": "2020-06-05T04:48:53.030000+00:00",
+        "mtime": "2020-05-26T19:13:25.168091-07:00"
+      },
+      "path": "000004/sub-P37CS/sub-P37CS_ses-20150301_ecephys+image.nwb",
+      "metadata": {
+        "age": "33",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs37_96",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "527b69f583ca84252f73374a3299285a",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 96. ",
+        "session_start_time": "2015-03-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "95c8fd9fc73ef0e0614b04e6ff747d7e5404dc04",
+        "sha256": "f01661782351056101ce0f1a33f8e02f1aec7735e2dc89c46ccd7030dc1a3a1f",
+        "sha512": "54b0be98fb8384487a6039f54161e7591327a2ba6329df18697265bf702ae98e20ecd3337561cb87e464a13929a1e70a9c0eb7960acad17f3b06b361d6e0cc46",
+        "species": "human",
+        "subject_id": "p37cs",
+        "uploaded_datetime": "2020-06-04T21:48:53.869192-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:25.168091-07:00",
+        "uploaded_nwb_object_id": "e78740ff-facd-4574-b5ea-ec0267ff0382",
+        "uploaded_size": 72446872
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9ceb5e82be273d48e41d2",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/06/ac/06acff6e921c4856a54298fad32f0683"
+    },
+    {
+      "id": "5ed9cec9e82be273d48e41d6",
+      "name": "sub-P38CS_ses-20150701_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73306096,
+        "ctime": "2020-06-05T04:49:12.857000+00:00",
+        "mtime": "2020-05-26T19:13:53.612432-07:00"
+      },
+      "path": "000004/sub-P38CS/sub-P38CS_ses-20150701_ecephys+image.nwb",
+      "metadata": {
+        "age": "63",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs38_102",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "3fcc0816550ea7e3630d4d5d921b5eb3",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 102. ",
+        "session_start_time": "2015-07-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "b53229ce0d6e8668b66d0509a5d4b2ff24cda675",
+        "sha256": "58f065cfc80d7386886f7795d4b3067c213c214fc1083105aaf2bf679b646841",
+        "sha512": "3404c511acafd6dbc53193dda53435ee3172a0352573d0bcc6961a720034e75033b59c732083187e69276ed4375e5848e2085f9d2f54a57eaa6243dea4904c46",
+        "species": "human",
+        "subject_id": "p38cs",
+        "uploaded_datetime": "2020-06-04T21:49:13.482412-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:53.612432-07:00",
+        "uploaded_nwb_object_id": "345c6113-7136-4cda-a1db-bcfb695fcc89",
+        "uploaded_size": 73306096
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cec9e82be273d48e41d6",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/c1/5e/c15e9b3896984eb4816bb60715005b97"
+    },
+    {
+      "id": "5ed9cfb7e82be273d48e41da",
+      "name": "sub-P39CS_ses-20150801_obj-14sjqvm_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72807020,
+        "ctime": "2020-06-05T04:53:11.169000+00:00",
+        "mtime": "2020-05-26T19:13:18.956673-07:00"
+      },
+      "path": "000004/sub-P39CS/sub-P39CS_ses-20150801_obj-14sjqvm_ecephys+image.nwb",
+      "metadata": {
+        "age": "26",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs39_93",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "0ae95a17a3b56b4f40c46e645cd46c33",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 93. ",
+        "session_start_time": "2015-08-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "ae9d9e571b4a4573cece65b7e8ec826a0e876414",
+        "sha256": "5fc5ab3c5b7d45810000524687497c8e3f8e2fcf492ed0872c957e745eb0006f",
+        "sha512": "318bb501d33432eddd823878aa2c1cbef6c26d007c4ea014144edbd1927fdbf1642a59a5996221a32a1479db880f3b43e153acc984211a6521426a7f145f65fc",
+        "species": "human",
+        "subject_id": "p39cs",
+        "uploaded_datetime": "2020-06-04T21:53:11.770943-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:18.956673-07:00",
+        "uploaded_nwb_object_id": "1f00b7a9-c8f8-4ba9-9677-47f65ba6f07a",
+        "uploaded_size": 72807020
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9cfb7e82be273d48e41da",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/f5/c9/f5c9563a316d4e02aef09d67faf8a9a6"
+    },
+    {
+      "id": "5ed9d010e82be273d48e41de",
+      "name": "sub-P39CS_ses-20150801_obj-14vknkz_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72986320,
+        "ctime": "2020-06-05T04:54:40.283000+00:00",
+        "mtime": "2020-05-26T19:13:42.476853-07:00"
+      },
+      "path": "000004/sub-P39CS/sub-P39CS_ses-20150801_obj-14vknkz_ecephys+image.nwb",
+      "metadata": {
+        "age": "26",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs39_100",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "389958ed41447bff2c96c57d859526c9",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 100. ",
+        "session_start_time": "2015-08-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "c1e9b106bfceabfef77fe63f64c47278b90bab8e",
+        "sha256": "1baa9700c818490c3db34027d9e3223c9ba5a39f12bbf545a7b5219ac6e81ca5",
+        "sha512": "2673e1d39a3ae54d7ac9a1f72cf2d6d75e2f8e039da53077ce2f505229021ce5081b38dea81b89718227206c732f90e7f4e69b9cf6a1c6d43ed41e8ffd32c120",
+        "species": "human",
+        "subject_id": "p39cs",
+        "uploaded_datetime": "2020-06-04T21:54:40.918991-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:42.476853-07:00",
+        "uploaded_nwb_object_id": "151e06d9-68e4-47a7-9445-e632a3f11e2a",
+        "uploaded_size": 72986320
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d010e82be273d48e41de",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/8c/0b/8c0b84120dd04e41b2a0b9249a0eee81"
+    },
+    {
+      "id": "5ed9d038e82be273d48e41e8",
+      "name": "sub-P40CS_ses-20160101_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72805248,
+        "ctime": "2020-06-05T04:55:20.408000+00:00",
+        "mtime": "2020-05-26T19:13:47.476418-07:00"
+      },
+      "path": "000004/sub-P40CS/sub-P40CS_ses-20160101_ecephys+image.nwb",
+      "metadata": {
+        "age": "25",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs40_101",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "39e8b938ec4c7cd0a63635509c3d7421",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 101. ",
+        "session_start_time": "2016-01-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "93498fcc3ea8934c69b924a5b847d3b7e7a45ba9",
+        "sha256": "230850b558d5a98978cf12e4d0d66f1408f135b5524ae4ce40d12aa03c327d7d",
+        "sha512": "1ae21a5c5f85a1d0d6aa2f422a7d7d2ebc2d79d77bc756a51bc974183f9cab14b48e2b0d79820de801279e410d8796922a029d73cd8d2d2c3b134ca19ee363ff",
+        "species": "human",
+        "subject_id": "p40cs",
+        "uploaded_datetime": "2020-06-04T21:55:21.025146-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:47.476418-07:00",
+        "uploaded_nwb_object_id": "c99d6e98-2711-48eb-b51f-f767fc86402a",
+        "uploaded_size": 72805248
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d038e82be273d48e41e8",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/99/26/9926ba303cf94dbb85ce775b28c3aef9"
+    },
+    {
+      "id": "5ed9d038e82be273d48e41e9",
+      "name": "sub-P42CS_ses-20160801_obj-4o8frf_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72578016,
+        "ctime": "2020-06-05T04:55:20.871000+00:00",
+        "mtime": "2020-05-26T19:14:21.006818-07:00"
+      },
+      "path": "000004/sub-P42CS/sub-P42CS_ses-20160801_obj-4o8frf_ecephys+image.nwb",
+      "metadata": {
+        "age": "25",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs42_112",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "e91ace3b29e746a1d577c79d532af96a",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 112. ",
+        "session_start_time": "2016-08-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "99212a2d1542e66dd314cffea7db9eda36d5a506",
+        "sha256": "5336c05ce83d4922ea09bd24c9812c2c1d7b63512228a13c1f76c86e898fd58e",
+        "sha512": "41f201e0a4b242eaab60ac09e189fdbaf2340d7b3060733e3c5f079b659d9903a54e101eea43bc9cf8c84b56566718e1ec66042b5d6dab610a17e50258a809c8",
+        "species": "human",
+        "subject_id": "p42cs",
+        "uploaded_datetime": "2020-06-04T21:55:21.518826-07:00",
+        "uploaded_mtime": "2020-05-26T19:14:21.006818-07:00",
+        "uploaded_nwb_object_id": "006229be-7471-4aab-97a9-62336b25a9c3",
+        "uploaded_size": 72578016
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d038e82be273d48e41e9",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/e6/7b/e67b2e484f1b4af3bb4bd04b6241a6ca"
+    },
+    {
+      "id": "5ed9d02ee82be273d48e41e2",
+      "name": "sub-P42CS_ses-20160801_obj-xl1j7v_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72564296,
+        "ctime": "2020-06-05T04:55:10.511000+00:00",
+        "mtime": "2020-05-26T19:14:11.405286-07:00"
+      },
+      "path": "000004/sub-P42CS/sub-P42CS_ses-20160801_obj-xl1j7v_ecephys+image.nwb",
+      "metadata": {
+        "age": "25",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs42_111",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "ba0e41d885ec8a66d8de5b08e28d48c2",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 111. ",
+        "session_start_time": "2016-08-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "14c5494a86f9beb035f5570ac9474a6b061a31f0",
+        "sha256": "937a7dd8401901fb148499d10ceab932fd076e31f2368274bc93c17dc156f939",
+        "sha512": "c89976bc172f0dd1fb63c9c38a8192c492addbcb1ae04ed1d689e56b41e166623ada30863f5ead17479db97f8293e29bff811f08dabc42dbc95df8763d7d7038",
+        "species": "human",
+        "subject_id": "p42cs",
+        "uploaded_datetime": "2020-06-04T21:55:11.262255-07:00",
+        "uploaded_mtime": "2020-05-26T19:14:11.405286-07:00",
+        "uploaded_nwb_object_id": "a8d10fa3-e2ad-4e18-9b9b-bfb60d353535",
+        "uploaded_size": 72564296
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d02ee82be273d48e41e2",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/4b/a7/4ba79b80859b488eabaaab4295370619"
+    },
+    {
+      "id": "5ed9d035e82be273d48e41e6",
+      "name": "sub-P42HMH_ses-20130301_obj-1ysquep_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73057632,
+        "ctime": "2020-06-05T04:55:17.200000+00:00",
+        "mtime": "2020-05-26T19:11:03.930690-07:00"
+      },
+      "path": "000004/sub-P42HMH/sub-P42HMH_ses-20130301_obj-1ysquep_ecephys+image.nwb",
+      "metadata": {
+        "age": "29",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h42_55",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "aadffa7cc8163ce07e2a39d5543f620b",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 55. ",
+        "session_start_time": "2013-03-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "5d09aa39fce32d9a196fc248e1acfd437b1c802a",
+        "sha256": "1f1d3220f7c7ec046ab3d3afc9b064972ca3bcffbafff0422a5949819070ed4d",
+        "sha512": "960d749e9c51c0445e6cfa970763452e807d3d0dc84c5d6426b4e8720a93db92e74ed8a21a5a7df0585f9369e982610989c1d7438209d032c2c0874ac0cbc523",
+        "species": "human",
+        "subject_id": "p42hmh",
+        "uploaded_datetime": "2020-06-04T21:55:17.857618-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:03.930690-07:00",
+        "uploaded_nwb_object_id": "d46567c1-5128-446f-aa70-7fae98816d3b",
+        "uploaded_size": 73057632
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d035e82be273d48e41e6",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/89/a3/89a3042087f541e5aea3bfb4bd884041"
+    },
+    {
+      "id": "5ed9d0c9e82be273d48e41f1",
+      "name": "sub-P42HMH_ses-20130301_obj-4rl7w2_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73057632,
+        "ctime": "2020-06-05T04:57:45.535000+00:00",
+        "mtime": "2020-05-26T19:10:55.298353-07:00"
+      },
+      "path": "000004/sub-P42HMH/sub-P42HMH_ses-20130301_obj-4rl7w2_ecephys+image.nwb",
+      "metadata": {
+        "age": "29",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h42_54",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "36fd0366320f4aed889ccc64203c4a70",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 54. ",
+        "session_start_time": "2013-03-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "e38633fdc90766db677b9ad305394e673313c585",
+        "sha256": "7bc03e210800a8f2130f07bae0502d1b8b7e48bcdcdde523b046269c45da4637",
+        "sha512": "fab21ea68415d7288cf97654a4758ca7490408410b45a83f4a0590871b6e4f8c189a153e61bd3ef1e0b6ab7dceab089cb4d4996d6643270b9ec2ac93ed5bf63a",
+        "species": "human",
+        "subject_id": "p42hmh",
+        "uploaded_datetime": "2020-06-04T21:57:46.251270-07:00",
+        "uploaded_mtime": "2020-05-26T19:10:55.298353-07:00",
+        "uploaded_nwb_object_id": "76279520-249a-4281-bd9d-3f18add0d77d",
+        "uploaded_size": 73057632
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d0c9e82be273d48e41f1",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/dd/da/ddda91b32bbf4d67a0250311ab392f0e"
+    },
+    {
+      "id": "5ed9d0dee82be273d48e41f5",
+      "name": "sub-P43CS_ses-20161101_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73067436,
+        "ctime": "2020-06-05T04:58:05.916000+00:00",
+        "mtime": "2020-05-26T19:14:31.240046-07:00"
+      },
+      "path": "000004/sub-P43CS/sub-P43CS_ses-20161101_ecephys+image.nwb",
+      "metadata": {
+        "age": "42",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs43_113",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "23f6ede603bb9faa8ac128343217f8f6",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 113. ",
+        "session_start_time": "2016-11-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "5cf7252d4d14ad6c01cb318c4aaec60360f8e1a3",
+        "sha256": "4e5b4937b71e98814d343ec16344d5756d633e3816b8d71ea61c2b92d41352c0",
+        "sha512": "59b387bd803d7454bd98c8ec76a4a46b64df2a3ccb57eb8c00e0518870f4bf19c8072d7254487265c63e86f007a50751b6c9ecf3aeffe2fd88d50ec8cc8f3967",
+        "species": "human",
+        "subject_id": "p43cs",
+        "uploaded_datetime": "2020-06-04T21:58:06.920726-07:00",
+        "uploaded_mtime": "2020-05-26T19:14:31.240046-07:00",
+        "uploaded_nwb_object_id": "17f4b4ff-eea1-42ca-9278-3a14cb414604",
+        "uploaded_size": 73067436
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d0dee82be273d48e41f5",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/ad/16/ad1686cfade64f9c9226ed8b41a07b45"
+    },
+    {
+      "id": "5ed9d0e5e82be273d48e41f8",
+      "name": "sub-P43HMH_ses-20130401_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72352824,
+        "ctime": "2020-06-05T04:58:13.211000+00:00",
+        "mtime": "2020-05-26T19:11:09.747964-07:00"
+      },
+      "path": "000004/sub-P43HMH/sub-P43HMH_ses-20130401_ecephys+image.nwb",
+      "metadata": {
+        "age": "27",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h43_56",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "def72a795538f0aa993ee51ab1607256",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 56. ",
+        "session_start_time": "2013-04-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "30d05ae3defa8af48ec06ea4294a820cfff4f0f7",
+        "sha256": "103afbe91830fe0284517eb90e3ae1ef2d5c1e21a6635a29b51a58790b053c51",
+        "sha512": "f83d7f1dfced1d271c1332c163caaf161e47536845efdd009bee6b7665e94be17008915af6e491b414995f6feb5044b4a407ccb7697d3b7f9deee1f15580dacf",
+        "species": "human",
+        "subject_id": "p43hmh",
+        "uploaded_datetime": "2020-06-04T21:58:13.910568-07:00",
+        "uploaded_mtime": "2020-05-26T19:11:09.747964-07:00",
+        "uploaded_nwb_object_id": "b32eebee-40cb-4ce1-acb3-146cb29928e3",
+        "uploaded_size": 72352824
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d0e5e82be273d48e41f8",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/64/ae/64ae89ac937141ad9de1ecbd6d7a9827"
+    },
+    {
+      "id": "5ed9d0fce82be273d48e41fc",
+      "name": "sub-P44CS_ses-20160901_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72485464,
+        "ctime": "2020-06-05T04:58:36.048000+00:00",
+        "mtime": "2020-05-26T19:14:36.266322-07:00"
+      },
+      "path": "000004/sub-P44CS/sub-P44CS_ses-20160901_ecephys+image.nwb",
+      "metadata": {
+        "age": "53",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs44_114",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "83b754b497813253e494c04325b6b5f4",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 114. ",
+        "session_start_time": "2016-09-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "49e52ce03678e3fe727f2ba6b309e07b8fc63003",
+        "sha256": "55eab2c5f5f0b747d239faf6805b547f306927d1dcfa6137eaef9f23de648ada",
+        "sha512": "3b407d3d0882e5764b3a7da68359637f955f8d39a6c6e5b2b8cb3ecffb0df79d6d835adf8d60966855d4e25b9e2640fc190d016e95f1635ea7e4652b139db191",
+        "species": "human",
+        "subject_id": "p44cs",
+        "uploaded_datetime": "2020-06-04T21:58:36.646007-07:00",
+        "uploaded_mtime": "2020-05-26T19:14:36.266322-07:00",
+        "uploaded_nwb_object_id": "6b4c95e0-258c-424b-a95f-79895f4cb6e9",
+        "uploaded_size": 72485464
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d0fce82be273d48e41fc",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/b2/6e/b26eabb315764c948bb02189d4de3497"
+    },
+    {
+      "id": "5ed9d1f6e82be273d48e41ff",
+      "name": "sub-P44HMH_ses-20000101_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72392632,
+        "ctime": "2020-06-05T05:02:46.655000+00:00",
+        "mtime": "2020-05-26T19:12:03.837919-07:00"
+      },
+      "path": "000004/sub-P44HMH/sub-P44HMH_ses-20000101_ecephys+image.nwb",
+      "metadata": {
+        "age": "57",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h44_68",
+        "institution": "hunington memorial hospital",
+        "lab": "rutishauser",
+        "md5": "96edb23915002f30c31bf13dddb78935",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 68. ",
+        "session_start_time": "2000-01-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "379d5284999df6c61151bfa385c1dbfc8cb39bde",
+        "sha256": "f99cc029a2034c79e62c71436036f7b9ec68dcdee015b0071ddc26f86c3609ef",
+        "sha512": "0e8dc1f4904ef14fa39b59569dc2d36f9623f40682650cf9ce1c3020e49a8994a1a863ee20e8212ecb2952cd9f426f2bb89d6558456a23a9a6c6f06ce339fbff",
+        "species": "human",
+        "subject_id": "p44hmh",
+        "uploaded_datetime": "2020-06-04T22:02:47.209347-07:00",
+        "uploaded_mtime": "2020-05-26T19:12:03.837919-07:00",
+        "uploaded_nwb_object_id": "bcbdd65d-d125-4227-821b-07a4bfcc51ae",
+        "uploaded_size": 72392632
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d1f6e82be273d48e41ff",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/45/9c/459cefccf78946dea96d726bf38d431e"
+    },
+    {
+      "id": "5ed9d24be82be273d48e4203",
+      "name": "sub-P47CS_ses-20170201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72904312,
+        "ctime": "2020-06-05T05:04:11.479000+00:00",
+        "mtime": "2020-05-26T19:14:41.811743-07:00"
+      },
+      "path": "000004/sub-P47CS/sub-P47CS_ses-20170201_ecephys+image.nwb",
+      "metadata": {
+        "age": "32",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs47_115",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "677d3e5083ad8d28ea740cdbaf9eca8b",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 115. ",
+        "session_start_time": "2017-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "1a2c9a87d9c6c2d12215e0edfaf666c8d26b4918",
+        "sha256": "f5eccd6a9fb951b8defc14dc0349a2ef0b9f909cc571267284e321b4b443d5ad",
+        "sha512": "08eab5c556d98652458437c6127a3377244e559002e551b7e14c3f92e2e4d06226b2ec6d41cceaa9b95b0ce3edb348e3d5932a472f5a7e92b122dd397454af9d",
+        "species": "human",
+        "subject_id": "p47cs",
+        "uploaded_datetime": "2020-06-04T22:04:12.021037-07:00",
+        "uploaded_mtime": "2020-05-26T19:14:41.811743-07:00",
+        "uploaded_nwb_object_id": "688ddce9-800c-4e06-b7e6-8c02b9dad19a",
+        "uploaded_size": 72904312
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d24be82be273d48e4203",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/b9/f5/b9f567177ac2423bb983afa70f114d0a"
+    },
+    {
+      "id": "5ed9d270e82be273d48e4206",
+      "name": "sub-P47HMH_ses-20140601_obj-idwqk1_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72281800,
+        "ctime": "2020-06-05T05:04:48.183000+00:00",
+        "mtime": "2020-05-26T19:13:13.685267-07:00"
+      },
+      "path": "000004/sub-P47HMH/sub-P47HMH_ses-20140601_obj-idwqk1_ecephys+image.nwb",
+      "metadata": {
+        "age": "20",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h47_92",
+        "institution": "hunington memorial hospital",
+        "lab": "rutishauser",
+        "md5": "5911b313111bf3b7f2532f26a557c579",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 92. ",
+        "session_start_time": "2014-06-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "5092f409399d4f8b92ef89a4b18da5b9d360cd70",
+        "sha256": "39e0422b716c61acd8850ebe7be345bff52c5dccb7dd9fd545ee2df1ea75af35",
+        "sha512": "be7827de13f54e3d904bbed34af7da3028233ceb4c4d2d1e6f497e0e00bb0357f937094620f725b00df3b13d51dd9d637916902f348d44d9c5acf0bf2ad90667",
+        "species": "human",
+        "subject_id": "p47hmh",
+        "uploaded_datetime": "2020-06-04T22:04:48.742768-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:13.685267-07:00",
+        "uploaded_nwb_object_id": "e548e5a0-9316-4748-9dec-7a76f4f5eec0",
+        "uploaded_size": 72281800
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d270e82be273d48e4206",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/17/9b/179bf5bd62a2456daf1fd9c3dc215471"
+    },
+    {
+      "id": "5ed9d273e82be273d48e4207",
+      "name": "sub-P47HMH_ses-20140601_obj-vnr1ai_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72460496,
+        "ctime": "2020-06-05T05:04:50.842000+00:00",
+        "mtime": "2020-05-26T19:13:29.832633-07:00"
+      },
+      "path": "000004/sub-P47HMH/sub-P47HMH_ses-20140601_obj-vnr1ai_ecephys+image.nwb",
+      "metadata": {
+        "age": "20",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h47_97",
+        "institution": "hunington memorial hospital",
+        "lab": "rutishauser",
+        "md5": "595aa964510ca3efd01f3dd9208f2d20",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 97. ",
+        "session_start_time": "2014-06-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "e5c6c83c50942f2230aa71675cd95c4b472edef9",
+        "sha256": "0bd15d3eb57b15ecee0a99da727ffb1eb3a0662fa31dc945e8319ce63d2eefc6",
+        "sha512": "5fbb7bd83101aa11817e141d63ea1a45aba0c7088823fc9a91217ca8bbbb984ddc1e333452f02a0e95bd3deda3c7765996dba11e9c2cca5e20de273c6cbe7b60",
+        "species": "human",
+        "subject_id": "p47hmh",
+        "uploaded_datetime": "2020-06-04T22:04:51.456511-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:29.832633-07:00",
+        "uploaded_nwb_object_id": "2de2a665-8823-47e0-b818-8a987daab192",
+        "uploaded_size": 72460496
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d273e82be273d48e4207",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/83/c7/83c70ccd8c6b4b1f91622a627557bc71"
+    },
+    {
+      "id": "5ed9d274e82be273d48e420b",
+      "name": "sub-P48CS_ses-20170301_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72662592,
+        "ctime": "2020-06-05T05:04:52.714000+00:00",
+        "mtime": "2020-05-26T19:14:46.944603-07:00"
+      },
+      "path": "000004/sub-P48CS/sub-P48CS_ses-20170301_ecephys+image.nwb",
+      "metadata": {
+        "age": "32",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs48_116",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "dc346113d96316850a315f16c7793043",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 116. ",
+        "session_start_time": "2017-03-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "fc13970c5cbeabe15dd027ae36efbd51bf9685fb",
+        "sha256": "581bcea63021620e9cebfd24a407f2a0c28e7c0cefefb4b1b4c1f54c6e9f4e23",
+        "sha512": "37f5f3cf39992e302e502c9d3ba0e546131564e1071237fb2f2c6364ad03d6497d10d15f49faa3178cb5ef9b0d5ea3cc269b7abc331f5a6b56af40f0727cfb34",
+        "species": "human",
+        "subject_id": "p48cs",
+        "uploaded_datetime": "2020-06-04T22:04:53.366403-07:00",
+        "uploaded_mtime": "2020-05-26T19:14:46.944603-07:00",
+        "uploaded_nwb_object_id": "cb5c621c-bfe3-48b1-bcbc-0e08b4cccced",
+        "uploaded_size": 72662592
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d274e82be273d48e420b",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/6a/87/6a878cf79b2548cb8e08c23d08ec03ad"
+    },
+    {
+      "id": "5ed9d274e82be273d48e420a",
+      "name": "sub-P48HMH_ses-20141201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73331256,
+        "ctime": "2020-06-05T05:04:51.942000+00:00",
+        "mtime": "2020-05-26T19:13:36.970556-07:00"
+      },
+      "path": "000004/sub-P48HMH/sub-P48HMH_ses-20141201_ecephys+image.nwb",
+      "metadata": {
+        "age": "32",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h48_99",
+        "institution": "hunington memorial hospital",
+        "lab": "rutishauser",
+        "md5": "c990426c8332da129c910032998270ee",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 99. ",
+        "session_start_time": "2014-12-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "1e5526e3c9d8bd1424b5061de8c2a0c8184a4905",
+        "sha256": "23b2f7399cc448a33700428d96402e59b3ad9cbbd16b330edd9bd337094f8274",
+        "sha512": "80e56eab9b241031f9b0cf7b1470b01ed3e8fe7815340243f313315683061c2ca4a2bef8cfeab9218c5ffd6162e2c4ee50ccb4e36818d7dd83d4943fc63d3438",
+        "species": "human",
+        "subject_id": "p48hmh",
+        "uploaded_datetime": "2020-06-04T22:04:52.574521-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:36.970556-07:00",
+        "uploaded_nwb_object_id": "aee963bd-521d-496d-bb84-9dc8b010d731",
+        "uploaded_size": 73331256
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d274e82be273d48e420a",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/c5/c7/c5c7b2d5d2104ef3bec2a224ce4fceb5"
+    },
+    {
+      "id": "5ed9d2f2e82be273d48e4214",
+      "name": "sub-P49CS_ses-20170501_obj-1ft8efg_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72356056,
+        "ctime": "2020-06-05T05:06:58.682000+00:00",
+        "mtime": "2020-05-26T19:14:51.650258-07:00"
+      },
+      "path": "000004/sub-P49CS/sub-P49CS_ses-20170501_obj-1ft8efg_ecephys+image.nwb",
+      "metadata": {
+        "age": "24",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs49_117",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "9ff5d5ae9ed3dc4686bbaad4061b5d6f",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 117. ",
+        "session_start_time": "2017-05-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "4d49095fe980466f58c00f48167d9e2bbf07d794",
+        "sha256": "e312524bf9afedbb8f7f877f2996e83f9ff5fb4537134161f9594e4d024f4c67",
+        "sha512": "b7ba14d8b0a82cf4e0495a5f289e263b259f7fd8463bf41ed12e7a7b3138b07e90f9ca843d97f8b23c686f4742b9da230e4a7512e66127e9dccfac034d416a13",
+        "species": "human",
+        "subject_id": "p49cs",
+        "uploaded_datetime": "2020-06-04T22:06:59.217165-07:00",
+        "uploaded_mtime": "2020-05-26T19:14:51.650258-07:00",
+        "uploaded_nwb_object_id": "f97ad46d-a2e6-4bfd-8351-b804c5dbb0c9",
+        "uploaded_size": 72356056
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d2f2e82be273d48e4214",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/b2/c1/b2c1ae0df8c14200b9ccc464090a9c7b"
+    },
+    {
+      "id": "5ed9d30ee82be273d48e4217",
+      "name": "sub-P49CS_ses-20170501_obj-1tdxaqk_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72332784,
+        "ctime": "2020-06-05T05:07:25.934000+00:00",
+        "mtime": "2020-05-26T19:15:01.163897-07:00"
+      },
+      "path": "000004/sub-P49CS/sub-P49CS_ses-20170501_obj-1tdxaqk_ecephys+image.nwb",
+      "metadata": {
+        "age": "24",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs49_118",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "c97fedc2edb1d8e31393ea9c368affad",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 118. ",
+        "session_start_time": "2017-05-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "f2c29e617c64e38bdacbd76091618993561509d5",
+        "sha256": "008143a70f7d18bdc31a3627437767b2970db8f72ae9c822cf2475e5c08c7a27",
+        "sha512": "262e683646ba5eddb5b78951e4d9d669e3d1724b9921610fb35b38e2b3bc0e3d4aafefd0fa3f32ed1cacc4924d2c6c4f6bafc7921a3b97f1b2d8567b107088f7",
+        "species": "human",
+        "subject_id": "p49cs",
+        "uploaded_datetime": "2020-06-04T22:07:26.516446-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:01.163897-07:00",
+        "uploaded_nwb_object_id": "cf8bf6d9-fce2-4ff9-b603-bf79390ff8a0",
+        "uploaded_size": 72332784
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d30ee82be273d48e4217",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/eb/a9/eba9fcd12e744a2d8de64d3352fea6f7"
+    },
+    {
+      "id": "5ed9d312e82be273d48e421a",
+      "name": "sub-P51CS_ses-20170701_obj-r8wk_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72364512,
+        "ctime": "2020-06-05T05:07:30.741000+00:00",
+        "mtime": "2020-05-26T19:15:06.124576-07:00"
+      },
+      "path": "000004/sub-P51CS/sub-P51CS_ses-20170701_obj-r8wk_ecephys+image.nwb",
+      "metadata": {
+        "age": "17",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs51_119",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "e556e0604c53475b49ae756a767a62ce",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 119. ",
+        "session_start_time": "2017-07-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "439ece8ac696cd85e3b3524bb9b1104622b84439",
+        "sha256": "d724a24b41f6a55bf24040b95dc808269147ebb5be0b225cc3e40f973c50bf26",
+        "sha512": "552a16043b835d6794102caf45d94bc1fe5411e036c21f2bb2cfd4191cba433cb5be09054b3fdf9c68d3edf105254280dc0fbb18cc8a05a672ccbd9188eaa715",
+        "species": "human",
+        "subject_id": "p51cs",
+        "uploaded_datetime": "2020-06-04T22:07:31.272154-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:06.124576-07:00",
+        "uploaded_nwb_object_id": "7e74a0fd-c874-4df0-b73f-32cb8c7c0347",
+        "uploaded_size": 72364512
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d312e82be273d48e421a",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/53/25/5325b70889f1473eab50b2e65047738d"
+    },
+    {
+      "id": "5ed9d321e82be273d48e421f",
+      "name": "sub-P51CS_ses-20170701_obj-whpzxi_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72354280,
+        "ctime": "2020-06-05T05:07:44.890000+00:00",
+        "mtime": "2020-05-26T19:15:10.773587-07:00"
+      },
+      "path": "000004/sub-P51CS/sub-P51CS_ses-20170701_obj-whpzxi_ecephys+image.nwb",
+      "metadata": {
+        "age": "17",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs51_120",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "b4fadde1b153cd377b8f277d9853c73a",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 120. ",
+        "session_start_time": "2017-07-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "ff77f9b2c0359a6d210d8f95e659d34cef8f1ab9",
+        "sha256": "f3e8cbd3d46ac09f98c58998ba5e9750c8c05574462ccf4c54880a760569c272",
+        "sha512": "8e03b3ee0c1db97c38399d92ba1b8e969c8b6629a033a6ef193ddce92093eff2c58c4ad7c35e58adaa25e814ef004e8a48f61ee80736c144d1d499b447c64277",
+        "species": "human",
+        "subject_id": "p51cs",
+        "uploaded_datetime": "2020-06-04T22:07:45.502664-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:10.773587-07:00",
+        "uploaded_nwb_object_id": "0ed4495d-0db2-40f9-8336-60bc673fe58f",
+        "uploaded_size": 72354280
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d321e82be273d48e421f",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/49/05/4905ee911ce24cec918d3b622098a610"
+    },
+    {
+      "id": "5ed9d41fe82be273d48e4223",
+      "name": "sub-P51HMH_ses-20160201_obj-14ikvd2_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72958132,
+        "ctime": "2020-06-05T05:11:58.888000+00:00",
+        "mtime": "2020-05-26T19:14:06.285262-07:00"
+      },
+      "path": "000004/sub-P51HMH/sub-P51HMH_ses-20160201_obj-14ikvd2_ecephys+image.nwb",
+      "metadata": {
+        "age": "24",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h51_105",
+        "institution": "hunington memorial hospital",
+        "lab": "rutishauser",
+        "md5": "586db0d0664bdc1d5f10d517dbee1c7d",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 105. ",
+        "session_start_time": "2016-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "5d2f0cae453ffc7ae12ea4839305447e47344a97",
+        "sha256": "7deffdfee815fcb24fde4b3b1da5c22288014450154ff73840b404687468618f",
+        "sha512": "3b7ed192e1a7705654b1f0d97c1e1d1ddadff1201e8877973c5e651019f3d82d7d67127b7d8c50bc8c26a0ce78858f8e0ff2d053fb14c79da8a428545b4081c2",
+        "species": "human",
+        "subject_id": "p51hmh",
+        "uploaded_datetime": "2020-06-04T22:11:59.664250-07:00",
+        "uploaded_mtime": "2020-05-26T19:14:06.285262-07:00",
+        "uploaded_nwb_object_id": "4fd08979-b73c-4528-b9a0-251c1f0b499f",
+        "uploaded_size": 72958132
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d41fe82be273d48e4223",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/54/0c/540ce8916d664ce4b30d73324d274a3e"
+    },
+    {
+      "id": "5ed9d46ce82be273d48e4226",
+      "name": "sub-P51HMH_ses-20160201_obj-1hgu6x_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72993336,
+        "ctime": "2020-06-05T05:13:16.109000+00:00",
+        "mtime": "2020-05-26T19:13:59.171484-07:00"
+      },
+      "path": "000004/sub-P51HMH/sub-P51HMH_ses-20160201_obj-1hgu6x_ecephys+image.nwb",
+      "metadata": {
+        "age": "24",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h51_104",
+        "institution": "hunington memorial hospital",
+        "lab": "rutishauser",
+        "md5": "df707b45355a412900c6ca65dad77629",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 104. ",
+        "session_start_time": "2016-02-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "c4da08a97cea7a35923f166d1ff150eb35c8ad37",
+        "sha256": "d583b1a3f8d7f438fed8b1c779b63dfee2c669e04eab7f6d1026cf9d3d301336",
+        "sha512": "8685458115044399b34759efb1bd858ff7c930377c04b5ffcbba96e25449f76e22cfe127bca099aa983ea4e19e42b9cfb4a1b339131415160ef62809fa63bea3",
+        "species": "human",
+        "subject_id": "p51hmh",
+        "uploaded_datetime": "2020-06-04T22:13:16.821396-07:00",
+        "uploaded_mtime": "2020-05-26T19:13:59.171484-07:00",
+        "uploaded_nwb_object_id": "ae760704-78b8-4d99-897b-0669f9fc0cbf",
+        "uploaded_size": 72993336
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d46ce82be273d48e4226",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/5b/6c/5b6c45bd51534b3a9972a1b1bda61e59"
+    },
+    {
+      "id": "5ed9d471e82be273d48e4229",
+      "name": "sub-P53CS_ses-20171101_obj-108aqix_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 71228476,
+        "ctime": "2020-06-05T05:13:21.452000+00:00",
+        "mtime": "2020-05-26T19:15:21.034010-07:00"
+      },
+      "path": "000004/sub-P53CS/sub-P53CS_ses-20171101_obj-108aqix_ecephys+image.nwb",
+      "metadata": {
+        "age": "60",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs53_123",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "799b1e5c7bd21089a2427f4aaabadcfe",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 123. ",
+        "session_start_time": "2017-11-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "641ebcee0ef8b9e699866e82f0a63c6f067ab822",
+        "sha256": "c3b821e95621fd470256fdd4eb37894c40969457a22d2c9c5634716f01d949f9",
+        "sha512": "3748089c0385222c0cfca7b596933cf26ee03b4ad02823b3166d8ebe8b9d525c320d8973fcc4dc3dc3a40331e590e6176791840fd5b0ad71b327062e402714dd",
+        "species": "human",
+        "subject_id": "p53cs",
+        "uploaded_datetime": "2020-06-04T22:13:21.972625-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:21.034010-07:00",
+        "uploaded_nwb_object_id": "4db75858-c832-4e5f-9471-bdd2f827e8fc",
+        "uploaded_size": 71228476
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d471e82be273d48e4229",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/81/12/811207753f8648d3a8fcf961b9f02345"
+    },
+    {
+      "id": "5ed9d49ae82be273d48e4234",
+      "name": "sub-P53CS_ses-20171101_obj-lj04dr_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72916888,
+        "ctime": "2020-06-05T05:14:01.984000+00:00",
+        "mtime": "2020-05-26T19:15:16.201318-07:00"
+      },
+      "path": "000004/sub-P53CS/sub-P53CS_ses-20171101_obj-lj04dr_ecephys+image.nwb",
+      "metadata": {
+        "age": "60",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs53_122",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "46e19094e55263bfce95881d758fb465",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 122. ",
+        "session_start_time": "2017-11-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "3f54e4968e2cdb2109ce32b10b586cb6d3c7f5a0",
+        "sha256": "ca804703001f7ec1103e3738507c110e4a57c431a1f7559fc4b1d31d71f0e539",
+        "sha512": "87fc00c1a38ec5300089d194e7235d0d5bcbb9dcad4c8852e9b98c79118ced4dcf147803795774c90354ffe06a71a59a62e325e5cf457460b7a52f565bd3307a",
+        "species": "human",
+        "subject_id": "p53cs",
+        "uploaded_datetime": "2020-06-04T22:14:02.571699-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:16.201318-07:00",
+        "uploaded_nwb_object_id": "607abfeb-95b9-4676-8fea-c5c6a37f3c93",
+        "uploaded_size": 72916888
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d49ae82be273d48e4234",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/dd/a2/dda2d166bc844eea84704f7b3c6a19c1"
+    },
+    {
+      "id": "5ed9d493e82be273d48e422e",
+      "name": "sub-P54CS_ses-20180101_obj-1ru98u8_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72809520,
+        "ctime": "2020-06-05T05:13:55.082000+00:00",
+        "mtime": "2020-05-26T19:15:44.503101-07:00"
+      },
+      "path": "000004/sub-P54CS/sub-P54CS_ses-20180101_obj-1ru98u8_ecephys+image.nwb",
+      "metadata": {
+        "age": "59",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs54_126",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "eb8c6f4e241813cfd27eabb2e4cd975c",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 126. ",
+        "session_start_time": "2018-01-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "d0eaef70704885057823309e2c0ff3502f071f1e",
+        "sha256": "59d5a71fe4d7adb73d3ef2d51166190ccd54e53866591ea3758822af3c44cc88",
+        "sha512": "708b38260b53d2a159321ef0018e82133ba3fb87d58e3ea75fff0f118c82f4184d877870e45a5c4f29c4fc67be3cc2536a5faa23890c2251d03c8f05455457b1",
+        "species": "human",
+        "subject_id": "p54cs",
+        "uploaded_datetime": "2020-06-04T22:13:55.763391-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:44.503101-07:00",
+        "uploaded_nwb_object_id": "d29f6c98-67a9-47bd-be1c-f2594f37f3eb",
+        "uploaded_size": 72809520
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d493e82be273d48e422e",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/f6/0c/f60c945cd4b34615884293ad82a1c814"
+    },
+    {
+      "id": "5ed9d491e82be273d48e422d",
+      "name": "sub-P54CS_ses-20180101_obj-1ukzk61_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 73112672,
+        "ctime": "2020-06-05T05:13:53.687000+00:00",
+        "mtime": "2020-05-26T19:15:26.725440-07:00"
+      },
+      "path": "000004/sub-P54CS/sub-P54CS_ses-20180101_obj-1ukzk61_ecephys+image.nwb",
+      "metadata": {
+        "age": "59",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs54_124",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "7365191e64afbba0b9ac9aef95cdc56e",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 124. ",
+        "session_start_time": "2018-01-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "bc44cc98bddc4a0d0765833af94443a3cc48c426",
+        "sha256": "57a2dc5a0ec7173eac7e7ffdaff2c03dfe372f55c490cd7f4050bc2faec79978",
+        "sha512": "a5881c3e8e5ccf0e10976f6c97d5f90edddcbcfb7092855e629c4de1a7bc1c0d095b6ada6ae6e0af51d06d6f80973d5a699ad6e7b550dab32f8bec6c7c1131d4",
+        "species": "human",
+        "subject_id": "p54cs",
+        "uploaded_datetime": "2020-06-04T22:13:54.356384-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:26.725440-07:00",
+        "uploaded_nwb_object_id": "7daffd19-da09-4f96-aca8-e874a819c196",
+        "uploaded_size": 73112672
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d491e82be273d48e422d",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/d2/23/d22385717f45488c93a7c52c80cd5ed4"
+    },
+    {
+      "id": "5ed9d517e82be273d48e4239",
+      "name": "sub-P54CS_ses-20180101_obj-1vx1a5w_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72825960,
+        "ctime": "2020-06-05T05:16:07.234000+00:00",
+        "mtime": "2020-05-26T19:15:34.542663-07:00"
+      },
+      "path": "000004/sub-P54CS/sub-P54CS_ses-20180101_obj-1vx1a5w_ecephys+image.nwb",
+      "metadata": {
+        "age": "59",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs54_125",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "e72ab85abb6081f1d9d0f7e380d3ffe2",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 125. ",
+        "session_start_time": "2018-01-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "0c93a20694b29fd1c05fdbda01b7c9c1566212cb",
+        "sha256": "d848c4c27409509020b8086a0d38b7c6f357bd0b7966bcd00ea5249cf474a27e",
+        "sha512": "9df776ed7d24f428dc77394f4ed32c2fd8f4264bf3a3aec92dd2487cfe02256c581db915b13e2fc75f93805ea118590b5c49f989d0d62af644b67df3a6f80114",
+        "species": "human",
+        "subject_id": "p54cs",
+        "uploaded_datetime": "2020-06-04T22:16:08.355520-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:34.542663-07:00",
+        "uploaded_nwb_object_id": "751c0374-8278-4aef-ba65-740c63a1bbe1",
+        "uploaded_size": 72825960
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d517e82be273d48e4239",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/cf/28/cf287dce66eb4faf9a456f912ad2ab18"
+    },
+    {
+      "id": "5ed9d527e82be273d48e423d",
+      "name": "sub-P55CS_ses-20180301_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72371608,
+        "ctime": "2020-06-05T05:16:23.777000+00:00",
+        "mtime": "2020-05-26T19:15:53.930906-07:00"
+      },
+      "path": "000004/sub-P55CS/sub-P55CS_ses-20180301_ecephys+image.nwb",
+      "metadata": {
+        "age": "43",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs55_127",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "c02942df33f9f4f4384c189280c50f91",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 127. ",
+        "session_start_time": "2018-03-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "fd908b7f1d397f32fc6287694c44fa47b439cd97",
+        "sha256": "aa388e18204a5e2baf3022e69beb58bf4db7e1623cf3ae7ec78de2a741e44306",
+        "sha512": "70261b009790d0e04b8cb130eed9ebc434c8cffca51d99db80b0ad10d0778404779ac3d94f38c1172cca6047610c086b88f36b54d543bf9aa32b8748a30ba615",
+        "species": "human",
+        "subject_id": "p55cs",
+        "uploaded_datetime": "2020-06-04T22:16:24.548638-07:00",
+        "uploaded_mtime": "2020-05-26T19:15:53.930906-07:00",
+        "uploaded_nwb_object_id": "25181a39-7348-449b-926a-ec8ef06dff23",
+        "uploaded_size": 72371608
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d527e82be273d48e423d",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/36/3e/363e4c2c04344ab991adcbb0da6bcdc3"
+    },
+    {
+      "id": "5ed9d53ae82be273d48e4240",
+      "name": "sub-P56CS_ses-20180401_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72325224,
+        "ctime": "2020-06-05T05:16:42.314000+00:00",
+        "mtime": "2020-05-26T19:16:00.301222-07:00"
+      },
+      "path": "000004/sub-P56CS/sub-P56CS_ses-20180401_ecephys+image.nwb",
+      "metadata": {
+        "age": "48",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs56_128",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "92f15061f2203081c9076bcbd05577c1",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 128. ",
+        "session_start_time": "2018-04-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "6f201308c073abcdb29bcade0a9356ff0c3f062a",
+        "sha256": "30618ca55a2a026da9b70cb4440f12ce0ed0b9d0e48f90d11fd63e919ab0d2bd",
+        "sha512": "4b5829ce4518f6091865fcc86429603ab9b3b2c2e7c2cae5d151d05bf4a1d0a239a8f2c0d02cf27e2cb198a3eee1160ea65a03491fe36c330fe5862615a6010d",
+        "species": "human",
+        "subject_id": "p56cs",
+        "uploaded_datetime": "2020-06-04T22:16:42.959045-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:00.301222-07:00",
+        "uploaded_nwb_object_id": "e134adc8-7ebb-45c0-b9ec-a080a7004ca5",
+        "uploaded_size": 72325224
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d53ae82be273d48e4240",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/02/68/02688b6bff8e438089215e1f5a01cba6"
+    },
+    {
+      "id": "5ed9d54ae82be273d48e4244",
+      "name": "sub-P57CS_ses-20180601_obj-12hkdgu_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72810856,
+        "ctime": "2020-06-05T05:16:58.354000+00:00"
+      },
+      "path": "000004/sub-P57CS/sub-P57CS_ses-20180601_obj-12hkdgu_ecephys+image.nwb",
+      "metadata": {},
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d54ae82be273d48e4244",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/c9/3e/c93e0c8cf0a54e4bb38d8b151da5a9b9"
+    },
+    {
+      "id": "5ed9d622e82be273d48e4247",
+      "name": "sub-P57CS_ses-20180601_obj-9ad1o5_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72443880,
+        "ctime": "2020-06-05T05:20:34.555000+00:00",
+        "mtime": "2020-05-26T19:16:16.561088-07:00"
+      },
+      "path": "000004/sub-P57CS/sub-P57CS_ses-20180601_obj-9ad1o5_ecephys+image.nwb",
+      "metadata": {
+        "age": "46",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs57_131",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "ae558e5fb967fb9798e434924cb8c421",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 131. ",
+        "session_start_time": "2018-06-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "2f74b7ce45fb931726c1dee7b4c07fffd5cc5d2d",
+        "sha256": "dea09f8af029878f51746572fc48da1e6a13f569a937738ab9cfcc14c44a126d",
+        "sha512": "04773f1d54f00ff02a77d51bd5671df5afedbb014accc6dbf0234ac8222036e82e216276d0b6c118355417c1c49229e8a30ffcff70d6f0484d36ff3499e99574",
+        "species": "human",
+        "subject_id": "p57cs",
+        "uploaded_datetime": "2020-06-04T22:20:35.297875-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:16.561088-07:00",
+        "uploaded_nwb_object_id": "a5bdc165-06fd-4b08-a6c3-abf801c1c2dc",
+        "uploaded_size": 72443880
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d622e82be273d48e4247",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/7a/06/7a06d0ffc4bf430b8f23bb72c754ca14"
+    },
+    {
+      "id": "5ed9d686e82be273d48e424b",
+      "name": "sub-P58CS_ses-20180701_obj-ia8uyp_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72232080,
+        "ctime": "2020-06-05T05:22:14.689000+00:00",
+        "mtime": "2020-05-26T19:16:28.290060-07:00"
+      },
+      "path": "000004/sub-P58CS/sub-P58CS_ses-20180701_obj-ia8uyp_ecephys+image.nwb",
+      "metadata": {
+        "age": "32",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs58_133",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "fbe80841dd88204aaa71a564a7aec323",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 133. ",
+        "session_start_time": "2018-07-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "c640fb01953a52b1ddb16197c53251404a4113c7",
+        "sha256": "4ddc57092daf2675666f55e43a3cdfc53a3807d8d85c091dc236221371bec201",
+        "sha512": "e7bf19aebd1e4f4555b676438b716d3bed473429a454a8d25a4a290352269b97d55a5a3d0c6bf15bdf01fcabdd07246e972ae90fbd847254f5812c76f613df4f",
+        "species": "human",
+        "subject_id": "p58cs",
+        "uploaded_datetime": "2020-06-04T22:22:15.303375-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:28.290060-07:00",
+        "uploaded_nwb_object_id": "42eedaa7-79ed-49bb-8b28-dcf372db97cc",
+        "uploaded_size": 72232080
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d686e82be273d48e424b",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/87/ff/87ff6a634de34fbe99e2e50e4a65f746"
+    },
+    {
+      "id": "5ed9d697e82be273d48e424f",
+      "name": "sub-P58CS_ses-20180701_obj-n6u3dz_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72360176,
+        "ctime": "2020-06-05T05:22:31.663000+00:00",
+        "mtime": "2020-05-26T19:16:22.314582-07:00"
+      },
+      "path": "000004/sub-P58CS/sub-P58CS_ses-20180701_obj-n6u3dz_ecephys+image.nwb",
+      "metadata": {
+        "age": "32",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs58_132",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "79b8447f2a85faffc50786f7b5b767ce",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 132. ",
+        "session_start_time": "2018-07-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "36c4acf8cc237acb5adcbd4d86bcf9f8dff908b0",
+        "sha256": "1aac53435a622e0cc2dcd3666550fd4126b92a9aafd3ad90912cf82918a37b59",
+        "sha512": "c2b94b859dc94f833cd7441ae91ef9689f39d7ea7b9e9491f66e9d3bf363ba372e93e2c03c510c55e9aa90c4f2a8d1fa2b2a4ab1d7c98269be053117990f4c22",
+        "species": "human",
+        "subject_id": "p58cs",
+        "uploaded_datetime": "2020-06-04T22:22:32.268195-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:22.314582-07:00",
+        "uploaded_nwb_object_id": "0b47e497-181c-4f72-8f43-a0634cb2f978",
+        "uploaded_size": 72360176
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d697e82be273d48e424f",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/62/52/6252632682ab4ed8a70ff2d8b451ce2c"
+    },
+    {
+      "id": "5ed9d6ade82be273d48e4255",
+      "name": "sub-P60CS_ses-20181001_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72483960,
+        "ctime": "2020-06-05T05:22:53.779000+00:00",
+        "mtime": "2020-05-26T19:16:33.211619-07:00"
+      },
+      "path": "000004/sub-P60CS/sub-P60CS_ses-20181001_ecephys+image.nwb",
+      "metadata": {
+        "age": "67",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs60_134",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "ba6984327f9b9b7f890c85092420fb55",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 134. ",
+        "session_start_time": "2018-10-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "19e12924ed901c13bf97a057c43a2e5a7c4dc8cb",
+        "sha256": "f8fa797c4099f63ac0d0f9aacec08ab642ec1f94b8efcbca10ffd45266e14de5",
+        "sha512": "b87838bd3bd6d4917ecdf2a499d2ae2d1c2b838061395a3e6ac1960aa77d495cfd931c0a261627ebbf082598268ecc4aaa6c4e2adf09dc2fbf25c4a52a6f6547",
+        "species": "human",
+        "subject_id": "p60cs",
+        "uploaded_datetime": "2020-06-04T22:22:54.302250-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:33.211619-07:00",
+        "uploaded_nwb_object_id": "faccea0c-a1e8-4517-bfe2-17ff623ac967",
+        "uploaded_size": 72483960
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d6ade82be273d48e4255",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/26/8a/268a7a9c62834785aa43e6d366cac7a3"
+    },
+    {
+      "id": "5ed9d6aae82be273d48e4253",
+      "name": "sub-P61CS_ses-20190201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72587784,
+        "ctime": "2020-06-05T05:22:50.678000+00:00",
+        "mtime": "2020-05-26T19:16:38.663549-07:00"
+      },
+      "path": "000004/sub-P61CS/sub-P61CS_ses-20190201_ecephys+image.nwb",
+      "metadata": {
+        "age": "52",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs61_135",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "c52f12ecc84bb5ded47b5592bfbd9363",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 135. ",
+        "session_start_time": "2019-02-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "5605809c439c1107c27a30132fb7e32de8bb52bc",
+        "sha256": "d507e19e39eb6bd9819c79ffd2be8b70cae1b249a6b1c28ca6b94dd92417bd27",
+        "sha512": "53aa9002672ba1df74c7707be0baf5cef7cb9ba606c7e777314b82b0b27cc1e470cf85ceacb6df512062d769273d54b4fba3ac065356619f205d74717280bc3d",
+        "species": "human",
+        "subject_id": "p61cs",
+        "uploaded_datetime": "2020-06-04T22:22:51.212758-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:38.663549-07:00",
+        "uploaded_nwb_object_id": "d13598a9-1c14-4951-a90c-7e702a1a4775",
+        "uploaded_size": 72587784
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d6aae82be273d48e4253",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/18/23/1823dd084654482b9a461c02c72391f8"
+    },
+    {
+      "id": "5ed9d6aee82be273d48e4257",
+      "name": "sub-P62CS_ses-20190401_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72482176,
+        "ctime": "2020-06-05T05:22:54.208000+00:00",
+        "mtime": "2020-05-26T19:16:43.366690-07:00"
+      },
+      "path": "000004/sub-P62CS/sub-P62CS_ses-20190401_ecephys+image.nwb",
+      "metadata": {
+        "age": "25",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "cs62_136",
+        "institution": "cedars-sinai medical center",
+        "lab": "rutishauser",
+        "md5": "f8000b56efede62d902958e5bd21db34",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 136. ",
+        "session_start_time": "2019-04-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "7b9d8ed744158bbad18bf3cd87933083bd41f3f3",
+        "sha256": "866a9d8ac6bfa6295bf1474f99f7b7ba6a0df599fa9668ff700e982c4659b354",
+        "sha512": "69b4435162c1dd0f119604ea2a9350bcd84cbd1ecacbe134005a06c56d0ab83ba74ad0038f3d13005cef6ed545e3b63dc0cdf5f19db442b4e6a0e1f06ae0687a",
+        "species": "human",
+        "subject_id": "p62cs",
+        "uploaded_datetime": "2020-06-04T22:22:54.855427-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:43.366690-07:00",
+        "uploaded_nwb_object_id": "e192f132-676c-4a04-bd03-ac3dbb94a603",
+        "uploaded_size": 72482176
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d6aee82be273d48e4257",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/96/32/96322095f68c40b2aa54defc95921141"
+    },
+    {
+      "id": "5ed9d727e82be273d48e425f",
+      "name": "sub-P9HMH_ses-20060301_obj-1otd1m8_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72888592,
+        "ctime": "2020-06-05T05:24:54.952000+00:00",
+        "mtime": "2020-05-26T19:08:11.892015-07:00"
+      },
+      "path": "000004/sub-P9HMH/sub-P9HMH_ses-20060301_obj-1otd1m8_ecephys+image.nwb",
+      "metadata": {
+        "age": "55",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h09_5",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "f23ae02d8c3a82182d50e48648b0fa63",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 5. ",
+        "session_start_time": "2006-03-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "35bcf02d66d9e2a4b708673b637d1ac1c685de63",
+        "sha256": "0c9409255f5802393af3f00fd6248f8956e1a64100c3e8ec14fd7108e0f6a0a0",
+        "sha512": "e2c88e80a822ce4463cccac4546eacf0fc773305a493b93eebdba4f8807982abc32b37ee7c5fb8e95af28fa54e828fcda3d302d54bc8233601a31f224c14d363",
+        "species": "human",
+        "subject_id": "p9hmh",
+        "uploaded_datetime": "2020-06-04T22:24:55.540293-07:00",
+        "uploaded_mtime": "2020-05-26T19:08:11.892015-07:00",
+        "uploaded_nwb_object_id": "59211a0b-38e7-4dcf-98a3-756ca16dba37",
+        "uploaded_size": 72888592
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d727e82be273d48e425f",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/43/01/4301fd35106640a59775ecb8915e63ac"
+    },
+    {
+      "id": "5ed9d748e82be273d48e4263",
+      "name": "sub-P9HMH_ses-20060301_obj-2arzt6_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72536672,
+        "ctime": "2020-06-05T05:25:28.592000+00:00",
+        "mtime": "2020-05-26T19:08:23.754528-07:00"
+      },
+      "path": "000004/sub-P9HMH/sub-P9HMH_ses-20060301_obj-2arzt6_ecephys+image.nwb",
+      "metadata": {
+        "age": "55",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "h09_6",
+        "institution": "hunigton memorial hospital",
+        "lab": "rutishauser",
+        "md5": "b88726f28b23aecef35f778e7f9983bc",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 6. ",
+        "session_start_time": "2006-03-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "11ff875fc4cbe3df024daf3226d506c0511270b0",
+        "sha256": "064246a1c69f8d4447155946d854d7d24f37dc8694289c1cdef340e739fdd286",
+        "sha512": "194e308e951b677d78198ec2d3dd96e1b9021bec5267be583c4034ea9c3396971133a2039b3d548e7cb6815bb78b16de90506a12c9c14cc10fa6869a6f8d71ed",
+        "species": "human",
+        "subject_id": "p9hmh",
+        "uploaded_datetime": "2020-06-04T22:25:29.324296-07:00",
+        "uploaded_mtime": "2020-05-26T19:08:23.754528-07:00",
+        "uploaded_nwb_object_id": "d174b9af-3b43-41b6-ba59-f967f6060ec7",
+        "uploaded_size": 72536672
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d748e82be273d48e4263",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/f2/79/f2796b7cb9554a09b0d62af41730332c"
+    },
+    {
+      "id": "5ed9d74be82be273d48e4264",
+      "name": "sub-TWH088_ses-20180301_obj-14chmi4_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72680616,
+        "ctime": "2020-06-05T05:25:31.812000+00:00",
+        "mtime": "2020-05-26T19:16:50.030975-07:00"
+      },
+      "path": "000004/sub-TWH088/sub-TWH088_ses-20180301_obj-14chmi4_ecephys+image.nwb",
+      "metadata": {
+        "age": "26",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t88_2001",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "04993ecde9b314a0e671297f77ff9f67",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2001. ",
+        "session_start_time": "2018-03-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "fca6f41c875335ebb44ba5b3c2501cfb96f7a0ce",
+        "sha256": "d57e0587a4cb27279da4678942afdbaabadcb86360b172b976126514001ddda1",
+        "sha512": "a36c38fbc7a02edcb9b2e3290c4c28b129d8d2b173a9721f5d648699edb57dcffd218605a1551b0736d3adc9dc642906c7ecc6de9e99fd4fe3360b625d03adcb",
+        "species": "human",
+        "subject_id": "twh088",
+        "uploaded_datetime": "2020-06-04T22:25:32.419916-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:50.030975-07:00",
+        "uploaded_nwb_object_id": "db8cae89-2777-4e36-be8e-a1f6ac6de2e2",
+        "uploaded_size": 72680616
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d74be82be273d48e4264",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/39/af/39af5a7115344cc4bad5466e870dd904"
+    },
+    {
+      "id": "5ed9d767e82be273d48e4265",
+      "name": "sub-TWH088_ses-20180301_obj-fkumf6_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72295960,
+        "ctime": "2020-06-05T05:25:59.057000+00:00",
+        "mtime": "2020-05-26T19:16:59.561717-07:00"
+      },
+      "path": "000004/sub-TWH088/sub-TWH088_ses-20180301_obj-fkumf6_ecephys+image.nwb",
+      "metadata": {
+        "age": "26",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t88_2002",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "bb2e4ea2f7fa93d0404d1ab4abc18b7a",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2002. ",
+        "session_start_time": "2018-03-01T00:00:00-08:00",
+        "sex": "m",
+        "sha1": "9932d1d3441a84ba0e71f874525058a7c49b8a64",
+        "sha256": "d9cde24d6796b0ca56f027e784ec670804343d2cdfeb27a5b029489d355b39a9",
+        "sha512": "7a815387a903f68ce5e96b5475b8eded824d50a7348c589006a5091ee56335388757c39ab53d85f84966942ef0ef5cf50680b007c9f938c89964ad80c3258213",
+        "species": "human",
+        "subject_id": "twh088",
+        "uploaded_datetime": "2020-06-04T22:25:59.731249-07:00",
+        "uploaded_mtime": "2020-05-26T19:16:59.561717-07:00",
+        "uploaded_nwb_object_id": "7165befa-e59f-4cdc-88d1-5d936f70f1d9",
+        "uploaded_size": 72295960
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d767e82be273d48e4265",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/d8/68/d8685817a74b4512849a4451bb6ac63f"
+    },
+    {
+      "id": "5ed9d7eee82be273d48e4266",
+      "name": "sub-TWH089_ses-20180301_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72847288,
+        "ctime": "2020-06-05T05:28:14.233000+00:00",
+        "mtime": "2020-05-26T19:17:06.605146-07:00"
+      },
+      "path": "000004/sub-TWH089/sub-TWH089_ses-20180301_ecephys+image.nwb",
+      "metadata": {
+        "age": "45",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t89_2004",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "8828d0aa204e51104e62bec589808275",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2004. ",
+        "session_start_time": "2018-03-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "e5b026d4c3f73ba6119acec49300f542363de98e",
+        "sha256": "02d316a04ec754bb7ca5381a02508a8cf02e1c3ea8c1922077d0fc9e0419b48f",
+        "sha512": "ad159eadd527c6b3286a6d0130c46b243383829f3a9e7df841cc9bbe27833fcce984f86ec5aff16caf8c07d0f011f5f521184a22fd117022262ee847951a56eb",
+        "species": "human",
+        "subject_id": "twh089",
+        "uploaded_datetime": "2020-06-04T22:28:14.831688-07:00",
+        "uploaded_mtime": "2020-05-26T19:17:06.605146-07:00",
+        "uploaded_nwb_object_id": "d882a731-8e9c-4e4b-bd55-199bc502470a",
+        "uploaded_size": 72847288
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d7eee82be273d48e4266",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/d7/8d/d78d3cb78eaa4d75a20423dadc2d1af4"
+    },
+    {
+      "id": "5ed9d838e82be273d48e4267",
+      "name": "sub-TWH090_ses-20180401_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72257200,
+        "ctime": "2020-06-05T05:29:27.992000+00:00",
+        "mtime": "2020-05-26T19:17:12.366373-07:00"
+      },
+      "path": "000004/sub-TWH090/sub-TWH090_ses-20180401_ecephys+image.nwb",
+      "metadata": {
+        "age": "20",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t90_2003",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "4741e95887771ebe97a3b5e635278acc",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2003. ",
+        "session_start_time": "2018-04-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "6d5c796769be4ff612b2a080f422282f93413ec2",
+        "sha256": "81275b6262f71b1a869660d2afe882b9c8a01f8dad863ba5d2e80c9ad3c7edfd",
+        "sha512": "b21920d4f7b57823af6ab8ead6c4a85959a78c023d1c1a3603d29474e78fbeaf59e91dd1bcbeb5ed4bfaa6978eeedcf470fc4675cf3f65125b31ff3291e0e45d",
+        "species": "human",
+        "subject_id": "twh090",
+        "uploaded_datetime": "2020-06-04T22:29:28.623972-07:00",
+        "uploaded_mtime": "2020-05-26T19:17:12.366373-07:00",
+        "uploaded_nwb_object_id": "8f567ff1-86c5-4cf8-9911-8063533a1994",
+        "uploaded_size": 72257200
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d838e82be273d48e4267",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/08/53/0853bcfc7f2e47b682543bf81b45f7b7"
+    },
+    {
+      "id": "5ed9d838e82be273d48e4268",
+      "name": "sub-TWH098_ses-20180901_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72534816,
+        "ctime": "2020-06-05T05:29:28.638000+00:00",
+        "mtime": "2020-05-26T19:17:18.635802-07:00"
+      },
+      "path": "000004/sub-TWH098/sub-TWH098_ses-20180901_ecephys+image.nwb",
+      "metadata": {
+        "age": "46",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t98_2005",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "6ccaacced6dcbadbd958bf9e22675fa1",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2005. ",
+        "session_start_time": "2018-09-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "4590fbab5f938a517e51a338a5ccf840989a76ac",
+        "sha256": "1b3ec78259b1040cc4ac822c189ec45ddc320e14b6e7a8bb385d48c0060f9185",
+        "sha512": "b931206d32115e802a65785dbef8a1712c18dfa4372f0d29037c8276580c5f3caef43ad752cda96c99197d435def136dac93bdad48f96e96689e77fa34f9ab32",
+        "species": "human",
+        "subject_id": "twh098",
+        "uploaded_datetime": "2020-06-04T22:29:29.194283-07:00",
+        "uploaded_mtime": "2020-05-26T19:17:18.635802-07:00",
+        "uploaded_nwb_object_id": "47dafc30-c6ec-4730-908b-da4a5e167593",
+        "uploaded_size": 72534816
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d838e82be273d48e4268",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/36/ee/36ee47163d704b9bab5f911bc6e7afe6"
+    },
+    {
+      "id": "5ed9d854e82be273d48e426a",
+      "name": "sub-TWH100_ses-20181001_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72200016,
+        "ctime": "2020-06-05T05:29:56.422000+00:00",
+        "mtime": "2020-05-26T19:17:22.741023-07:00"
+      },
+      "path": "000004/sub-TWH100/sub-TWH100_ses-20181001_ecephys+image.nwb",
+      "metadata": {
+        "age": "19",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t100_2008",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "35f26bf5074e5574b8f1e74b86757584",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2008. ",
+        "session_start_time": "2018-10-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "7ba0155babd8230801dc0dcc469b5b5a0ad6032b",
+        "sha256": "00932f8cf479953f183c6ecc3672aa653469e43cf5b8aff8d20df70de7ed13f1",
+        "sha512": "9c04fa6019d34a2192bb9a34a3a440851c9a850424badb2d45e44872bbd02607a116969e4f453ede9ded66373b57e846616c884b91d4ee6c0324c9dc685c9078",
+        "species": "human",
+        "subject_id": "twh100",
+        "uploaded_datetime": "2020-06-04T22:29:57.390750-07:00",
+        "uploaded_mtime": "2020-05-26T19:17:22.741023-07:00",
+        "uploaded_nwb_object_id": "afabb9a5-a009-4e6d-bdc1-8bc62762c4bf",
+        "uploaded_size": 72200016
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d854e82be273d48e426a",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/94/d1/94d1c8b998514910b485689910828e34"
+    },
+    {
+      "id": "5ed9d857e82be273d48e426b",
+      "name": "sub-TWH101_ses-20181001_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72325320,
+        "ctime": "2020-06-05T05:29:58.909000+00:00",
+        "mtime": "2020-05-26T19:17:27.274894-07:00"
+      },
+      "path": "000004/sub-TWH101/sub-TWH101_ses-20181001_ecephys+image.nwb",
+      "metadata": {
+        "age": "25",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t101_2011",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "3de20633de14f062363ace4feae3596e",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2011. ",
+        "session_start_time": "2018-10-01T00:00:00-07:00",
+        "sex": "f",
+        "sha1": "fa52498f6834a53ffd3689ba5519a432e7efeeec",
+        "sha256": "f4fede86aae9e2c3769ec8968ee946475220a982851bd68c2cbf529a5775154a",
+        "sha512": "7402730be27c62d35ef954f7e34ef1243990cc17990981f4febb2066559dd81ebbcc548143969d33079fd4f40915a629b6c3552e4b621b2b6829e4c87819a5a9",
+        "species": "human",
+        "subject_id": "twh101",
+        "uploaded_datetime": "2020-06-04T22:29:59.537558-07:00",
+        "uploaded_mtime": "2020-05-26T19:17:27.274894-07:00",
+        "uploaded_nwb_object_id": "322b7d1b-7f1c-47e1-aac0-fe1c4231c25a",
+        "uploaded_size": 72325320
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d857e82be273d48e426b",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/33/cb/33cb4a4c5b8d4cfa8016861dd5ab6f9f"
+    },
+    {
+      "id": "5ed9d849e82be273d48e4269",
+      "name": "sub-TWH103_ses-20181101_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72237528,
+        "ctime": "2020-06-05T05:29:45.855000+00:00",
+        "mtime": "2020-05-26T19:17:31.701054-07:00"
+      },
+      "path": "000004/sub-TWH103/sub-TWH103_ses-20181101_ecephys+image.nwb",
+      "metadata": {
+        "age": "49",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t103_2009",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "11d06ee1821459bc6227dfa3a1c33c29",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2009. ",
+        "session_start_time": "2018-11-01T00:00:00-07:00",
+        "sex": "m",
+        "sha1": "5a7a381b10426207aeb026331d251855c14db19b",
+        "sha256": "438ef8d77d33f9c795a01678257169e7dbd678dda0fe413fa9c1291b194c9c47",
+        "sha512": "7f44fce5263102887f8794ba229c3917239b10383b0a2687fa714f60abd62b091c0d5aee13dd0011e14d74e1dadedfd92bea3cd8f86b8b95ecea26c33b5d0132",
+        "species": "human",
+        "subject_id": "twh103",
+        "uploaded_datetime": "2020-06-04T22:29:46.538914-07:00",
+        "uploaded_mtime": "2020-05-26T19:17:31.701054-07:00",
+        "uploaded_nwb_object_id": "99a741d6-8aca-4a92-903f-0ffadb6a134a",
+        "uploaded_size": 72237528
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d849e82be273d48e4269",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/c6/de/c6de15cded214867a2c26894c6a22584"
+    },
+    {
+      "id": "5ed9d865e82be273d48e426c",
+      "name": "sub-TWH107_ses-20181201_ecephys+image.nwb",
+      "type": "file",
+      "attrs": {
+        "size": 72313104,
+        "ctime": "2020-06-05T05:30:13.653000+00:00",
+        "mtime": "2020-05-26T19:17:36.274160-07:00"
+      },
+      "path": "000004/sub-TWH107/sub-TWH107_ses-20181201_ecephys+image.nwb",
+      "metadata": {
+        "age": "64",
+        "experiment_description": "the data contained within this file describes a new/old recogntion task performed in patients with intractable epilepsy implanted with depth electrodes and behnke-fried microwires in the human medical temporal lobe (mtl).",
+        "identifier": "t107_2007",
+        "institution": "toronto western hospital",
+        "lab": "rutishauser",
+        "md5": "b930f04d43d4347643c3a53e20b3c1d2",
+        "nwb_version": "2.1.0",
+        "session_description": "new/old recognition task for id: 2007. ",
+        "session_start_time": "2018-12-01T00:00:00-08:00",
+        "sex": "f",
+        "sha1": "6d79f2b979a4d17bb9d8f43b7fcc41b262310979",
+        "sha256": "bc24a5cc3467f0cb425ace87874a36ef713c6bbf48974c8ff7c38553ec2a8673",
+        "sha512": "e2ad211f4f6f46a0479d61ba2833d5a64c4fceba8c49f5f8780492d78e43ad4d2437fd5ccfc3a0375cf8bccb02fe9666826d40a975811da730afc6581e518ed8",
+        "species": "human",
+        "subject_id": "twh107",
+        "uploaded_datetime": "2020-06-04T22:30:14.242278-07:00",
+        "uploaded_mtime": "2020-05-26T19:17:36.274160-07:00",
+        "uploaded_nwb_object_id": "3310d9a0-90aa-4cba-a29e-ee0db6c77a21",
+        "uploaded_size": 72313104
+      },
+      "dandiURL": "https://api.dandiarchive.org/v1/asset/5ed9d865e82be273d48e426c",
+      "awsURL": "https://dandiarchive.s3.amazonaws.com/girder-assetstore/f4/85/f4851cae545c4d1091e93955292d9a2a"
+    }
+  ]
+}

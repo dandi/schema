@@ -1,0 +1,24 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:DigestType
+    "@type": rdfs:Class
+    rdfs:comment: An enumeration of checksum types
+    rdfs:label: Checksum Type
+    rdfs:subClassOf:
+      "@id": schema:Enumeration
+  - "@id": dandi:md5
+    "@type": dandi:DigestType
+    rdfs:comment: MD5 checksum
+    rdfs:label: MD5
+  - "@id": dandi:sha1
+    "@type": dandi:DigestType
+    rdfs:comment: SHA-1 checksum
+    rdfs:label: SHA-1
+  - "@id": dandi:SHA256
+    "@type": dandi:DigestType
+    rdfs:comment: SHA-256 checksum
+    rdfs:label: SHA-256
+  - "@id": dandi:sha512
+    "@type": dandi:DigestType
+    rdfs:comment: SHA-512 checksum
+    rdfs:label: SHA-512

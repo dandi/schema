@@ -1,0 +1,17 @@
+"@context": ../context/base.json
+"@graph":
+- "@id": dandi:LicenseType
+  "@type": rdfs:Class
+  rdfs:comment: An enumeration of supported licenses
+  rdfs:label: License type
+  rdfs:subClassOf:
+    "@id": schema:Enumeration
+- "@id": https://creativecommons.org/publicdomain/zero/1.0/
+  "@type": dandi:LicenseType
+  rdfs:label: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+- "@id": https://creativecommons.org/licenses/by/4.0/
+  "@type": dandi:LicenseType
+  rdfs:label: Attribution 4.0 International (CC BY 4.0)
+- "@id": https://creativecommons.org/licenses/by-nc/4.0
+  "@type": dandi:LicenseType
+  rdfs:label: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)

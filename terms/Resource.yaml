@@ -1,0 +1,34 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:Resource
+    "@type":
+    - rdfs:Class
+    - prov:Entity
+    rdfs:comment: An external resource connected to a Dandiset such as another
+      Dataset, publication, etc.,.
+    rdfs:label: Resource
+    rdfs:subClassOf:
+      "@id": schema:Thing
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Resource
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Resource
+  - "@id": schema:url
+    schema:domainIncludes: dandi:Resource
+  - "@id": dandi:repository
+    "@type": rdf:Property
+    rdfs:comment: An identifier of a repository in which an entity is housed
+    rdfs:label: Repository
+    rdfs:subClassOf:
+      "@id": schema:identifier
+    schema:domainIncludes: dandi:Resource
+  - "@id": dandi:relation
+    "@type": rdf:Property
+    rdfs:comment: How is the resource related to the entity
+    rdfs:label: Relation
+    schema:domainIncludes: dandi:Resource
+    schema:rangeIncludes: dandi:RelationType
+  - "@id": schema:schemaVersion
+    schema:domainIncludes: dandi:Resource
+
+

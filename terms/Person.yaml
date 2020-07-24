@@ -1,0 +1,32 @@
+"@context": ../context/base.json
+"@graph":
+  - "@id": dandi:Person
+    "@type":
+    - rdfs:Class
+    - prov:Person
+    http://www.w3.org/2002/07/owl#equivalentClass:
+      - "@id": http://xmlns.com/foaf/0.1/Person
+    rdfs:comment: An individual
+    rdfs:label: Person
+    rdfs:subClassOf:
+      "@id": dandi:Contributor
+  - "@id": schema:identifier
+    schema:domainIncludes: dandi:Person
+  - "@id": schema:email
+    schema:domainIncludes: dandi:Person
+  - "@id": schema:roleName
+    schema:domainIncludes: dandi:Person
+    schema:rangeIncludes: dandi:RoleType
+  - "@id": dandi:includeInCitation
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Person
+    schema:rangeIncludes: schema:Boolean
+  - "@id": dandi:awardNumber
+    "@type": rdf:Property
+    schema:domainIncludes: dandi:Person
+    schema:rangeIncludes: schema:Text
+  - "@id": schema:name
+    schema:domainIncludes: dandi:Person
+  - "@id": schema:affiliation
+    schema:domainIncludes: dandi:Person
+

@@ -1,0 +1,20 @@
+"@context": ../context/base.json
+"@graph":
+- "@id": dandi:AccessType
+  "@type": rdfs:Class
+  rdfs:comment: An enumeration of access status options
+  rdfs:label: Access status type
+  rdfs:subClassOf:
+    "@id": schema:Enumeration
+- "@id": dandi:Open
+  "@type": dandi:AccessType
+  rdfs:comment: The dandiset is openly accessible
+  rdfs:label: Open access
+- "@id": dandi:Embargoed
+  "@type": dandi:AccessType
+  rdfs:comment: The dandiset is embargoed
+  rdfs:label: Embargoed
+- "@id": dandi:Restricted
+  "@type": dandi:AccessType
+  rdfs:comment: The dandiset is restricted
+  rdfs:label: Restricted
