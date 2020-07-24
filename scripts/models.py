@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, AnyUrl, EmailStr, create_model
 from typing import List, Union, Optional
 from datetime import date
 import yaml
-
+from copy import deepcopy
 
 def create_enum(path):
     with open(path)as fp:
@@ -38,7 +38,7 @@ class PropertyValue(BaseModel):
     unitCode: Union[str, AnyUrl] = None
     unitText: str = None
     value: Union[bool, float, str, int, List[Union[bool, float, str, int]]] = None
-    valueReference: PropertyValue = None
+    valueReference: PropertyValue = None   # Note: recursive (circular or not)
     propertyID: Union[IdentifierType, AnyUrl, str] = None
 
 
@@ -92,11 +92,22 @@ class AccessRequirements(BaseModel):
     embargoedUntil: date = None
 
 
-class DandisetStat(BaseModel):
-    numberOfFiles: int = Field(readonly=True)
-    numberOfSubjects: int = Field(readonly=True)
-    numberOfSamples: int = Field(None, readonly=True)
+class AssetsSummary(BaseModel):
+    """Summary over assets contained in a dandiset (published or not)"""
+
+    # stats which are not stats
+    numberOfBytes: int = Field(readonly=True, sameas="schema:contentSize")
+    numberOfFiles: int = Field(readonly=True)  # universe
+    numberOfSubjects: int = Field(readonly=True)  # NWB + BIDS
+    numberOfSamples: int = Field(None, readonly=True)  # more of NWB
     numberOfCells: int = Field(None, readonly=True)
+
+    dataStandard: List[str] = Field(readonly=True)  # TODO: types of things NWB, BIDS
+    # Web UI: icons per each modality?
+    modality: List[str] = Field(readonly=True)  # TODO: types of things, BIDS etc...
+    # Web UI: could be an icon with number, which if hovered on  show a list?
+    measurementTechnique: List[str] = Field(readonly=True)
+    variableMeasured: List[PropertyValue] = Field(None, readonly=True)
 
 
 class Digest(BaseModel):
@@ -128,7 +139,7 @@ class Dandiset(BaseModel):
               description="The people or organizations who have"
                           "contributed to creating this dataset")
 
-    license: License = Field(title="License",
+    license: List[License] = Field(title="License",
                              description="A license document that applies to this "
                                          "content, typically indicated by URL.",
                              prefix="schema")
@@ -146,25 +157,41 @@ class Dandiset(BaseModel):
     access: List[AccessRequirements]
     relatedResource: List[Resource] = None
 
-    # From assets
-    dandisetStats: DandisetStat = Field(readonly=True)
-    dataStandard: List[str] = Field(readonly=True)
-    modality: List[str] = Field(readonly=True)
-    measurementTechnique: List[str] = Field(readonly=True)
-    variableMeasure: List[PropertyValue] = Field(None, readonly=True)
+    # Linking to this dandiset or the larger thing
+    url: AnyUrl = Field(readonly=True, description="permalink to the dandiset")
+    repository: AnyUrl = Field(readonly=True, description="location of the ")
 
-    # From server
+    # From assets
+    assetsSummary: AssetsSummary = Field(readonly=True)
+
+    # From server (requested by users even for drafts)
     manifestLocation: List[AnyUrl] = Field(readonly=True)
 
+    @classmethod
+    def unvalidated(__pydantic_cls__: "Type[Model]", **data: Any) -> "Model":
+        for name, field in __pydantic_cls__.__fields__.items():
+            try:
+                data[name]
+            except KeyError:
+                if field.required:
+                    value = None
+                if field.default is None:
+                    # deepcopy is quite slow on None
+                    value = None
+                else:
+                    value = deepcopy(field.default)
+                data[name] = value
+        self = __pydantic_cls__.__new__(__pydantic_cls__)
+        object.__setattr__(self, "__dict__", data)
+        object.__setattr__(self, "__fields_set__", set(data.keys()))
+        return self
 
 class PublishedDandiset(Dandiset):
     # On publish
     version: str = Field(readonly=True)
     datePublished: date = Field(readonly=True)
-    url: AnyUrl = Field(readonly=True)
-    contentSize: str = Field(readonly=True)
-    repository: AnyUrl = Field(readonly=True)
-    generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
+    publishedBy: AnyUrl = Field(None, readonly=True)  # TODO: formalize "publish" activity to at least the Actor
+    doi: Optional[Union[str, AnyUrl]] = Field(None, readonly=True)
 
 
 class Asset(BaseModel):
@@ -173,7 +200,7 @@ class Asset(BaseModel):
     Derived from C2M2 (Level 0 and 1) and schema.org
     """
     schemaVersion: str = Field(default="0.0.0", readonly=True)
-    identifier: Identifier = Field(readonly=True)
+    identifier: Identifier = Field(readonly=True)  # yoh: might be UUID
     contentSize: str
     encodingFormat: Union[str, AnyUrl]
     digest: Digest
