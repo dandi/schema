@@ -212,6 +212,12 @@ class Asset(BaseModel):
     path: str = None
     isPartOf: Identifier
 
+    # Potential information about the asset
+    about: List[About] = None
+    studyTarget: List[Union[str, AnyUrl]] = None
+    protocol: List[str] = None
+    ethicsApproval: List[EthicsApproval] = None
+
     # this is from C2M2 level 1 - using EDAM vocabularies - in our case we would
     # need to come up with things for neurophys
     dataType: AnyUrl
