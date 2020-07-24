@@ -5,7 +5,7 @@
   "properties": {
     "schemaVersion": {
       "title": "Schemaversion",
-      "default": "0.0.0",
+      "default": "1.0.0-rc1",
       "readonly": true,
       "type": "string"
     },
@@ -34,11 +34,13 @@
     "name": {
       "title": "Title",
       "description": "Name of this dataset",
+      "maxLength": 150,
       "type": "string"
     },
     "description": {
       "title": "Description",
-      "description": "A",
+      "description": "A description of this dataset",
+      "maxLength": 3000,
       "type": "string"
     },
     "contributor": {
@@ -59,7 +61,7 @@
     "license": {
       "title": "License",
       "description": "A license document that applies to this content, typically indicated by URL.",
-      "prefix": "schema",
+      "nskey": "schema",
       "type": "array",
       "items": {
         "enum": [

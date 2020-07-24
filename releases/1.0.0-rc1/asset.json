@@ -5,7 +5,7 @@
   "properties": {
     "schemaVersion": {
       "title": "Schemaversion",
-      "default": "0.0.0",
+      "default": "1.0.0-rc1",
       "readonly": true,
       "type": "string"
     },

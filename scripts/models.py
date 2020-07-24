@@ -128,11 +128,13 @@ class BioSample(BaseModel):
 
 class Dandiset(BaseModel):
     """A body of structured information describing a DANDI dataset."""
-    schemaVersion: str = Field(default="0.0.0", readonly=True)
+    schemaVersion: str = Field(default="1.0.0-rc1", readonly=True)
     identifier: Identifier = Field(readonly=True)
-    name: str = Field(title="Title", description="Name of this dataset")
+    name: str = Field(title="Title", description="Name of this dataset",
+                      max_length=150)
     description: str = Field(title="",
-                             description="A")
+                             description="A description of this dataset",
+                             max_length=3000)
 
     contributor: List[Union[Person, Organization]] = \
         Field(title="Contributors",
@@ -142,7 +144,7 @@ class Dandiset(BaseModel):
     license: List[License] = Field(title="License",
                              description="A license document that applies to this "
                                          "content, typically indicated by URL.",
-                             prefix="schema")
+                             nskey="schema")
     keywords: List[str] = Field(title="Keywords",
                                 description="Keywords or tags used to describe "
                                             "this content. Multiple entries in a "
@@ -200,7 +202,7 @@ class Asset(BaseModel):
 
     Derived from C2M2 (Level 0 and 1) and schema.org
     """
-    schemaVersion: str = Field(default="0.0.0", readonly=True)
+    schemaVersion: str = Field(default="1.0.0-rc1", readonly=True)
     identifier: Identifier = Field(readonly=True)  # yoh: might be UUID
     contentSize: str
     encodingFormat: Union[str, AnyUrl]
