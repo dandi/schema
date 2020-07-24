@@ -186,6 +186,7 @@ contributor:
 - awardNumber: U19NS104590
   name: initiative, BRAIN
   roleName: *id001
+datePublished: null
 description: 'A challenge for data sharing in systems neuroscience is the multitude
   of different data formats used. Neurodata Without Borders: Neurophysiology 2.0 (NWB:N)
   has emerged as a standardized data format for the storage of cellular-level data
@@ -200,6 +201,7 @@ description: 'A challenge for data sharing in systems neuroscience is the multit
   data and code release is a case study for how to utilize NWB:N for human single-neuron
   recordings and enables easy re-use of this hard-to-obtain data for both teaching
   and research on the mechanisms of human memory.'
+doi: null
 ethicsApproval: null
 identifier:
   propertyID: DANDI
@@ -219,6 +221,7 @@ manifestLocation: null
 name: A NWB-based dataset and processing pipeline of human single-neuron activity
   during a declarative memory task
 protocol: null
+publishedBy: null
 relatedResource:
 - identifier: DOI:10.17605/OSF.IO/HV7JA
   name: A NWB-based Dataset and Processing Pipeline of Human Single-Neuron Activity
@@ -233,3 +236,4 @@ repository: null
 schemaVersion: 0.0.0
 studyTarget: null
 url: null
+version: null

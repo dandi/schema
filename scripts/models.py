@@ -16,7 +16,7 @@ def create_enum(path):
             klass = item["@id"].replace("dandi:", "")
             klass_doc = item["rdfs:comment"]
         else:
-            value = item["@id"]
+            value = item["@id"].replace("dandi:", "")
             items[f"var{idx:02d}"] = value
     if klass is None or len(items) == 0:
         raise ValueError(f"YAML {path} did not generate a klass or items")
@@ -186,6 +186,7 @@ class Dandiset(BaseModel):
         object.__setattr__(self, "__fields_set__", set(data.keys()))
         return self
 
+
 class PublishedDandiset(Dandiset):
     # On publish
     version: str = Field(readonly=True)
@@ -233,4 +234,4 @@ class Asset(BaseModel):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) == 2:
-        print({'dandiset': Dandiset, 'asset': Asset}[sys.argv[1]].schema_json(indent=2))
+        print({'dandiset': PublishedDandiset, 'asset': Asset}[sys.argv[1]].schema_json(indent=2))
