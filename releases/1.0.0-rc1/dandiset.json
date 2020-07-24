@@ -1,5 +1,5 @@
 {
-  "title": "PublishedDandiset",
+  "title": "Dandiset",
   "description": "A body of structured information describing a DANDI dataset.",
   "type": "object",
   "properties": {
@@ -30,6 +30,66 @@
           ]
         }
       ]
+    },
+    "about": {
+      "title": "About",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/About"
+      }
+    },
+    "studyTarget": {
+      "title": "Studytarget",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 65536,
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    "protocol": {
+      "title": "Protocol",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ethicsApproval": {
+      "title": "Ethicsapproval",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EthicsApproval"
+      }
+    },
+    "access": {
+      "title": "Access",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
+    },
+    "relatedResource": {
+      "title": "Relatedresource",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "publishedBy": {
+      "title": "Publishedby",
+      "readonly": true,
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
     },
     "name": {
       "title": "Title",
@@ -79,61 +139,9 @@
         "type": "string"
       }
     },
-    "about": {
-      "title": "About",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/About"
-      }
-    },
-    "studyTarget": {
-      "title": "Studytarget",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 65536,
-            "format": "uri"
-          }
-        ]
-      }
-    },
-    "protocol": {
-      "title": "Protocol",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "ethicsApproval": {
-      "title": "Ethicsapproval",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/EthicsApproval"
-      }
-    },
     "acknowledgement": {
       "title": "Acknowledgement",
       "type": "string"
-    },
-    "access": {
-      "title": "Access",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/AccessRequirements"
-      }
-    },
-    "relatedResource": {
-      "title": "Relatedresource",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Resource"
-      }
     },
     "url": {
       "title": "Url",
@@ -184,14 +192,6 @@
       "type": "string",
       "format": "date"
     },
-    "publishedBy": {
-      "title": "Publishedby",
-      "readonly": true,
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 65536,
-      "format": "uri"
-    },
     "doi": {
       "title": "Doi",
       "readonly": true,
@@ -210,12 +210,12 @@
   },
   "required": [
     "identifier",
+    "access",
     "name",
     "description",
     "contributor",
     "license",
     "keywords",
-    "access",
     "url",
     "repository",
     "assetsSummary",
@@ -317,6 +317,190 @@
           ]
         }
       }
+    },
+    "About": {
+      "title": "About",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      }
+    },
+    "EthicsApproval": {
+      "title": "EthicsApproval",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url"
+      ]
+    },
+    "AccessRequirements": {
+      "title": "AccessRequirements",
+      "type": "object",
+      "properties": {
+        "status": {
+          "title": "Status",
+          "enum": [
+            "Open",
+            "Embargoed",
+            "Restricted"
+          ]
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "embargoedUntil": {
+          "title": "Embargoeduntil",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "repository": {
+          "title": "Repository",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            }
+          ]
+        },
+        "relation": {
+          "title": "Relation",
+          "enum": [
+            "IsCitedBy",
+            "Cites",
+            "IsSupplementTo",
+            "IsSupplementedBy",
+            "IsContinuedBy",
+            "Continues",
+            "Describes",
+            "IsDescribedBy",
+            "HasMetadata",
+            "IsMetadataFor",
+            "HasVersion",
+            "IsVersionOf",
+            "IsNewVersionOf",
+            "IsPreviousVersionOf",
+            "IsPartOf",
+            "HasPart",
+            "IsReferencedBy",
+            "References",
+            "IsDocumentedBy",
+            "Documents",
+            "IsCompiledBy",
+            "Compiles",
+            "IsVariantFormOf",
+            "IsOriginalFormOf",
+            "IsIdenticalTo",
+            "IsReviewedBy",
+            "Reviews",
+            "IsDerivedFrom",
+            "IsSourceOf",
+            "IsRequiredBy",
+            "Requires",
+            "Obsoletes",
+            "IsObsoletedBy"
+          ]
+        }
+      },
+      "required": [
+        "url",
+        "relation"
+      ]
     },
     "Person": {
       "title": "Person",
@@ -501,190 +685,6 @@
       "required": [
         "roleName",
         "name"
-      ]
-    },
-    "About": {
-      "title": "About",
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/PropertyValue"
-            }
-          ]
-        },
-        "name": {
-          "title": "Name",
-          "type": "string"
-        }
-      }
-    },
-    "EthicsApproval": {
-      "title": "EthicsApproval",
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/PropertyValue"
-            }
-          ]
-        },
-        "name": {
-          "title": "Name",
-          "type": "string"
-        },
-        "url": {
-          "title": "Url",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name",
-        "url"
-      ]
-    },
-    "AccessRequirements": {
-      "title": "AccessRequirements",
-      "type": "object",
-      "properties": {
-        "status": {
-          "title": "Status",
-          "enum": [
-            "Open",
-            "Embargoed",
-            "Restricted"
-          ]
-        },
-        "email": {
-          "title": "Email",
-          "type": "string",
-          "format": "email"
-        },
-        "contactPoint": {
-          "title": "Contactpoint",
-          "type": "string"
-        },
-        "description": {
-          "title": "Description",
-          "type": "string"
-        },
-        "embargoedUntil": {
-          "title": "Embargoeduntil",
-          "type": "string",
-          "format": "date"
-        }
-      },
-      "required": [
-        "status"
-      ]
-    },
-    "Resource": {
-      "title": "Resource",
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/PropertyValue"
-            }
-          ]
-        },
-        "name": {
-          "title": "Name",
-          "type": "string"
-        },
-        "url": {
-          "title": "Url",
-          "type": "string"
-        },
-        "repository": {
-          "title": "Repository",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            }
-          ]
-        },
-        "relation": {
-          "title": "Relation",
-          "enum": [
-            "IsCitedBy",
-            "Cites",
-            "IsSupplementTo",
-            "IsSupplementedBy",
-            "IsContinuedBy",
-            "Continues",
-            "Describes",
-            "IsDescribedBy",
-            "HasMetadata",
-            "IsMetadataFor",
-            "HasVersion",
-            "IsVersionOf",
-            "IsNewVersionOf",
-            "IsPreviousVersionOf",
-            "IsPartOf",
-            "HasPart",
-            "IsReferencedBy",
-            "References",
-            "IsDocumentedBy",
-            "Documents",
-            "IsCompiledBy",
-            "Compiles",
-            "IsVariantFormOf",
-            "IsOriginalFormOf",
-            "IsIdenticalTo",
-            "IsReviewedBy",
-            "Reviews",
-            "IsDerivedFrom",
-            "IsSourceOf",
-            "IsRequiredBy",
-            "Requires",
-            "Obsoletes",
-            "IsObsoletedBy"
-          ]
-        }
-      },
-      "required": [
-        "url",
-        "relation"
       ]
     },
     "AssetsSummary": {

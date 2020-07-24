@@ -31,6 +31,66 @@
         }
       ]
     },
+    "about": {
+      "title": "About",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/About"
+      }
+    },
+    "studyTarget": {
+      "title": "Studytarget",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 65536,
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    "protocol": {
+      "title": "Protocol",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ethicsApproval": {
+      "title": "Ethicsapproval",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EthicsApproval"
+      }
+    },
+    "access": {
+      "title": "Access",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
+    },
+    "relatedResource": {
+      "title": "Relatedresource",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "publishedBy": {
+      "title": "Publishedby",
+      "readonly": true,
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
     "contentSize": {
       "title": "Contentsize",
       "type": "string"
@@ -91,20 +151,6 @@
       "maxLength": 65536,
       "format": "uri"
     },
-    "access": {
-      "title": "Access",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/AccessRequirements"
-      }
-    },
-    "relatedResource": {
-      "title": "Relatedresource",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Resource"
-      }
-    },
     "modality": {
       "title": "Modality",
       "readonly": true,
@@ -142,6 +188,7 @@
     },
     "contentUrl": {
       "title": "Contenturl",
+      "readonly": true,
       "type": "array",
       "items": {
         "type": "string",
@@ -149,15 +196,11 @@
         "maxLength": 65536,
         "format": "uri"
       }
-    },
-    "datePublished": {
-      "title": "Datepublished",
-      "type": "string",
-      "format": "date"
     }
   },
   "required": [
     "identifier",
+    "access",
     "contentSize",
     "encodingFormat",
     "digest",
@@ -166,9 +209,7 @@
     "dataType",
     "modality",
     "measurementTechnique",
-    "variableMeasured",
-    "contentUrl",
-    "datePublished"
+    "variableMeasured"
   ],
   "definitions": {
     "PropertyValue": {
@@ -265,25 +306,66 @@
         }
       }
     },
-    "Digest": {
-      "title": "Digest",
+    "About": {
+      "title": "About",
       "type": "object",
       "properties": {
-        "value": {
-          "title": "Value",
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      }
+    },
+    "EthicsApproval": {
+      "title": "EthicsApproval",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
           "type": "string"
         },
-        "cryptoType": {
-          "title": "Cryptotype",
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 65536,
-          "format": "uri"
+        "url": {
+          "title": "Url",
+          "type": "string"
         }
       },
       "required": [
-        "value",
-        "cryptoType"
+        "name",
+        "url"
       ]
     },
     "AccessRequirements": {
@@ -406,6 +488,27 @@
       "required": [
         "url",
         "relation"
+      ]
+    },
+    "Digest": {
+      "title": "Digest",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "cryptoType": {
+          "title": "Cryptotype",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      },
+      "required": [
+        "value",
+        "cryptoType"
       ]
     },
     "Organization": {
