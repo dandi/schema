@@ -125,49 +125,18 @@ class BioSample(BaseModel):
     sex: str = None
     species: str = None
 
-
-class Dandiset(BaseModel):
-    """A body of structured information describing a DANDI dataset."""
+class CommonModel(BaseModel):
     schemaVersion: str = Field(default="1.0.0-rc1", readonly=True)
     identifier: Identifier = Field(readonly=True)
-    name: str = Field(title="Title", description="Name of this dataset",
-                      max_length=150)
-    description: str = Field(title="",
-                             description="A description of this dataset",
-                             max_length=3000)
-
-    contributor: List[Union[Person, Organization]] = \
-        Field(title="Contributors",
-              description="The people or organizations who have"
-                          "contributed to creating this dataset")
-
-    license: List[License] = Field(title="License",
-                             description="A license document that applies to this "
-                                         "content, typically indicated by URL.",
-                             nskey="schema")
-    keywords: List[str] = Field(title="Keywords",
-                                description="Keywords or tags used to describe "
-                                            "this content. Multiple entries in a "
-                                            "keywords list are typically delimited "
-                                            "by commas.")
     about: List[About] = None
     studyTarget: List[Union[str, AnyUrl]] = None
     protocol: List[str] = None
     ethicsApproval: List[EthicsApproval] = None
-    acknowledgement: str = None
 
     access: List[AccessRequirements]
     relatedResource: List[Resource] = None
 
-    # Linking to this dandiset or the larger thing
-    url: AnyUrl = Field(readonly=True, description="permalink to the dandiset")
-    repository: AnyUrl = Field(readonly=True, description="location of the ")
-
-    # From assets
-    assetsSummary: AssetsSummary = Field(readonly=True)
-
-    # From server (requested by users even for drafts)
-    manifestLocation: List[AnyUrl] = Field(readonly=True)
+    publishedBy: AnyUrl = Field(None, readonly=True)  # TODO: formalize "publish" activity to at least the Actor
 
     @classmethod
     def unvalidated(__pydantic_cls__: "Type[Model]", **data: Any) -> "Model":
@@ -189,21 +158,53 @@ class Dandiset(BaseModel):
         return self
 
 
-class PublishedDandiset(Dandiset):
+class Dandiset(CommonModel):
+    """A body of structured information describing a DANDI dataset."""
+    name: str = Field(title="Title", description="Name of this dataset",
+                      max_length=150)
+    description: str = Field(title="",
+                             description="A description of this dataset",
+                             max_length=3000)
+
+    contributor: List[Union[Person, Organization]] = \
+        Field(title="Contributors",
+              description="The people or organizations who have"
+                          "contributed to creating this dataset")
+
+    license: List[License] = Field(title="License",
+                             description="A license document that applies to this "
+                                         "content, typically indicated by URL.",
+                             nskey="schema")
+    keywords: List[str] = Field(title="Keywords",
+                                description="Keywords or tags used to describe "
+                                            "this content. Multiple entries in a "
+                                            "keywords list are typically delimited "
+                                            "by commas.")
+    acknowledgement: str = None
+
+
+    # Linking to this dandiset or the larger thing
+    url: AnyUrl = Field(readonly=True, description="permalink to the dandiset")
+    repository: AnyUrl = Field(readonly=True, description="location of the ")
+
+    # From assets
+    assetsSummary: AssetsSummary = Field(readonly=True)
+
+    # From server (requested by users even for drafts)
+    manifestLocation: List[AnyUrl] = Field(readonly=True)
+
+
     # On publish
     version: str = Field(readonly=True)
     datePublished: date = Field(readonly=True)
-    publishedBy: AnyUrl = Field(None, readonly=True)  # TODO: formalize "publish" activity to at least the Actor
     doi: Optional[Union[str, AnyUrl]] = Field(None, readonly=True)
 
 
-class Asset(BaseModel):
+class Asset(CommonModel):
     """Metadata used to describe an asset.
 
     Derived from C2M2 (Level 0 and 1) and schema.org
     """
-    schemaVersion: str = Field(default="1.0.0-rc1", readonly=True)
-    identifier: Identifier = Field(readonly=True)  # yoh: might be UUID
     contentSize: str
     encodingFormat: Union[str, AnyUrl]
     digest: Digest
@@ -212,19 +213,11 @@ class Asset(BaseModel):
     path: str = None
     isPartOf: Identifier
 
-    # Potential information about the asset
-    about: List[About] = None
-    studyTarget: List[Union[str, AnyUrl]] = None
-    protocol: List[str] = None
-    ethicsApproval: List[EthicsApproval] = None
-
     # this is from C2M2 level 1 - using EDAM vocabularies - in our case we would
     # need to come up with things for neurophys
     dataType: AnyUrl
 
     sameAs: AnyUrl = None
-    access: List[AccessRequirements] = None
-    relatedResource: List[Resource] = None
 
     modality: List[str] = Field(readonly=True)
     measurementTechnique: List[str] = Field(readonly=True)
@@ -234,12 +227,11 @@ class Asset(BaseModel):
     wasDerivedFrom: BioSample = None
 
     # on publish or set by server
-    contentUrl: List[AnyUrl]
-    datePublished: date
+    contentUrl: List[AnyUrl]  = Field(None, readonly=True)
 
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) == 2:
-        print({'dandiset': PublishedDandiset, 'asset': Asset}[sys.argv[1]].schema_json(indent=2))
+        print({'dandiset': Dandiset, 'asset': Asset}[sys.argv[1]].schema_json(indent=2))

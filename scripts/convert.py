@@ -183,9 +183,9 @@ if __name__ == "__main__":
     newmeta["@type"] = "Dandiset"
 
     # validate via the model
-    from models import PublishedDandiset
-    dandiset = PublishedDandiset.unvalidated(**newmeta)
+    from models import Dandiset
+    dandiset = Dandiset.unvalidated(**newmeta)
     with open(filename.replace(".json", "_converted.yaml"), "wt") as fp:
         yaml.dump(dict(dandiset), fp, indent=2)
 
-    data = PublishedDandiset(**newmeta)
+    data = Dandiset(**newmeta)
