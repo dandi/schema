@@ -1,5 +1,4 @@
 mkdocs-material
 pymdown-extensions
 reproschema
-pydantic
-pydantic-email
+pydantic[msgpack,ujson,email]
