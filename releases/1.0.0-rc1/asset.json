@@ -188,10 +188,10 @@
         "$ref": "#/definitions/Resource"
       }
     },
-    "generatedBy": {
-      "title": "Generatedby",
+    "wasGeneratedBy": {
+      "title": "Wasgeneratedby",
       "readonly": true,
-      "nskey": "dandi",
+      "nskey": "prov",
       "anyOf": [
         {
           "allOf": [
@@ -221,15 +221,18 @@
     "datePublished": {
       "title": "Datepublished",
       "readonly": true,
+      "nskey": "schema",
       "type": "string",
       "format": "date"
     },
     "contentSize": {
       "title": "Contentsize",
+      "nskey": "schema",
       "type": "string"
     },
     "encodingFormat": {
       "title": "Encodingformat",
+      "nskey": "schema",
       "anyOf": [
         {
           "type": "string"
@@ -243,14 +246,22 @@
       ]
     },
     "digest": {
-      "$ref": "#/definitions/Digest"
+      "title": "Digest",
+      "nskey": "dandi",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Digest"
+        }
+      ]
     },
     "path": {
       "title": "Path",
+      "nskey": "dandi",
       "type": "string"
     },
     "isPartOf": {
       "title": "Ispartof",
+      "nskey": "schema",
       "anyOf": [
         {
           "type": "string"
@@ -262,12 +273,17 @@
           "format": "uri"
         },
         {
-          "$ref": "#/definitions/PropertyValue"
+          "allOf": [
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
         }
       ]
     },
     "dataType": {
       "title": "Datatype",
+      "nskey": "dandi",
       "type": "string",
       "minLength": 1,
       "maxLength": 65536,
@@ -275,6 +291,7 @@
     },
     "sameAs": {
       "title": "Sameas",
+      "nskey": "schema",
       "type": "string",
       "minLength": 1,
       "maxLength": 65536,
@@ -283,6 +300,7 @@
     "modality": {
       "title": "Modality",
       "readonly": true,
+      "nskey": "dandi",
       "type": "array",
       "items": {
         "type": "string"
@@ -291,6 +309,7 @@
     "measurementTechnique": {
       "title": "Measurementtechnique",
       "readonly": true,
+      "nskey": "schema",
       "type": "array",
       "items": {
         "type": "string"
@@ -299,17 +318,25 @@
     "variableMeasured": {
       "title": "Variablemeasured",
       "readonly": true,
+      "nskey": "schema",
       "type": "array",
       "items": {
         "$ref": "#/definitions/PropertyValue"
       }
     },
     "wasDerivedFrom": {
-      "$ref": "#/definitions/BioSample"
+      "title": "Wasderivedfrom",
+      "nskey": "prov",
+      "allOf": [
+        {
+          "$ref": "#/definitions/BioSample"
+        }
+      ]
     },
     "contentUrl": {
       "title": "Contenturl",
       "readonly": true,
+      "nskey": "schema",
       "type": "array",
       "items": {
         "type": "string",
@@ -1044,9 +1071,9 @@
             }
           ]
         },
-        "association": {
-          "title": "Association",
-          "nskey": "dandi",
+        "wasAssociatedWith": {
+          "title": "Wasassociatedwith",
+          "nskey": "prov",
           "anyOf": [
             {
               "allOf": [

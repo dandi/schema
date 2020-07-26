@@ -8,6 +8,7 @@ access:
   status: Open
 acknowledgement: null
 assetsSummary: null
+citation: null
 contributor:
 - affiliation:
   - Department of Neurosurgery, Cedars-Sinai Medical Center, Los Angeles, CA, USA
@@ -239,3 +240,4 @@ schemaVersion: 1.0.0-rc1
 studyTarget: null
 url: null
 version: null
+wasGeneratedBy: null

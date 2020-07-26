@@ -1,6 +1,6 @@
 from __future__ import annotations
 from enum import Enum
-from pydantic import BaseModel, Field, AnyUrl, EmailStr, root_validator
+from pydantic import BaseModel, Field, AnyUrl, EmailStr, validator
 from typing import List, Union, Optional
 from datetime import date
 import yaml
@@ -432,12 +432,12 @@ class CommonModel(BaseModel):
 class Dandiset(CommonModel):
     """A body of structured information describing a DANDI dataset."""
 
-    @root_validator
+    @validator("contributor")
     def check_data(cls, values):
-        contributors = values.get("contributor")
-        contacts = [
-            val for val in contributors if RoleType.ContactPerson in val.roleName
-        ]
+        contacts = []
+        for val in values:
+            if val.roleName and RoleType.ContactPerson in val.roleName:
+                contacts.append(val)
         if len(contacts) == 0:
             raise ValueError("At least one contributor must have role ContactPerson")
         return values
