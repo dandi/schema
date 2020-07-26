@@ -7,11 +7,13 @@
       "title": "Schemaversion",
       "default": "1.0.0-rc1",
       "readonly": true,
+      "nskey": "schema",
       "type": "string"
     },
     "identifier": {
       "title": "Identifier",
       "readonly": true,
+      "nskey": "schema",
       "anyOf": [
         {
           "type": "string"
@@ -31,15 +33,68 @@
         }
       ]
     },
-    "about": {
-      "title": "About",
+    "name": {
+      "title": "Title",
+      "description": "The name of the item.",
+      "maxLength": 150,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "description": "A description of the item.",
+      "maxLength": 3000,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "contributor": {
+      "title": "Contributors",
+      "description": "Contributors to this item.",
+      "nskey": "schema",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/About"
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Person"
+          },
+          {
+            "$ref": "#/definitions/Organization"
+          }
+        ]
+      },
+      "minItems": 1
+    },
+    "about": {
+      "title": "Subject matter",
+      "description": "The subject matter of the content, such as disorders, brain anatomy.",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Disorder"
+          },
+          {
+            "$ref": "#/definitions/Anatomy"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 65536,
+            "format": "uri"
+          },
+          {
+            "$ref": "#/definitions/PropertyValue"
+          }
+        ]
       }
     },
     "studyTarget": {
-      "title": "Studytarget",
+      "title": "What the study is ",
+      "nskey": "dandi",
       "type": "array",
       "items": {
         "anyOf": [
@@ -57,6 +112,7 @@
     },
     "protocol": {
       "title": "Protocol",
+      "nskey": "dandi",
       "type": "array",
       "items": {
         "type": "string"
@@ -64,63 +120,14 @@
     },
     "ethicsApproval": {
       "title": "Ethicsapproval",
+      "nskey": "dandi",
       "type": "array",
       "items": {
         "$ref": "#/definitions/EthicsApproval"
       }
     },
-    "access": {
-      "title": "Access",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/AccessRequirements"
-      }
-    },
-    "relatedResource": {
-      "title": "Relatedresource",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Resource"
-      }
-    },
-    "publishedBy": {
-      "title": "Publishedby",
-      "readonly": true,
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 65536,
-      "format": "uri"
-    },
-    "name": {
-      "title": "Title",
-      "description": "Name of this dataset",
-      "maxLength": 150,
-      "type": "string"
-    },
-    "description": {
-      "title": "Description",
-      "description": "A description of this dataset",
-      "maxLength": 3000,
-      "type": "string"
-    },
-    "contributor": {
-      "title": "Contributors",
-      "description": "The people or organizations who havecontributed to creating this dataset",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "#/definitions/Person"
-          },
-          {
-            "$ref": "#/definitions/Organization"
-          }
-        ]
-      }
-    },
     "license": {
       "title": "License",
-      "description": "A license document that applies to this content, typically indicated by URL.",
       "nskey": "schema",
       "type": "array",
       "items": {
@@ -134,19 +141,31 @@
     "keywords": {
       "title": "Keywords",
       "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+      "nskey": "schema",
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "minItems": 1
     },
     "acknowledgement": {
       "title": "Acknowledgement",
+      "nskey": "dandi",
       "type": "string"
+    },
+    "access": {
+      "title": "Access",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
     },
     "url": {
       "title": "Url",
       "description": "permalink to the dandiset",
       "readonly": true,
+      "nskey": "schema",
       "type": "string",
       "minLength": 1,
       "maxLength": 65536,
@@ -154,12 +173,63 @@
     },
     "repository": {
       "title": "Repository",
-      "description": "location of the ",
+      "description": "location of the item",
       "readonly": true,
+      "nskey": "dandi",
       "type": "string",
       "minLength": 1,
       "maxLength": 65536,
       "format": "uri"
+    },
+    "relatedResource": {
+      "title": "Relatedresource",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "generatedBy": {
+      "title": "Generatedby",
+      "readonly": true,
+      "nskey": "dandi",
+      "anyOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Activity"
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      ]
+    },
+    "publishedBy": {
+      "title": "Publishedby",
+      "description": "The URL should contain the provenance of the publishing process.",
+      "readonly": true,
+      "nskey": "dandi",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "format": "uri"
+    },
+    "datePublished": {
+      "title": "Datepublished",
+      "readonly": true,
+      "type": "string",
+      "format": "date"
+    },
+    "citation": {
+      "title": "Citation",
+      "readonly": true,
+      "nskey": "schema",
+      "type": "string"
     },
     "assetsSummary": {
       "title": "Assetssummary",
@@ -186,12 +256,6 @@
       "readonly": true,
       "type": "string"
     },
-    "datePublished": {
-      "title": "Datepublished",
-      "readonly": true,
-      "type": "string",
-      "format": "date"
-    },
     "doi": {
       "title": "Doi",
       "readonly": true,
@@ -210,18 +274,20 @@
   },
   "required": [
     "identifier",
-    "access",
     "name",
     "description",
     "contributor",
     "license",
     "keywords",
+    "access",
     "url",
     "repository",
+    "publishedBy",
+    "datePublished",
+    "citation",
     "assetsSummary",
     "manifestLocation",
-    "version",
-    "datePublished"
+    "version"
   ],
   "definitions": {
     "PropertyValue": {
@@ -230,14 +296,17 @@
       "properties": {
         "maxValue": {
           "title": "Maxvalue",
+          "nskey": "schema",
           "type": "number"
         },
         "minValue": {
           "title": "Minvalue",
+          "nskey": "schema",
           "type": "number"
         },
         "unitCode": {
           "title": "Unitcode",
+          "nskey": "schema",
           "anyOf": [
             {
               "type": "string"
@@ -252,10 +321,12 @@
         },
         "unitText": {
           "title": "Unittext",
+          "nskey": "schema",
           "type": "string"
         },
         "value": {
           "title": "Value",
+          "nskey": "schema",
           "anyOf": [
             {
               "type": "boolean"
@@ -291,10 +362,17 @@
           ]
         },
         "valueReference": {
-          "$ref": "#/definitions/PropertyValue"
+          "title": "Valuereference",
+          "nskey": "schema",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PropertyValue"
+            }
+          ]
         },
         "propertyID": {
           "title": "Propertyid",
+          "nskey": "schema",
           "anyOf": [
             {
               "enum": [
@@ -318,74 +396,397 @@
         }
       }
     },
-    "About": {
-      "title": "About",
+    "ContactPoint": {
+      "title": "ContactPoint",
       "type": "object",
       "properties": {
-        "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/PropertyValue"
-            }
-          ]
-        },
-        "name": {
-          "title": "Name",
-          "type": "string"
-        }
-      }
-    },
-    "EthicsApproval": {
-      "title": "EthicsApproval",
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "title": "Identifier",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/PropertyValue"
-            }
-          ]
-        },
-        "name": {
-          "title": "Name",
-          "type": "string"
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
         },
         "url": {
           "title": "Url",
+          "nskey": "schema",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      }
+    },
+    "Organization": {
+      "title": "Organization",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "nskey": "schema",
           "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "Url",
+          "nskey": "schema",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "roleName": {
+          "title": "Rolename",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "enum": [
+              "Author",
+              "Conceptualization",
+              "ContactPerson",
+              "DataCollector",
+              "DataCurator",
+              "DataManager",
+              "FormalAnalysis",
+              "FundingAcquisition",
+              "Investigation",
+              "Maintainer",
+              "Methodology",
+              "Producer",
+              "ProjectLeader",
+              "ProjectManager",
+              "ProjectMember",
+              "ProjectAdministration",
+              "Researcher",
+              "Resources",
+              "Software",
+              "Supervision",
+              "Validation",
+              "Visualization",
+              "Funder",
+              "Sponsor",
+              "StudyParticipant",
+              "Affiliation",
+              "EthicsApproval",
+              "Other"
+            ]
+          }
+        },
+        "includeInCitation": {
+          "title": "Include contributor in citation",
+          "description": "A flag to indicate whether a contributor should be included when generating a citation for the item",
+          "default": true,
+          "nskey": "dandi",
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Identifier for an award",
+          "description": "Identifier associated with a sponsored or gidt award",
+          "nskey": "dandi",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "description": "Contact for the organization",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContactPoint"
+          }
+        }
+      },
+      "required": [
+        "roleName",
+        "contactPoint"
+      ]
+    },
+    "Person": {
+      "title": "Person",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "Use the format: lastname, firstname ...",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "Url",
+          "nskey": "schema",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        },
+        "roleName": {
+          "title": "Rolename",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "enum": [
+              "Author",
+              "Conceptualization",
+              "ContactPerson",
+              "DataCollector",
+              "DataCurator",
+              "DataManager",
+              "FormalAnalysis",
+              "FundingAcquisition",
+              "Investigation",
+              "Maintainer",
+              "Methodology",
+              "Producer",
+              "ProjectLeader",
+              "ProjectManager",
+              "ProjectMember",
+              "ProjectAdministration",
+              "Researcher",
+              "Resources",
+              "Software",
+              "Supervision",
+              "Validation",
+              "Visualization",
+              "Funder",
+              "Sponsor",
+              "StudyParticipant",
+              "Affiliation",
+              "EthicsApproval",
+              "Other"
+            ]
+          }
+        },
+        "includeInCitation": {
+          "title": "Include contributor in citation",
+          "description": "A flag to indicate whether a contributor should be included when generating a citation for the item",
+          "default": true,
+          "nskey": "dandi",
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Identifier for an award",
+          "description": "Identifier associated with a sponsored or gidt award",
+          "nskey": "dandi",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        },
+        "affiliation": {
+          "title": "Affiliation",
+          "description": "An organization that this person is affiliated with.",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Organization"
+          }
         }
       },
       "required": [
         "name",
-        "url"
+        "roleName"
+      ]
+    },
+    "Disorder": {
+      "title": "Disorder",
+      "description": "Biolink, SNOMED, or other identifier for disorder studied",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "identifier"
+      ]
+    },
+    "Anatomy": {
+      "title": "Anatomy",
+      "description": "UBERON or other identifier for anatomical part studied",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "identifier"
+      ]
+    },
+    "EthicsApproval": {
+      "title": "EthicsApproval",
+      "description": "Information about ethics committee approval for project",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        },
+        "contactPoint": {
+          "title": "Contactpoint",
+          "description": "Information about the ethics approval committee.",
+          "nskey": "schema",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ContactPoint"
+            }
+          ]
+        }
+      },
+      "required": [
+        "identifier",
+        "contactPoint"
       ]
     },
     "AccessRequirements": {
       "title": "AccessRequirements",
+      "description": "Information about access options for the dataset",
       "type": "object",
       "properties": {
         "status": {
-          "title": "Status",
+          "title": "Access status",
+          "description": "The access status of the item",
+          "nskey": "dandi",
           "enum": [
             "Open",
             "Embargoed",
@@ -394,19 +795,31 @@
         },
         "email": {
           "title": "Email",
+          "nskey": "schema",
           "type": "string",
           "format": "email"
         },
         "contactPoint": {
           "title": "Contactpoint",
-          "type": "string"
+          "nskey": "schema",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ContactPoint"
+            }
+          ]
         },
         "description": {
           "title": "Description",
+          "description": "A description of the item.",
+          "nskey": "schema",
           "type": "string"
         },
         "embargoedUntil": {
-          "title": "Embargoeduntil",
+          "title": "Embargo end date",
+          "description": "Date on which embargo ends",
+          "readonly": true,
+          "nskey": "dandi",
+          "rangeIncludes": "schema:Date",
           "type": "string",
           "format": "date"
         }
@@ -421,6 +834,7 @@
       "properties": {
         "identifier": {
           "title": "Identifier",
+          "nskey": "schema",
           "anyOf": [
             {
               "type": "string"
@@ -432,20 +846,28 @@
               "format": "uri"
             },
             {
-              "$ref": "#/definitions/PropertyValue"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
             }
           ]
         },
         "name": {
           "title": "Name",
+          "nskey": "schema",
           "type": "string"
         },
         "url": {
           "title": "Url",
+          "nskey": "schema",
           "type": "string"
         },
         "repository": {
           "title": "Repository",
+          "description": "An identifier of a repository in which the resource is housed",
+          "nskey": "dandi",
           "anyOf": [
             {
               "type": "string"
@@ -460,6 +882,8 @@
         },
         "relation": {
           "title": "Relation",
+          "description": "Indicates how the resource is related to the dataset",
+          "nskey": "dandi",
           "enum": [
             "IsCitedBy",
             "Cites",
@@ -498,16 +922,17 @@
         }
       },
       "required": [
-        "url",
         "relation"
       ]
     },
-    "Person": {
-      "title": "Person",
+    "Activity": {
+      "title": "Activity",
+      "description": "Information about the Project activity",
       "type": "object",
       "properties": {
         "identifier": {
           "title": "Identifier",
+          "nskey": "schema",
           "anyOf": [
             {
               "type": "string"
@@ -519,171 +944,80 @@
               "format": "uri"
             },
             {
-              "$ref": "#/definitions/PropertyValue"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
             }
           ]
         },
-        "email": {
-          "title": "Email",
-          "type": "string",
-          "format": "email"
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 65536,
-          "format": "uri"
-        },
-        "roleName": {
-          "title": "Rolename",
-          "type": "array",
-          "items": {
-            "enum": [
-              "Author",
-              "Conceptualization",
-              "ContactPerson",
-              "DataCollector",
-              "DataCurator",
-              "DataManager",
-              "FormalAnalysis",
-              "FundingAcquisition",
-              "Investigation",
-              "Maintainer",
-              "Methodology",
-              "Producer",
-              "ProjectLeader",
-              "ProjectManager",
-              "ProjectMember",
-              "ProjectAdministration",
-              "Researcher",
-              "Resources",
-              "Software",
-              "Supervision",
-              "Validation",
-              "Visualization",
-              "Funder",
-              "Sponsor",
-              "StudyParticipant",
-              "Other"
-            ]
-          }
-        },
-        "includeInCitation": {
-          "title": "Includeincitation",
-          "default": true,
-          "type": "boolean"
-        },
-        "awardNumber": {
-          "title": "Awardnumber",
-          "type": "string"
-        },
         "name": {
-          "title": "Name",
-          "description": "Use the format: lastname, firstname ...",
+          "title": "Title",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
           "type": "string"
         },
-        "affiliation": {
-          "title": "Affiliation",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "roleName",
-        "name",
-        "affiliation"
-      ]
-    },
-    "Organization": {
-      "title": "Organization",
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "title": "Identifier",
+        "description": {
+          "title": "Description",
+          "description": "A description of the item.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "startDate": {
+          "title": "Startdate",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "title": "Enddate",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date"
+        },
+        "isPartOf": {
+          "title": "Ispartof",
+          "nskey": "schema",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Activity"
+            }
+          ]
+        },
+        "hasPart": {
+          "title": "Haspart",
+          "nskey": "schema",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Activity"
+            }
+          ]
+        },
+        "association": {
+          "title": "Association",
+          "nskey": "dandi",
           "anyOf": [
             {
-              "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/Person"
+                }
+              ]
             },
             {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "$ref": "#/definitions/PropertyValue"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/Organization"
+                }
+              ]
             }
           ]
-        },
-        "email": {
-          "title": "Email",
-          "type": "string",
-          "format": "email"
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 65536,
-          "format": "uri"
-        },
-        "roleName": {
-          "title": "Rolename",
-          "type": "array",
-          "items": {
-            "enum": [
-              "Author",
-              "Conceptualization",
-              "ContactPerson",
-              "DataCollector",
-              "DataCurator",
-              "DataManager",
-              "FormalAnalysis",
-              "FundingAcquisition",
-              "Investigation",
-              "Maintainer",
-              "Methodology",
-              "Producer",
-              "ProjectLeader",
-              "ProjectManager",
-              "ProjectMember",
-              "ProjectAdministration",
-              "Researcher",
-              "Resources",
-              "Software",
-              "Supervision",
-              "Validation",
-              "Visualization",
-              "Funder",
-              "Sponsor",
-              "StudyParticipant",
-              "Other"
-            ]
-          }
-        },
-        "includeInCitation": {
-          "title": "Includeincitation",
-          "default": true,
-          "type": "boolean"
-        },
-        "awardNumber": {
-          "title": "Awardnumber",
-          "type": "string"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string"
-        },
-        "contactPoint": {
-          "title": "Contactpoint",
-          "type": "string"
         }
       },
       "required": [
-        "roleName",
+        "identifier",
         "name"
       ]
     },
