@@ -16,12 +16,12 @@
 - '@id': dandi:relation
   '@type': rdf:Property
   rdfs:comment: Indicates how the resource is related to the dataset
-  rdfs:label: relation
+  rdfs:label: Relation
   schema:domainIncludes: dandi:Resource
 - '@id': dandi:repository
   '@type': rdf:Property
   rdfs:comment: An identifier of a repository in which the resource is housed
-  rdfs:label: repository
+  rdfs:label: Repository
   schema:domainIncludes: dandi:Resource
 - '@id': schema:url
   schema:domainIncludes: dandi:Resource

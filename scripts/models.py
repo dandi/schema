@@ -61,7 +61,7 @@ def model2graph(model):
             if val.field_info.title:
                 prop["rdfs:label"] = val.field_info.title
             else:
-                prop["rdfs:label"] = key
+                prop["rdfs:label"] = split_name(key)
             if val.field_info.description:
                 prop["rdfs:comment"] = val.field_info.description
             if "rangeIncludes" in val.field_info.extra:
@@ -332,7 +332,7 @@ class Activity(BaseModel):
 
     isPartOf: Optional[Activity] = Field(None, nskey="schema")
     hasPart: Optional[Activity] = Field(None, nskey="schema")
-    association: Optional[Union[Person, Organization]] = Field(None, nskey="dandi")
+    wasAssociatedWith: Optional[Union[Person, Organization]] = Field(None, nskey="prov")
 
     _ldmeta = {"rdfs:subClassOf": ["prov:Activity", "schema:Thing"], "nskey": "dandi"}
 
@@ -398,15 +398,15 @@ class CommonModel(BaseModel):
     )
     relatedResource: List[Resource] = Field(None, nskey="dandi")
 
-    generatedBy: Optional[Union[Activity, AnyUrl]] = Field(
-        None, readonly=True, nskey="dandi"
+    wasGeneratedBy: Optional[Union[Activity, AnyUrl]] = Field(
+        None, readonly=True, nskey="prov"
     )
     publishedBy: AnyUrl = Field(
         description="The URL should contain the provenance of the publishing process.",
         readonly=True,
         nskey="dandi",
     )  # TODO: formalize "publish" activity to at least the Actor
-    datePublished: date = Field(readonly=True)
+    datePublished: date = Field(readonly=True, nskey="schema")
 
     @classmethod
     def unvalidated(__pydantic_cls__: "Type[Model]", **data: Any) -> "Model":
@@ -458,14 +458,20 @@ class Dandiset(CommonModel):
     citation: str = Field(readonly=True, nskey="schema")
 
     # From assets
-    assetsSummary: AssetsSummary = Field(readonly=True)
+    assetsSummary: AssetsSummary = Field(readonly=True, nskey="dandi")
 
     # From server (requested by users even for drafts)
-    manifestLocation: List[AnyUrl] = Field(readonly=True)
+    manifestLocation: List[AnyUrl] = Field(readonly=True, nskey="dandi")
 
     # On publish
-    version: str = Field(readonly=True)
-    doi: Optional[Union[str, AnyUrl]] = Field(None, readonly=True)
+    version: str = Field(readonly=True, nskey="schema")
+    doi: Optional[Union[str, AnyUrl]] = Field(None, readonly=True, nskey="dandi")
+
+    _ldmeta = {
+        "rdfs:subClassOf": ["schema:Dataset", "prov:Entity"],
+        "rdfs:label": "Information about the dataset",
+        "nskey": "dandi",
+    }
 
 
 class Asset(CommonModel):
@@ -487,27 +493,33 @@ class Asset(CommonModel):
         description="Contributors to this item.",
         nskey="schema",
     )
-    contentSize: str
-    encodingFormat: Union[str, AnyUrl]
-    digest: Digest
+    contentSize: str = Field(nskey="schema")
+    encodingFormat: Union[str, AnyUrl] = Field(nskey="schema")
+    digest: Digest = Field(nskey="dandi")
 
-    path: str = None
-    isPartOf: Identifier
+    path: str = Field(None, nskey="dandi")
+    isPartOf: Identifier = Field(nskey="schema")
 
     # this is from C2M2 level 1 - using EDAM vocabularies - in our case we would
     # need to come up with things for neurophys
-    dataType: AnyUrl
+    dataType: AnyUrl = Field(nskey="dandi")
 
-    sameAs: AnyUrl = None
+    sameAs: AnyUrl = Field(None, nskey="schema")
 
-    modality: List[str] = Field(readonly=True)
-    measurementTechnique: List[str] = Field(readonly=True)
-    variableMeasured: List[PropertyValue] = Field(readonly=True)
+    modality: List[str] = Field(readonly=True, nskey="dandi")
+    measurementTechnique: List[str] = Field(readonly=True, nskey="schema")
+    variableMeasured: List[PropertyValue] = Field(readonly=True, nskey="schema")
 
-    wasDerivedFrom: BioSample = None
+    wasDerivedFrom: BioSample = Field(None, nskey="prov")
 
     # on publish or set by server
-    contentUrl: List[AnyUrl] = Field(None, readonly=True)
+    contentUrl: List[AnyUrl] = Field(None, readonly=True, nskey="schema")
+
+    _ldmeta = {
+        "rdfs:subClassOf": ["schema:CreativeWork", "prov:Entity"],
+        "rdfs:label": "Information about the asset",
+        "nskey": "dandi",
+    }
 
 
 # this is equivalent to json.dumps(MainModel.schema(), indent=2):
@@ -530,6 +542,8 @@ if __name__ == "__main__":
         Disorder,
         Anatomy,
         Project,
+        Dandiset,
+        Asset,
     ]:
         print(model.__name__)
         model2graph(model)

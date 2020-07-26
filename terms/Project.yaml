@@ -8,10 +8,6 @@
   rdfs:subClassOf:
   - prov:Activity
   - schema:Thing
-- '@id': dandi:association
-  '@type': rdf:Property
-  rdfs:label: association
-  schema:domainIncludes: dandi:Project
 - '@id': schema:description
   schema:domainIncludes: dandi:Project
 - '@id': schema:endDate
@@ -25,4 +21,8 @@
 - '@id': schema:name
   schema:domainIncludes: dandi:Project
 - '@id': schema:startDate
+  schema:domainIncludes: dandi:Project
+- '@id': prov:wasAssociatedWith
+  '@type': rdf:Property
+  rdfs:label: Was associated with
   schema:domainIncludes: dandi:Project

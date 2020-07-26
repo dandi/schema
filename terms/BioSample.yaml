@@ -12,37 +12,37 @@
   '@type': rdf:Property
   rdfs:comment: A representation of age using ISO 8601 duration. This should include
     a valueReference if anything other than date of birth is used.
-  rdfs:label: age
+  rdfs:label: Age
   schema:domainIncludes: dandi:BioSample
   schema:rangeIncludes: schema:Duration
 - '@id': dandi:anatomy
   '@type': rdf:Property
   rdfs:comment: UBERON based identifier for the location of the sample
-  rdfs:label: anatomy
+  rdfs:label: Anatomy
   schema:domainIncludes: dandi:BioSample
 - '@id': dandi:assayType
   '@type': rdf:Property
   rdfs:comment: OBI based identifier for the assay used
-  rdfs:label: assayType
+  rdfs:label: Assay type
   schema:domainIncludes: dandi:BioSample
 - '@id': schema:identifier
   schema:domainIncludes: dandi:BioSample
 - '@id': dandi:sex
   '@type': rdf:Property
   rdfs:comment: OBI based identifier for sex of the sample if available
-  rdfs:label: sex
+  rdfs:label: Sex
   schema:domainIncludes: dandi:BioSample
 - '@id': dandi:species
   '@type': rdf:Property
   rdfs:comment: An identifier indicating the species of the biosample
-  rdfs:label: species
+  rdfs:label: Species
   schema:domainIncludes: dandi:BioSample
 - '@id': dandi:strain
   '@type': rdf:Property
   rdfs:comment: Identifier for the strain of the sample
-  rdfs:label: strain
+  rdfs:label: Strain
   schema:domainIncludes: dandi:BioSample
 - '@id': dandi:vendor
   '@type': rdf:Property
-  rdfs:label: vendor
+  rdfs:label: Vendor
   schema:domainIncludes: dandi:BioSample
