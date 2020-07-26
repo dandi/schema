@@ -14,5 +14,3 @@
     schema:domainIncludes: dandi:EthicsApproval
   - "@id": schema:url
     schema:domainIncludes: dandi:EthicsApproval
-
-

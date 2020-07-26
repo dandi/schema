@@ -30,5 +30,3 @@
     schema:rangeIncludes: dandi:RelationType
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Resource
-
-

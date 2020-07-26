@@ -29,6 +29,3 @@
     schema:domainIncludes: dandi:Organization
   - "@id": schema:contactPoint
     schema:domainIncludes: dandi:Organization
-
-
-

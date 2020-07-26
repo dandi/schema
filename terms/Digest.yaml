@@ -17,4 +17,3 @@
     rdfs:label: Cryptographic method used
     schema:domainIncludes: dandi:Asset
     schema:rangeIncludes: dandi:DigestType
-

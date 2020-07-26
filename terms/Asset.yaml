@@ -37,5 +37,3 @@
     schema:domainIncludes: dandi:Asset
   - "@id": schema:variableMeasured
     schema:domainIncludes: dandi:Asset
-
-

@@ -3,28 +3,29 @@ import yaml
 
 schemav1 = "schema/dandiset.json"
 
-mapping = {'identifier': ['identifier'],
-           'name': ['name'],
-           'description': ['description'],
-           'contributors': ['contributor'],
-           'sponsors': ['contributor', ['Sponsor']],
-           'license': ['license'],
-           'keywords': ['keywords'],
-           'project': ['generatedBy'],
-           'conditions_studied': ['about'],
-           'associated_anatomy': ['about'],
-           'protocols': ['protocol'],
-           'ethicsApprovals': ['ethicsApproval'],
-           'access': ['access'],
-           'associatedData': ['relatedResource', 'IsDerivedFrom'],
-           'publications': ['relatedResource', 'IsDescribedBy'],
-           'age': ['variableMeasured'],
-           'organism': ['variableMeasured'],
-           'sex': ['variableMeasured'],
-           'number_of_subjects': ['assetsSummary', 'numberOfSubjects'],
-           'number_of_cells': ['assetsSummary', 'numberOfCells'],
-           'number_of_tissue_samples': ['assetsSummary', 'numberOfSamples'],
-           }
+mapping = {
+    "identifier": ["identifier"],
+    "name": ["name"],
+    "description": ["description"],
+    "contributors": ["contributor"],
+    "sponsors": ["contributor", ["Sponsor"]],
+    "license": ["license"],
+    "keywords": ["keywords"],
+    "project": ["generatedBy"],
+    "conditions_studied": ["about"],
+    "associated_anatomy": ["about"],
+    "protocols": ["protocol"],
+    "ethicsApprovals": ["ethicsApproval"],
+    "access": ["access"],
+    "associatedData": ["relatedResource", "IsDerivedFrom"],
+    "publications": ["relatedResource", "IsDescribedBy"],
+    "age": ["variableMeasured"],
+    "organism": ["variableMeasured"],
+    "sex": ["variableMeasured"],
+    "number_of_subjects": ["assetsSummary", "numberOfSubjects"],
+    "number_of_cells": ["assetsSummary", "numberOfCells"],
+    "number_of_tissue_samples": ["assetsSummary", "numberOfSamples"],
+}
 
 
 def toContributor(value):
@@ -50,15 +51,14 @@ def toContributor(value):
             del item["awardNumber"]
         if "orcid" in item:
             if item["orcid"]:
-                contrib["identifier"] = {"value": item["orcid"],
-                                         "propertyID": "ORCID"}
+                contrib["identifier"] = {"value": item["orcid"], "propertyID": "ORCID"}
             else:
                 contrib["identifier"] = ""
             del item["orcid"]
         if "affiliations" in item:
             item["affiliation"] = item["affiliations"]
             del item["affiliations"]
-        contrib.update(**{f"{k}":v for k,v in item.items()})
+        contrib.update(**{f"{k}": v for k, v in item.items()})
         out.append(contrib)
     return out
 
@@ -69,7 +69,7 @@ def convertv1(filename):
     oldmeta = data["dandiset"] if "dandiset" in data else data
     newmeta = {}
     for oldkey, value in oldmeta.items():
-        if oldkey in ['language', 'altid', 'number_of_slices']:
+        if oldkey in ["language", "altid", "number_of_slices"]:
             continue
         if oldkey not in mapping:
             raise KeyError(f"Could not find {oldkey}")
@@ -77,28 +77,31 @@ def convertv1(filename):
             newkey = f"schema:{oldkey}"
         else:
             newkey = mapping[oldkey][0]
-        if oldkey in ['contributors', "sponsors"]:
+        if oldkey in ["contributors", "sponsors"]:
             value = toContributor(value)
         if oldkey == "access":
-            value = [{"email": value["access_contact_email"],
-                      "status": value["status"].capitalize()}]
+            value = [
+                {
+                    "email": value["access_contact_email"],
+                    "status": value["status"].capitalize(),
+                }
+            ]
         if oldkey == "identifier":
-            value = {"value": value,
-                     "propertyID": "DANDI"}
+            value = {"value": value, "propertyID": "DANDI"}
         if len(mapping[oldkey]) == 2:
             extra = mapping[oldkey][1]
-            if newkey == 'contributor':
-                extrakey = 'roleName'
-            if oldkey == 'sponsors':
-                extrakey = 'roleName'
-            if oldkey in ['publications', 'associatedData']:
-                extrakey = 'relation'
+            if newkey == "contributor":
+                extrakey = "roleName"
+            if oldkey == "sponsors":
+                extrakey = "roleName"
+            if oldkey in ["publications", "associatedData"]:
+                extrakey = "relation"
                 if not isinstance(value, list):
                     value = [value]
                 out = []
                 for item in value:
                     if isinstance(item, dict):
-                        out.append({k:v for k,v in item.items()})
+                        out.append({k: v for k, v in item.items()})
                     else:
                         present = False
                         for val in out:
@@ -107,8 +110,11 @@ def convertv1(filename):
                         if not present:
                             out.append({"url": item})
                 value = out
-            if oldkey in ['number_of_subjects', 'number_of_cells',
-                          'number_of_tissue_samples']:
+            if oldkey in [
+                "number_of_subjects",
+                "number_of_cells",
+                "number_of_tissue_samples",
+            ]:
                 value = {extra: value}
                 extrakey = None
             if isinstance(value, list):
@@ -118,7 +124,7 @@ def convertv1(filename):
             if isinstance(value, dict):
                 if extrakey:
                     value[extrakey] = extra
-        if newkey == 'variableMeasured':
+        if newkey == "variableMeasured":
             if oldkey in ["age", "sex"]:
                 vm = {"name": oldkey}
                 if oldkey == "sex":
@@ -174,16 +180,20 @@ def convertv1(filename):
 
 if __name__ == "__main__":
     import sys
+
     if len(sys.argv) == 2:
         filename = sys.argv[1]
     else:
         filename = "scripts/dandiset_000004.json"
     newmeta = convertv1(filename)
-    newmeta["@context"] = "https://raw.githubusercontent.com/dandi/schema/master/context/dandi.json"
+    newmeta[
+        "@context"
+    ] = "https://raw.githubusercontent.com/dandi/schema/master/context/dandi.json"
     newmeta["@type"] = "Dandiset"
 
     # validate via the model
     from models import Dandiset
+
     dandiset = Dandiset.unvalidated(**newmeta)
     with open(filename.replace(".json", "_converted.yaml"), "wt") as fp:
         yaml.dump(dict(dandiset), fp, indent=2)

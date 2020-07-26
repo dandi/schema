@@ -29,4 +29,3 @@
     schema:domainIncludes: dandi:Person
   - "@id": schema:affiliation
     schema:domainIncludes: dandi:Person
-

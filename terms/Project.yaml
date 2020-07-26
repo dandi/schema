@@ -38,5 +38,3 @@
     schema:rangeIncludes: dandi:Contributor
   - "@id": schema:schemaVersion
     schema:domainIncludes: dandi:Project
-
-

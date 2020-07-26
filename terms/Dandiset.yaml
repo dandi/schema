@@ -115,4 +115,3 @@
       "@id": schema:identifier
     schema:domainIncludes: dandi:Dandiset
     schema:rangeIncludes: dandi:Project
-
