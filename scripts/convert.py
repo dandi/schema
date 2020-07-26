@@ -34,8 +34,9 @@ def toContributor(value):
     out = []
     for item in value:
         contrib = {}
-        name = item["name"].split()
-        item["name"] = f"{name[-1]}, {' '.join(name[:-1])}"
+        if "name" in item:
+            name = item["name"].split()
+            item["name"] = f"{name[-1]}, {' '.join(name[:-1])}"
         if "roles" in item:
             roles = []
             for role in item["roles"]:
