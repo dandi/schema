@@ -23,6 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip setuptools
+        pip install -r requirements.txt
     - name: Make a release
       run: |
         python scripts/makeRelease.py ci-release
