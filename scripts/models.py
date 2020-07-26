@@ -43,9 +43,9 @@ def split_name(name):
 def model2graph(model):
     """Convert a model to a JSON-LD graph"""
     klass = {}
-    klass_prefix = model._ldmeta.get("nskey", None)
     klass["rdfs:comment"] = model.__doc__
-    klass["rdfs:label"] = split_name(str(model))
+    klass["rdfs:label"] = split_name(model.__name__)
+    klass["rdf:type"] = "rdfs:Class"
     for key, val in model._ldmeta.items():
         if key == "nskey":
             klass["@id"] = f"{val}:{model.__name__}"
@@ -60,6 +60,8 @@ def model2graph(model):
             prop["@type"] = "rdf:Property"
             if val.field_info.title:
                 prop["rdfs:label"] = val.field_info.title
+            else:
+                prop["rdfs:label"] = key
             if val.field_info.description:
                 prop["rdfs:comment"] = val.field_info.description
             if "rangeIncludes" in val.field_info.extra:
@@ -77,6 +79,7 @@ RoleType = create_enum("terms/RoleType.yaml")
 Relation = create_enum("terms/RelationType.yaml")
 License = create_enum("terms/LicenseType.yaml")
 IdentifierType = create_enum("terms/IdentifierType.yaml")
+DigestType = create_enum("terms/DigestType.yaml")
 
 
 class PropertyValue(BaseModel):
@@ -131,6 +134,10 @@ class Organization(Contributor):
     contactPoint: List[ContactPoint] = Field(
         description="Contact for the organization", nskey="schema"
     )
+    _ldmeta = {
+        "rdfs:subClassOf": ["schema:Organization", "prov:Organization"],
+        "nskey": "dandi",
+    }
 
 
 class Person(Contributor):
@@ -144,28 +151,50 @@ class Person(Contributor):
         description="An organization that this person is affiliated with.",
         nskey="schema",
     )
+    _ldmeta = {"rdfs:subClassOf": ["schema:Person", "prov:Person"], "nskey": "dandi"}
 
 
 class EthicsApproval(BaseModel):
     """Information about ethics committee approval for project"""
 
-    identifier: Identifier = None
-    name: str
-    url: str
+    identifier: Identifier = Field(nskey="schema")
+    contactPoint: ContactPoint = Field(
+        description="Information about the ethics approval committee.", nskey="schema"
+    )
+
+    _ldmeta = {"rdfs:subClassOf": ["schema:Thing", "prov:Entity"], "nskey": "dandi"}
 
 
 class Resource(BaseModel):
-    identifier: Identifier = None
-    name: str = None
-    url: str
-    repository: Union[str, AnyUrl] = None
-    relation: Relation
+    identifier: Identifier = Field(None, nskey="schema")
+    name: str = Field(None, nskey="schema")
+    url: str = Field(None, nskey="schema")
+    repository: Union[str, AnyUrl] = Field(
+        None,
+        description="An identifier of a repository in which the resource is housed",
+        nskey="dandi",
+    )
+    relation: Relation = Field(
+        description="Indicates how the resource is related to the dataset",
+        nskey="dandi",
+    )
+
+    _ldmeta = {
+        "rdfs:subClassOf": ["schema:CreativeWork", "prov:Entity"],
+        "rdfs:comment": "A resource related to the project (e.g., another "
+        "dataset, publication, Webpage)",
+        "nskey": "dandi",
+    }
 
 
 class AccessRequirements(BaseModel):
     """Information about access options for the dataset"""
 
-    status: AccessType = Field(nskey="dandi")
+    status: AccessType = Field(
+        title="Access status",
+        description="The access status of the item",
+        nskey="dandi",
+    )
     email: Optional[EmailStr] = Field(None, nskey="schema")
     contactPoint: Optional[ContactPoint] = Field(None, nskey="schema")
     description: Optional[str] = Field(
@@ -183,12 +212,7 @@ class AccessRequirements(BaseModel):
         rangeIncludes="schema:Date",
     )
 
-    _ldmeta = {
-        "rdfs:subClassOf": "schema:Thing",
-        "rdfs:label": "Access requirements",
-        "rdf:type": ["rdfs:Class", "prov:Entity"],
-        "nskey": "dandi",
-    }
+    _ldmeta = {"rdfs:subClassOf": ["schema:Thing", "prov:Entity"], "nskey": "dandi"}
 
 
 class AssetsSummary(BaseModel):
@@ -208,29 +232,116 @@ class AssetsSummary(BaseModel):
     measurementTechnique: List[str] = Field(readonly=True)
     variableMeasured: List[PropertyValue] = Field(None, readonly=True)
 
+    _ldmeta = {
+        "rdfs:subClassOf": ["schema:CreativeWork", "prov:Entity"],
+        "nskey": "dandi",
+    }
+
 
 class Digest(BaseModel):
-    value: str
-    cryptoType: AnyUrl
+    """Information about the crytographic checksum of the item."""
+
+    value: str = Field(nskey="schema")
+    cryptoType: DigestType = Field(
+        description="Which cryptographic checksum is used",
+        title="Cryptographic method used",
+        nskey="dandi",
+    )
+
+    _ldmeta = {
+        "rdfs:subClassOf": ["schema:Thing", "prov:Entity"],
+        "rdfs:label": "Cryptographic checksum information",
+        "nskey": "dandi",
+    }
 
 
 class BioSample(BaseModel):
-    assayType: AnyUrl  # from OBI
-    anatomy: AnyUrl  # from UBERON
-    strain: str = None
-    identifier: Identifier = None
-    vendor: Organization = None
-    age: str = None
-    sex: str = None
-    species: str = None
+    """Description about the sample that was studied"""
+
+    identifier: Identifier = Field(None, nskey="schema")
+    assayType: Identifier = Field(
+        description="OBI based identifier for the assay used", nskey="dandi"
+    )
+    anatomy: Identifier = Field(
+        description="UBERON based identifier for the location of the sample",
+        nskey="dandi",
+    )
+    strain: Identifier = Field(
+        None, description="Identifier for the strain of the sample", nskey="dandi"
+    )
+    vendor: Organization = Field(None, nskey="dandi")
+    age: PropertyValue = Field(
+        None,
+        description="A representation of age using ISO 8601 duration. This "
+        "should include a valueReference if anything other than "
+        "date of birth is used.",
+        nskey="dandi",
+        rangeIncludes="schema:Duration",
+    )
+    sex: Identifier = Field(
+        None,
+        description="OBI based identifier for sex of the sample if available",
+        nskey="dandi",
+    )
+    species: Identifier = Field(
+        description="An identifier indicating the species of the biosample",
+        nskey="dandi",
+    )
+
+    _ldmeta = {
+        "rdfs:subClassOf": ["schema:Thing", "prov:Entity"],
+        "rdfs:label": "Information about the biosample.",
+        "nskey": "dandi",
+    }
 
 
 class Disorder(BaseModel):
-    identifier: Identifier
+    """Biolink, SNOMED, or other identifier for disorder studied"""
+
+    identifier: Identifier = Field(nskey="schema")
+
+    _ldmeta = {"rdfs:subClassOf": ["prov:Entity", "schema:Thing"], "nskey": "dandi"}
 
 
-class Anatomy(PropertyValue):
-    identifier: Identifier
+class Anatomy(BaseModel):
+    """UBERON or other identifier for anatomical part studied"""
+
+    identifier: Identifier = Field(nskey="schema")
+
+    _ldmeta = {"rdfs:subClassOf": ["prov:Entity", "schema:Thing"], "nskey": "dandi"}
+
+
+class Activity(BaseModel):
+    """Information about the Project activity"""
+
+    identifier: Identifier = Field(nskey="schema")
+    name: str = Field(
+        title="Title",
+        description="The name of the item.",
+        max_length=150,
+        nskey="schema",
+    )
+    description: Optional[str] = Field(
+        None,
+        title="Description",
+        description="A description of the item.",
+        nskey="schema",
+    )
+    startDate: Optional[date] = Field(None, nskey="schema")
+    endDate: Optional[date] = Field(None, nskey="schema")
+
+    isPartOf: Optional[Activity] = Field(None, nskey="schema")
+    hasPart: Optional[Activity] = Field(None, nskey="schema")
+    association: Optional[Union[Person, Organization]] = Field(None, nskey="dandi")
+
+    _ldmeta = {"rdfs:subClassOf": ["prov:Activity", "schema:Thing"], "nskey": "dandi"}
+
+
+Activity.update_forward_refs()
+
+
+class Project(Activity):
+    pass
 
 
 class CommonModel(BaseModel):
@@ -287,6 +398,9 @@ class CommonModel(BaseModel):
     )
     relatedResource: List[Resource] = Field(None, nskey="dandi")
 
+    generatedBy: Optional[Union[Activity, AnyUrl]] = Field(
+        None, readonly=True, nskey="dandi"
+    )
     publishedBy: AnyUrl = Field(
         description="The URL should contain the provenance of the publishing process.",
         readonly=True,
@@ -390,7 +504,6 @@ class Asset(CommonModel):
     measurementTechnique: List[str] = Field(readonly=True)
     variableMeasured: List[PropertyValue] = Field(readonly=True)
 
-    generatedBy: Optional[AnyUrl] = Field(None, readonly=True)
     wasDerivedFrom: BioSample = None
 
     # on publish or set by server
@@ -405,4 +518,18 @@ if __name__ == "__main__":
         print({"dandiset": Dandiset, "asset": Asset}[sys.argv[1]].schema_json(indent=2))
 
     # generate models
-    model2graph(AccessRequirements)
+    for model in [
+        ContactPoint,
+        Organization,
+        Person,
+        AccessRequirements,
+        EthicsApproval,
+        Resource,
+        Digest,
+        BioSample,
+        Disorder,
+        Anatomy,
+        Project,
+    ]:
+        print(model.__name__)
+        model2graph(model)

@@ -110,6 +110,10 @@
     "@type": dandi:RoleType
     rdfs:comment: Affiliated with an entity
     rdfs:label: Affiliation
+  - "@id": dandi:EthicsApproval
+    "@type": dandi:RoleType
+    rdfs:comment: Approved ethics protocol
+    rdfs:label: Ethics approval
   - "@id": dandi:Other
     "@type": dandi:RoleType
     rdfs:comment: Other

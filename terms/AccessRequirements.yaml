@@ -2,12 +2,12 @@
 '@context': ../context/base.json
 '@graph':
 - '@id': dandi:AccessRequirements
-  rdf:type:
-  - rdfs:Class
-  - prov:Entity
+  rdf:type: rdfs:Class
   rdfs:comment: Information about access options for the dataset
   rdfs:label: Access requirements
-  rdfs:subClassOf: schema:Thing
+  rdfs:subClassOf:
+  - schema:Thing
+  - prov:Entity
 - '@id': schema:contactPoint
   schema:domainIncludes: dandi:AccessRequirements
 - '@id': schema:description
@@ -22,4 +22,6 @@
   schema:rangeIncludes: schema:Date
 - '@id': dandi:status
   '@type': rdf:Property
+  rdfs:comment: The access status of the item
+  rdfs:label: Access status
   schema:domainIncludes: dandi:AccessRequirements
