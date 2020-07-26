@@ -198,4 +198,4 @@ if __name__ == "__main__":
     with open(filename.replace(".json", "_converted.yaml"), "wt") as fp:
         yaml.dump(dict(dandiset), fp, indent=2)
 
-    data = Dandiset(**newmeta)
+    # data = Dandiset(**newmeta)
