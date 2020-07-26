@@ -189,6 +189,26 @@
         "$ref": "#/definitions/Resource"
       }
     },
+    "generatedBy": {
+      "title": "Generatedby",
+      "readonly": true,
+      "nskey": "dandi",
+      "anyOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Activity"
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri"
+        }
+      ]
+    },
     "publishedBy": {
       "title": "Publishedby",
       "description": "The URL should contain the provenance of the publishing process.",
@@ -473,6 +493,7 @@
               "Sponsor",
               "StudyParticipant",
               "Affiliation",
+              "EthicsApproval",
               "Other"
             ]
           }
@@ -600,6 +621,7 @@
               "Sponsor",
               "StudyParticipant",
               "Affiliation",
+              "EthicsApproval",
               "Other"
             ]
           }
@@ -651,10 +673,12 @@
     },
     "Disorder": {
       "title": "Disorder",
+      "description": "Biolink, SNOMED, or other identifier for disorder studied",
       "type": "object",
       "properties": {
         "identifier": {
           "title": "Identifier",
+          "nskey": "schema",
           "anyOf": [
             {
               "type": "string"
@@ -666,7 +690,11 @@
               "format": "uri"
             },
             {
-              "$ref": "#/definitions/PropertyValue"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
             }
           ]
         }
@@ -677,110 +705,12 @@
     },
     "Anatomy": {
       "title": "Anatomy",
+      "description": "UBERON or other identifier for anatomical part studied",
       "type": "object",
       "properties": {
-        "maxValue": {
-          "title": "Maxvalue",
-          "nskey": "schema",
-          "type": "number"
-        },
-        "minValue": {
-          "title": "Minvalue",
-          "nskey": "schema",
-          "type": "number"
-        },
-        "unitCode": {
-          "title": "Unitcode",
-          "nskey": "schema",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            }
-          ]
-        },
-        "unitText": {
-          "title": "Unittext",
-          "nskey": "schema",
-          "type": "string"
-        },
-        "value": {
-          "title": "Value",
-          "nskey": "schema",
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "integer"
-            },
-            {
-              "type": "array",
-              "items": {
-                "anyOf": [
-                  {
-                    "type": "boolean"
-                  },
-                  {
-                    "type": "number"
-                  },
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "integer"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        "valueReference": {
-          "title": "Valuereference",
-          "nskey": "schema",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PropertyValue"
-            }
-          ]
-        },
-        "propertyID": {
-          "title": "Propertyid",
-          "nskey": "schema",
-          "anyOf": [
-            {
-              "enum": [
-                "idorg:doi",
-                "idorg:orcid",
-                "https://ror.org/",
-                "idorg:dandi",
-                "idorg:rrid"
-              ]
-            },
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 65536,
-              "format": "uri"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
         "identifier": {
           "title": "Identifier",
+          "nskey": "schema",
           "anyOf": [
             {
               "type": "string"
@@ -792,7 +722,11 @@
               "format": "uri"
             },
             {
-              "$ref": "#/definitions/PropertyValue"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
             }
           ]
         }
@@ -808,6 +742,7 @@
       "properties": {
         "identifier": {
           "title": "Identifier",
+          "nskey": "schema",
           "anyOf": [
             {
               "type": "string"
@@ -819,22 +754,28 @@
               "format": "uri"
             },
             {
-              "$ref": "#/definitions/PropertyValue"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
             }
           ]
         },
-        "name": {
-          "title": "Name",
-          "type": "string"
-        },
-        "url": {
-          "title": "Url",
-          "type": "string"
+        "contactPoint": {
+          "title": "Contactpoint",
+          "description": "Information about the ethics approval committee.",
+          "nskey": "schema",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ContactPoint"
+            }
+          ]
         }
       },
       "required": [
-        "name",
-        "url"
+        "identifier",
+        "contactPoint"
       ]
     },
     "AccessRequirements": {
@@ -843,7 +784,8 @@
       "type": "object",
       "properties": {
         "status": {
-          "title": "Status",
+          "title": "Access status",
+          "description": "The access status of the item",
           "nskey": "dandi",
           "enum": [
             "Open",
@@ -892,6 +834,7 @@
       "properties": {
         "identifier": {
           "title": "Identifier",
+          "nskey": "schema",
           "anyOf": [
             {
               "type": "string"
@@ -903,20 +846,28 @@
               "format": "uri"
             },
             {
-              "$ref": "#/definitions/PropertyValue"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
             }
           ]
         },
         "name": {
           "title": "Name",
+          "nskey": "schema",
           "type": "string"
         },
         "url": {
           "title": "Url",
+          "nskey": "schema",
           "type": "string"
         },
         "repository": {
           "title": "Repository",
+          "description": "An identifier of a repository in which the resource is housed",
+          "nskey": "dandi",
           "anyOf": [
             {
               "type": "string"
@@ -931,6 +882,8 @@
         },
         "relation": {
           "title": "Relation",
+          "description": "Indicates how the resource is related to the dataset",
+          "nskey": "dandi",
           "enum": [
             "IsCitedBy",
             "Cites",
@@ -969,8 +922,103 @@
         }
       },
       "required": [
-        "url",
         "relation"
+      ]
+    },
+    "Activity": {
+      "title": "Activity",
+      "description": "Information about the Project activity",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "A description of the item.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "startDate": {
+          "title": "Startdate",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "title": "Enddate",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date"
+        },
+        "isPartOf": {
+          "title": "Ispartof",
+          "nskey": "schema",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Activity"
+            }
+          ]
+        },
+        "hasPart": {
+          "title": "Haspart",
+          "nskey": "schema",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Activity"
+            }
+          ]
+        },
+        "association": {
+          "title": "Association",
+          "nskey": "dandi",
+          "anyOf": [
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/Person"
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/Organization"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "identifier",
+        "name"
       ]
     },
     "AssetsSummary": {
