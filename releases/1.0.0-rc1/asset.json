@@ -1220,6 +1220,29 @@
             }
           ]
         },
+        "cellLine": {
+          "title": "Cellline",
+          "description": "Cell line associated with the sample",
+          "nskey": "dandi",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/PropertyValue"
+                }
+              ]
+            }
+          ]
+        },
         "vendor": {
           "title": "Vendor",
           "nskey": "dandi",
@@ -1263,9 +1286,9 @@
             }
           ]
         },
-        "species": {
-          "title": "Species",
-          "description": "An identifier indicating the species of the biosample",
+        "taxonomy": {
+          "title": "Taxonomy",
+          "description": "An identifier indicating the taxonomic classification of the biosample",
           "nskey": "dandi",
           "anyOf": [
             {
@@ -1285,12 +1308,21 @@
               ]
             }
           ]
+        },
+        "disease": {
+          "title": "Disease",
+          "description": "Any current diagnosed disease associated with the sample",
+          "nskey": "dandi",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Disorder"
+          }
         }
       },
       "required": [
+        "identifier",
         "assayType",
-        "anatomy",
-        "species"
+        "anatomy"
       ]
     }
   }
