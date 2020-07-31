@@ -255,46 +255,6 @@ class Digest(BaseModel):
     }
 
 
-class BioSample(BaseModel):
-    """Description about the sample that was studied"""
-
-    identifier: Identifier = Field(None, nskey="schema")
-    assayType: Identifier = Field(
-        description="OBI based identifier for the assay used", nskey="dandi"
-    )
-    anatomy: Identifier = Field(
-        description="UBERON based identifier for the location of the sample",
-        nskey="dandi",
-    )
-    strain: Identifier = Field(
-        None, description="Identifier for the strain of the sample", nskey="dandi"
-    )
-    vendor: Organization = Field(None, nskey="dandi")
-    age: PropertyValue = Field(
-        None,
-        description="A representation of age using ISO 8601 duration. This "
-        "should include a valueReference if anything other than "
-        "date of birth is used.",
-        nskey="dandi",
-        rangeIncludes="schema:Duration",
-    )
-    sex: Identifier = Field(
-        None,
-        description="OBI based identifier for sex of the sample if available",
-        nskey="dandi",
-    )
-    species: Identifier = Field(
-        description="An identifier indicating the species of the biosample",
-        nskey="dandi",
-    )
-
-    _ldmeta = {
-        "rdfs:subClassOf": ["schema:Thing", "prov:Entity"],
-        "rdfs:label": "Information about the biosample.",
-        "nskey": "dandi",
-    }
-
-
 class Disorder(BaseModel):
     """Biolink, SNOMED, or other identifier for disorder studied"""
 
@@ -309,6 +269,53 @@ class Anatomy(BaseModel):
     identifier: Identifier = Field(nskey="schema")
 
     _ldmeta = {"rdfs:subClassOf": ["prov:Entity", "schema:Thing"], "nskey": "dandi"}
+
+
+class BioSample(BaseModel):
+    """Description about the sample that was studied"""
+
+    identifier: Identifier = Field(nskey="schema")
+    assayType: Identifier = Field(
+        description="OBI based identifier for the assay used", nskey="dandi"
+    )
+    anatomy: Identifier = Field(
+        description="UBERON based identifier for the location of the sample",
+        nskey="dandi",
+    )
+    strain: Optional[Identifier] = Field(
+        None, description="Identifier for the strain of the sample", nskey="dandi"
+    )
+    cellLine: Optional[Identifier] = Field(
+        None, description="Cell line associated with the sample", nskey="dandi"
+    )
+    vendor: Optional[Organization] = Field(None, nskey="dandi")
+    age: Optional[PropertyValue] = Field(
+        None,
+        description="A representation of age using ISO 8601 duration. This "
+        "should include a valueReference if anything other than "
+        "date of birth is used.",
+        nskey="dandi",
+        rangeIncludes="schema:Duration",
+    )
+    sex: Optional[Identifier] = Field(
+        None,
+        description="OBI based identifier for sex of the sample if available",
+        nskey="dandi",
+    )
+    taxonomy: Optional[Identifier] = Field(
+        None,
+        description="An identifier indicating the taxonomic classification of the biosample",
+        nskey="dandi",
+    )
+    disease: Optional[List[Disorder]] = Field(
+        None, description="Any current diagnosed disease associated with the sample"
+    )
+
+    _ldmeta = {
+        "rdfs:subClassOf": ["schema:Thing", "prov:Entity"],
+        "rdfs:label": "Information about the biosample.",
+        "nskey": "dandi",
+    }
 
 
 class Activity(BaseModel):
