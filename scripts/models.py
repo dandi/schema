@@ -308,7 +308,9 @@ class BioSample(BaseModel):
         nskey="dandi",
     )
     disease: Optional[List[Disorder]] = Field(
-        None, description="Any current diagnosed disease associated with the sample"
+        None,
+        description="Any current diagnosed disease associated with the sample",
+        nskey="dandi",
     )
 
     _ldmeta = {

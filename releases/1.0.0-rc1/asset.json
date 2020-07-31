@@ -1312,6 +1312,7 @@
         "disease": {
           "title": "Disease",
           "description": "Any current diagnosed disease associated with the sample",
+          "nskey": "dandi",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Disorder"
