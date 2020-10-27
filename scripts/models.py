@@ -207,7 +207,7 @@ class AccessRequirements(BaseModel):
         None,
         title="Embargo end date",
         description="Date on which embargo ends",
-        readonly=True,
+        readOnly=True,
         nskey="dandi",
         rangeIncludes="schema:Date",
     )
@@ -219,18 +219,18 @@ class AssetsSummary(BaseModel):
     """Summary over assets contained in a dandiset (published or not)"""
 
     # stats which are not stats
-    numberOfBytes: int = Field(readonly=True, sameas="schema:contentSize")
-    numberOfFiles: int = Field(readonly=True)  # universe
-    numberOfSubjects: int = Field(readonly=True)  # NWB + BIDS
-    numberOfSamples: int = Field(None, readonly=True)  # more of NWB
-    numberOfCells: int = Field(None, readonly=True)
+    numberOfBytes: int = Field(readOnly=True, sameas="schema:contentSize")
+    numberOfFiles: int = Field(readOnly=True)  # universe
+    numberOfSubjects: int = Field(readOnly=True)  # NWB + BIDS
+    numberOfSamples: int = Field(None, readOnly=True)  # more of NWB
+    numberOfCells: int = Field(None, readOnly=True)
 
-    dataStandard: List[str] = Field(readonly=True)  # TODO: types of things NWB, BIDS
+    dataStandard: List[str] = Field(readOnly=True)  # TODO: types of things NWB, BIDS
     # Web UI: icons per each modality?
-    modality: List[str] = Field(readonly=True)  # TODO: types of things, BIDS etc...
+    modality: List[str] = Field(readOnly=True)  # TODO: types of things, BIDS etc...
     # Web UI: could be an icon with number, which if hovered on  show a list?
-    measurementTechnique: List[str] = Field(readonly=True)
-    variableMeasured: List[PropertyValue] = Field(None, readonly=True)
+    measurementTechnique: List[str] = Field(readOnly=True)
+    variableMeasured: List[PropertyValue] = Field(None, readOnly=True)
 
     _ldmeta = {
         "rdfs:subClassOf": ["schema:CreativeWork", "prov:Entity"],
@@ -354,8 +354,8 @@ class Project(Activity):
 
 
 class CommonModel(BaseModel):
-    schemaVersion: str = Field(default="1.0.0-rc1", readonly=True, nskey="schema")
-    identifier: Identifier = Field(readonly=True, nskey="schema")
+    schemaVersion: str = Field(default="1.0.0-rc1", readOnly=True, nskey="schema")
+    identifier: Identifier = Field(readOnly=True, nskey="schema")
     name: str = Field(
         title="Title",
         description="The name of the item.",
@@ -400,22 +400,22 @@ class CommonModel(BaseModel):
     # Linking to this dandiset or the larger thing
     access: List[AccessRequirements] = Field(nskey="dandi")
     url: AnyUrl = Field(
-        readonly=True, description="permalink to the dandiset", nskey="schema"
+        readOnly=True, description="permalink to the dandiset", nskey="schema"
     )
     repository: AnyUrl = Field(
-        readonly=True, description="location of the item", nskey="dandi"
+        readOnly=True, description="location of the item", nskey="dandi"
     )
     relatedResource: List[Resource] = Field(None, nskey="dandi")
 
     wasGeneratedBy: Optional[Union[Activity, AnyUrl]] = Field(
-        None, readonly=True, nskey="prov"
+        None, readOnly=True, nskey="prov"
     )
     publishedBy: AnyUrl = Field(
         description="The URL should contain the provenance of the publishing process.",
-        readonly=True,
+        readOnly=True,
         nskey="dandi",
     )  # TODO: formalize "publish" activity to at least the Actor
-    datePublished: date = Field(readonly=True, nskey="schema")
+    datePublished: date = Field(readOnly=True, nskey="schema")
 
     @classmethod
     def unvalidated(__pydantic_cls__: "Type[Model]", **data: Any) -> "Model":
@@ -464,17 +464,17 @@ class Dandiset(CommonModel):
         min_items=1,
     )
 
-    citation: str = Field(readonly=True, nskey="schema")
+    citation: str = Field(readOnly=True, nskey="schema")
 
     # From assets
-    assetsSummary: AssetsSummary = Field(readonly=True, nskey="dandi")
+    assetsSummary: AssetsSummary = Field(readOnly=True, nskey="dandi")
 
     # From server (requested by users even for drafts)
-    manifestLocation: List[AnyUrl] = Field(readonly=True, nskey="dandi")
+    manifestLocation: List[AnyUrl] = Field(readOnly=True, nskey="dandi")
 
     # On publish
-    version: str = Field(readonly=True, nskey="schema")
-    doi: Optional[Union[str, AnyUrl]] = Field(None, readonly=True, nskey="dandi")
+    version: str = Field(readOnly=True, nskey="schema")
+    doi: Optional[Union[str, AnyUrl]] = Field(None, readOnly=True, nskey="dandi")
 
     _ldmeta = {
         "rdfs:subClassOf": ["schema:Dataset", "prov:Entity"],
@@ -515,14 +515,14 @@ class Asset(CommonModel):
 
     sameAs: AnyUrl = Field(None, nskey="schema")
 
-    modality: List[str] = Field(readonly=True, nskey="dandi")
-    measurementTechnique: List[str] = Field(readonly=True, nskey="schema")
-    variableMeasured: List[PropertyValue] = Field(readonly=True, nskey="schema")
+    modality: List[str] = Field(readOnly=True, nskey="dandi")
+    measurementTechnique: List[str] = Field(readOnly=True, nskey="schema")
+    variableMeasured: List[PropertyValue] = Field(readOnly=True, nskey="schema")
 
     wasDerivedFrom: BioSample = Field(None, nskey="prov")
 
     # on publish or set by server
-    contentUrl: List[AnyUrl] = Field(None, readonly=True, nskey="schema")
+    contentUrl: List[AnyUrl] = Field(None, readOnly=True, nskey="schema")
 
     _ldmeta = {
         "rdfs:subClassOf": ["schema:CreativeWork", "prov:Entity"],
