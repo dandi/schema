@@ -1,23 +1,20 @@
 {
-  "title": "Dandiset",
+  "title": "DandiMeta",
   "description": "A body of structured information describing a DANDI dataset.",
   "type": "object",
   "properties": {
     "schemaVersion": {
       "title": "Schemaversion",
       "default": "1.0.0-rc1",
-      "readonly": true,
+      "readOnly": true,
       "nskey": "schema",
       "type": "string"
     },
     "identifier": {
       "title": "Identifier",
-      "readonly": true,
+      "readOnly": true,
       "nskey": "schema",
       "anyOf": [
-        {
-          "type": "string"
-        },
         {
           "type": "string",
           "minLength": 1,
@@ -25,11 +22,10 @@
           "format": "uri"
         },
         {
-          "allOf": [
-            {
-              "$ref": "#/definitions/PropertyValue"
-            }
-          ]
+          "$ref": "#/definitions/PropertyValue"
+        },
+        {
+          "type": "string"
         }
       ]
     },
@@ -51,6 +47,7 @@
       "title": "Contributors",
       "description": "Contributors to this item.",
       "nskey": "schema",
+      "minItems": 1,
       "type": "array",
       "items": {
         "anyOf": [
@@ -61,8 +58,7 @@
             "$ref": "#/definitions/Organization"
           }
         ]
-      },
-      "minItems": 1
+      }
     },
     "about": {
       "title": "Subject matter",
@@ -72,13 +68,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "#/definitions/Disorder"
+            "$ref": "#/definitions/Disease"
           },
           {
             "$ref": "#/definitions/Anatomy"
-          },
-          {
-            "type": "string"
           },
           {
             "type": "string",
@@ -88,12 +81,15 @@
           },
           {
             "$ref": "#/definitions/PropertyValue"
+          },
+          {
+            "type": "string"
           }
         ]
       }
     },
     "studyTarget": {
-      "title": "What the study is ",
+      "title": "What the study is related to",
       "nskey": "dandi",
       "type": "array",
       "items": {
@@ -127,15 +123,10 @@
       }
     },
     "license": {
-      "title": "License",
       "nskey": "schema",
       "type": "array",
       "items": {
-        "enum": [
-          "https://creativecommons.org/publicdomain/zero/1.0/",
-          "https://creativecommons.org/licenses/by/4.0/",
-          "https://creativecommons.org/licenses/by-nc/4.0"
-        ]
+        "$ref": "#/definitions/LicenseType"
       }
     },
     "keywords": {
@@ -145,8 +136,7 @@
       "type": "array",
       "items": {
         "type": "string"
-      },
-      "minItems": 1
+      }
     },
     "acknowledgement": {
       "title": "Acknowledgement",
@@ -163,23 +153,24 @@
     },
     "url": {
       "title": "Url",
-      "description": "permalink to the dandiset",
-      "readonly": true,
+      "description": "permalink to the item",
+      "readOnly": true,
       "nskey": "schema",
-      "type": "string",
       "minLength": 1,
       "maxLength": 65536,
-      "format": "uri"
+      "format": "uri",
+      "type": "string"
     },
     "repository": {
       "title": "Repository",
       "description": "location of the item",
-      "readonly": true,
+      "default": "https://dandiarchive.org/",
+      "readOnly": true,
       "nskey": "dandi",
-      "type": "string",
       "minLength": 1,
       "maxLength": 65536,
-      "format": "uri"
+      "format": "uri",
+      "type": "string"
     },
     "relatedResource": {
       "title": "Relatedresource",
@@ -191,15 +182,11 @@
     },
     "wasGeneratedBy": {
       "title": "Wasgeneratedby",
-      "readonly": true,
+      "readOnly": true,
       "nskey": "prov",
       "anyOf": [
         {
-          "allOf": [
-            {
-              "$ref": "#/definitions/Activity"
-            }
-          ]
+          "$ref": "#/definitions/Activity"
         },
         {
           "type": "string",
@@ -209,32 +196,15 @@
         }
       ]
     },
-    "publishedBy": {
-      "title": "Publishedby",
-      "description": "The URL should contain the provenance of the publishing process.",
-      "readonly": true,
-      "nskey": "dandi",
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 65536,
-      "format": "uri"
-    },
-    "datePublished": {
-      "title": "Datepublished",
-      "readonly": true,
-      "nskey": "schema",
-      "type": "string",
-      "format": "date"
-    },
     "citation": {
       "title": "Citation",
-      "readonly": true,
+      "readOnly": true,
       "nskey": "schema",
       "type": "string"
     },
     "assetsSummary": {
       "title": "Assetssummary",
-      "readonly": true,
+      "readOnly": true,
       "nskey": "dandi",
       "allOf": [
         {
@@ -244,7 +214,7 @@
     },
     "manifestLocation": {
       "title": "Manifestlocation",
-      "readonly": true,
+      "readOnly": true,
       "nskey": "dandi",
       "type": "array",
       "items": {
@@ -256,13 +226,13 @@
     },
     "version": {
       "title": "Version",
-      "readonly": true,
+      "readOnly": true,
       "nskey": "schema",
       "type": "string"
     },
     "doi": {
       "title": "Doi",
-      "readonly": true,
+      "readOnly": true,
       "nskey": "dandi",
       "anyOf": [
         {
@@ -283,18 +253,23 @@
     "description",
     "contributor",
     "license",
-    "keywords",
-    "access",
-    "url",
-    "repository",
-    "publishedBy",
-    "datePublished",
     "citation",
     "assetsSummary",
     "manifestLocation",
     "version"
   ],
   "definitions": {
+    "IdentifierType": {
+      "title": "IdentifierType",
+      "description": "An enumeration of identifiers",
+      "enum": [
+        "dandi:doi",
+        "dandi:orcid",
+        "dandi:ror",
+        "dandi:dandi",
+        "dandi:rrid"
+      ]
+    },
     "PropertyValue": {
       "title": "PropertyValue",
       "type": "object",
@@ -380,13 +355,7 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "enum": [
-                "idorg:doi",
-                "idorg:orcid",
-                "https://ror.org/",
-                "idorg:dandi",
-                "idorg:rrid"
-              ]
+              "$ref": "#/definitions/IdentifierType"
             },
             {
               "type": "string",
@@ -401,6 +370,40 @@
         }
       }
     },
+    "RoleType": {
+      "title": "RoleType",
+      "description": "An enumeration of rols",
+      "enum": [
+        "dandi:Author",
+        "dandi:Conceptualization",
+        "dandi:ContactPerson",
+        "dandi:DataCollector",
+        "dandi:DataCurator",
+        "dandi:DataManager",
+        "dandi:FormalAnalysis",
+        "dandi:FundingAcquisition",
+        "dandi:Investigation",
+        "dandi:Maintainer",
+        "dandi:Methodology",
+        "dandi:Producer",
+        "dandi:ProjectLeader",
+        "dandi:ProjectManager",
+        "dandi:ProjectMember",
+        "dandi:ProjectAdministration",
+        "dandi:Researcher",
+        "dandi:Resources",
+        "dandi:Software",
+        "dandi:Supervision",
+        "dandi:Validation",
+        "dandi:Visualization",
+        "dandi:Funder",
+        "dandi:Sponsor",
+        "dandi:StudyParticipant",
+        "dandi:Affiliation",
+        "dandi:EthicsApproval",
+        "dandi:Other"
+      ]
+    },
     "ContactPoint": {
       "title": "ContactPoint",
       "type": "object",
@@ -414,10 +417,10 @@
         "url": {
           "title": "Url",
           "nskey": "schema",
-          "type": "string",
           "minLength": 1,
           "maxLength": 65536,
-          "format": "uri"
+          "format": "uri",
+          "type": "string"
         }
       }
     },
@@ -430,20 +433,16 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -461,46 +460,16 @@
         "url": {
           "title": "Url",
           "nskey": "schema",
-          "type": "string",
           "minLength": 1,
           "maxLength": 65536,
-          "format": "uri"
+          "format": "uri",
+          "type": "string"
         },
         "roleName": {
-          "title": "Rolename",
           "nskey": "schema",
           "type": "array",
           "items": {
-            "enum": [
-              "Author",
-              "Conceptualization",
-              "ContactPerson",
-              "DataCollector",
-              "DataCurator",
-              "DataManager",
-              "FormalAnalysis",
-              "FundingAcquisition",
-              "Investigation",
-              "Maintainer",
-              "Methodology",
-              "Producer",
-              "ProjectLeader",
-              "ProjectManager",
-              "ProjectMember",
-              "ProjectAdministration",
-              "Researcher",
-              "Resources",
-              "Software",
-              "Supervision",
-              "Validation",
-              "Visualization",
-              "Funder",
-              "Sponsor",
-              "StudyParticipant",
-              "Affiliation",
-              "EthicsApproval",
-              "Other"
-            ]
+            "$ref": "#/definitions/RoleType"
           }
         },
         "includeInCitation": {
@@ -516,20 +485,16 @@
           "nskey": "dandi",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -557,20 +522,16 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -589,46 +550,16 @@
         "url": {
           "title": "Url",
           "nskey": "schema",
-          "type": "string",
           "minLength": 1,
           "maxLength": 65536,
-          "format": "uri"
+          "format": "uri",
+          "type": "string"
         },
         "roleName": {
-          "title": "Rolename",
           "nskey": "schema",
           "type": "array",
           "items": {
-            "enum": [
-              "Author",
-              "Conceptualization",
-              "ContactPerson",
-              "DataCollector",
-              "DataCurator",
-              "DataManager",
-              "FormalAnalysis",
-              "FundingAcquisition",
-              "Investigation",
-              "Maintainer",
-              "Methodology",
-              "Producer",
-              "ProjectLeader",
-              "ProjectManager",
-              "ProjectMember",
-              "ProjectAdministration",
-              "Researcher",
-              "Resources",
-              "Software",
-              "Supervision",
-              "Validation",
-              "Visualization",
-              "Funder",
-              "Sponsor",
-              "StudyParticipant",
-              "Affiliation",
-              "EthicsApproval",
-              "Other"
-            ]
+            "$ref": "#/definitions/RoleType"
           }
         },
         "includeInCitation": {
@@ -644,20 +575,16 @@
           "nskey": "dandi",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -676,8 +603,8 @@
         "roleName"
       ]
     },
-    "Disorder": {
-      "title": "Disorder",
+    "Disease": {
+      "title": "Disease",
       "description": "Biolink, SNOMED, or other identifier for disorder studied",
       "type": "object",
       "properties": {
@@ -686,26 +613,42 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "dxdate": {
+          "title": "Dates of diagnosis",
+          "description": "Dates of diagnosis",
+          "readOnly": true,
+          "nskey": "dandi",
+          "rangeIncludes": "schema:Date",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          }
         }
       },
       "required": [
-        "identifier"
+        "identifier",
+        "name"
       ]
     },
     "Anatomy": {
@@ -718,26 +661,30 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
         }
       },
       "required": [
-        "identifier"
+        "identifier",
+        "name"
       ]
     },
     "EthicsApproval": {
@@ -750,20 +697,16 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -783,6 +726,24 @@
         "contactPoint"
       ]
     },
+    "LicenseType": {
+      "title": "LicenseType",
+      "description": "An enumeration of supported licenses",
+      "enum": [
+        "dandi:CC0",
+        "dandi:CCBY40",
+        "dandi:CCBYNC40"
+      ]
+    },
+    "AccessType": {
+      "title": "AccessType",
+      "description": "An enumeration of access status options",
+      "enum": [
+        "dandi:Open",
+        "dandi:Embargoed",
+        "dandi:Restricted"
+      ]
+    },
     "AccessRequirements": {
       "title": "AccessRequirements",
       "description": "Information about access options for the dataset",
@@ -792,10 +753,10 @@
           "title": "Access status",
           "description": "The access status of the item",
           "nskey": "dandi",
-          "enum": [
-            "Open",
-            "Embargoed",
-            "Restricted"
+          "allOf": [
+            {
+              "$ref": "#/definitions/AccessType"
+            }
           ]
         },
         "email": {
@@ -822,7 +783,7 @@
         "embargoedUntil": {
           "title": "Embargo end date",
           "description": "Date on which embargo ends",
-          "readonly": true,
+          "readOnly": true,
           "nskey": "dandi",
           "rangeIncludes": "schema:Date",
           "type": "string",
@@ -831,6 +792,45 @@
       },
       "required": [
         "status"
+      ]
+    },
+    "RelationType": {
+      "title": "RelationType",
+      "description": "An enumeration of resource relations",
+      "enum": [
+        "dandi:IsCitedBy",
+        "dandi:Cites",
+        "dandi:IsSupplementTo",
+        "dandi:IsSupplementedBy",
+        "dandi:IsContinuedBy",
+        "dandi:Continues",
+        "dandi:Describes",
+        "dandi:IsDescribedBy",
+        "dandi:HasMetadata",
+        "dandi:IsMetadataFor",
+        "dandi:HasVersion",
+        "dandi:IsVersionOf",
+        "dandi:IsNewVersionOf",
+        "dandi:IsPreviousVersionOf",
+        "dandi:IsPartOf",
+        "dandi:HasPart",
+        "dandi:IsReferencedBy",
+        "dandi:References",
+        "dandi:IsDocumentedBy",
+        "dandi:Documents",
+        "dandi:IsCompiledBy",
+        "dandi:Compiles",
+        "dandi:IsVariantFormOf",
+        "dandi:IsOriginalFormOf",
+        "dandi:IsIdenticalTo",
+        "dandi:IsReviewedBy",
+        "dandi:Reviews",
+        "dandi:IsDerivedFrom",
+        "dandi:IsSourceOf",
+        "dandi:IsRequiredBy",
+        "dandi:Requires",
+        "dandi:Obsoletes",
+        "dandi:IsObsoletedBy"
       ]
     },
     "Resource": {
@@ -842,20 +842,16 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -886,48 +882,56 @@
           ]
         },
         "relation": {
-          "title": "Relation",
           "description": "Indicates how the resource is related to the dataset",
           "nskey": "dandi",
-          "enum": [
-            "IsCitedBy",
-            "Cites",
-            "IsSupplementTo",
-            "IsSupplementedBy",
-            "IsContinuedBy",
-            "Continues",
-            "Describes",
-            "IsDescribedBy",
-            "HasMetadata",
-            "IsMetadataFor",
-            "HasVersion",
-            "IsVersionOf",
-            "IsNewVersionOf",
-            "IsPreviousVersionOf",
-            "IsPartOf",
-            "HasPart",
-            "IsReferencedBy",
-            "References",
-            "IsDocumentedBy",
-            "Documents",
-            "IsCompiledBy",
-            "Compiles",
-            "IsVariantFormOf",
-            "IsOriginalFormOf",
-            "IsIdenticalTo",
-            "IsReviewedBy",
-            "Reviews",
-            "IsDerivedFrom",
-            "IsSourceOf",
-            "IsRequiredBy",
-            "Requires",
-            "Obsoletes",
-            "IsObsoletedBy"
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationType"
+            }
           ]
         }
       },
       "required": [
         "relation"
+      ]
+    },
+    "Software": {
+      "title": "Software",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "nskey": "schema",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier",
+        "name",
+        "version"
       ]
     },
     "Activity": {
@@ -940,20 +944,16 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/PropertyValue"
-                }
-              ]
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -1005,20 +1005,159 @@
           "nskey": "prov",
           "anyOf": [
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/Person"
-                }
-              ]
+              "$ref": "#/definitions/Person"
             },
             {
-              "allOf": [
-                {
-                  "$ref": "#/definitions/Organization"
-                }
-              ]
+              "$ref": "#/definitions/Organization"
+            },
+            {
+              "$ref": "#/definitions/Software"
             }
           ]
+        }
+      },
+      "required": [
+        "identifier",
+        "name"
+      ]
+    },
+    "StandardsType": {
+      "title": "StandardsType",
+      "description": "Identifier for data standard used",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier",
+        "name"
+      ]
+    },
+    "ModalityType": {
+      "title": "ModalityType",
+      "description": "Identifier for modality used",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier",
+        "name"
+      ]
+    },
+    "MeasurementTechniqueType": {
+      "title": "MeasurementTechniqueType",
+      "description": "Identifier for measurement technique used",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier",
+        "name"
+      ]
+    },
+    "SpeciesType": {
+      "title": "SpeciesType",
+      "description": "Identifier for species of the sample",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
         }
       },
       "required": [
@@ -1033,60 +1172,68 @@
       "properties": {
         "numberOfBytes": {
           "title": "Numberofbytes",
-          "readonly": true,
+          "readOnly": true,
           "sameas": "schema:contentSize",
           "type": "integer"
         },
         "numberOfFiles": {
           "title": "Numberoffiles",
-          "readonly": true,
+          "readOnly": true,
           "type": "integer"
         },
         "numberOfSubjects": {
           "title": "Numberofsubjects",
-          "readonly": true,
+          "readOnly": true,
           "type": "integer"
         },
         "numberOfSamples": {
           "title": "Numberofsamples",
-          "readonly": true,
+          "readOnly": true,
           "type": "integer"
         },
         "numberOfCells": {
           "title": "Numberofcells",
-          "readonly": true,
+          "readOnly": true,
           "type": "integer"
         },
         "dataStandard": {
           "title": "Datastandard",
-          "readonly": true,
+          "readOnly": true,
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/StandardsType"
           }
         },
         "modality": {
           "title": "Modality",
-          "readonly": true,
+          "readOnly": true,
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/ModalityType"
           }
         },
         "measurementTechnique": {
           "title": "Measurementtechnique",
-          "readonly": true,
+          "readOnly": true,
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/MeasurementTechniqueType"
           }
         },
         "variableMeasured": {
           "title": "Variablemeasured",
-          "readonly": true,
+          "readOnly": true,
           "type": "array",
           "items": {
             "$ref": "#/definitions/PropertyValue"
+          }
+        },
+        "species": {
+          "title": "Species",
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpeciesType"
           }
         }
       },
@@ -1096,7 +1243,8 @@
         "numberOfSubjects",
         "dataStandard",
         "modality",
-        "measurementTechnique"
+        "measurementTechnique",
+        "species"
       ]
     }
   }
