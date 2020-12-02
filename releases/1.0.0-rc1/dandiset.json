@@ -68,7 +68,7 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "#/definitions/Disease"
+            "$ref": "#/definitions/Disorder"
           },
           {
             "$ref": "#/definitions/Anatomy"
@@ -309,32 +309,32 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
               "type": "string"
             },
             {
+              "type": "boolean"
+            },
+            {
               "type": "integer"
+            },
+            {
+              "type": "number"
             },
             {
               "type": "array",
               "items": {
                 "anyOf": [
                   {
-                    "type": "boolean"
-                  },
-                  {
-                    "type": "number"
-                  },
-                  {
                     "type": "string"
                   },
                   {
+                    "type": "boolean"
+                  },
+                  {
                     "type": "integer"
+                  },
+                  {
+                    "type": "number"
                   }
                 ]
               }
@@ -603,8 +603,8 @@
         "roleName"
       ]
     },
-    "Disease": {
-      "title": "Disease",
+    "Disorder": {
+      "title": "Disorder",
       "description": "Biolink, SNOMED, or other identifier for disorder studied",
       "type": "object",
       "properties": {
@@ -645,11 +645,7 @@
             "format": "date"
           }
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "Anatomy": {
       "title": "Anatomy",
@@ -681,11 +677,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "EthicsApproval": {
       "title": "EthicsApproval",
@@ -1051,11 +1043,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "ModalityType": {
       "title": "ModalityType",
@@ -1087,11 +1075,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "MeasurementTechniqueType": {
       "title": "MeasurementTechniqueType",
@@ -1123,11 +1107,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "SpeciesType": {
       "title": "SpeciesType",
@@ -1159,11 +1139,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "AssetsSummary": {
       "title": "AssetsSummary",

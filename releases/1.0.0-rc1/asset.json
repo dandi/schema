@@ -66,7 +66,7 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "#/definitions/Disease"
+            "$ref": "#/definitions/Disorder"
           },
           {
             "$ref": "#/definitions/Anatomy"
@@ -352,32 +352,32 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
               "type": "string"
             },
             {
+              "type": "boolean"
+            },
+            {
               "type": "integer"
+            },
+            {
+              "type": "number"
             },
             {
               "type": "array",
               "items": {
                 "anyOf": [
                   {
-                    "type": "boolean"
-                  },
-                  {
-                    "type": "number"
-                  },
-                  {
                     "type": "string"
                   },
                   {
+                    "type": "boolean"
+                  },
+                  {
                     "type": "integer"
+                  },
+                  {
+                    "type": "number"
                   }
                 ]
               }
@@ -646,8 +646,8 @@
         "roleName"
       ]
     },
-    "Disease": {
-      "title": "Disease",
+    "Disorder": {
+      "title": "Disorder",
       "description": "Biolink, SNOMED, or other identifier for disorder studied",
       "type": "object",
       "properties": {
@@ -688,11 +688,7 @@
             "format": "date"
           }
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "Anatomy": {
       "title": "Anatomy",
@@ -724,11 +720,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "EthicsApproval": {
       "title": "EthicsApproval",
@@ -1130,11 +1122,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "MeasurementTechniqueType": {
       "title": "MeasurementTechniqueType",
@@ -1166,11 +1154,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "AssayType": {
       "title": "AssayType",
@@ -1202,11 +1186,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "StrainType": {
       "title": "StrainType",
@@ -1238,11 +1218,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "SexType": {
       "title": "SexType",
@@ -1274,11 +1250,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "SpeciesType": {
       "title": "SpeciesType",
@@ -1310,11 +1282,7 @@
           "nskey": "schema",
           "type": "string"
         }
-      },
-      "required": [
-        "identifier",
-        "name"
-      ]
+      }
     },
     "BioSample": {
       "title": "BioSample",
@@ -1445,13 +1413,13 @@
             }
           ]
         },
-        "disease": {
-          "title": "Disease",
-          "description": "Any current diagnosed disease associated with the sample",
+        "disorder": {
+          "title": "Disorder",
+          "description": "Any current diagnosed disease or disorder associated with the sample",
           "nskey": "dandi",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Disease"
+            "$ref": "#/definitions/Disorder"
           }
         }
       },
