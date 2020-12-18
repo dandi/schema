@@ -482,7 +482,7 @@
         "includeInCitation": {
           "title": "Include Contributor in Citation",
           "description": "A flag to indicate whether a contributor should be included when generating a citation for the item",
-          "default": true,
+          "default": false,
           "nskey": "dandi",
           "type": "boolean"
         },
@@ -514,11 +514,7 @@
             "$ref": "#/definitions/ContactPoint"
           }
         }
-      },
-      "required": [
-        "roleName",
-        "contactPoint"
-      ]
+      }
     },
     "Person": {
       "title": "Person",
@@ -609,8 +605,7 @@
         }
       },
       "required": [
-        "name",
-        "roleName"
+        "name"
       ]
     },
     "Disorder": {

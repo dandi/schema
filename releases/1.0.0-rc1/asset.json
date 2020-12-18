@@ -285,6 +285,15 @@
         "$ref": "#/definitions/BioSample"
       }
     },
+    "wasAttributedTo": {
+      "title": "Was Attributed to",
+      "description": "Participant(s) to which this file belongs to",
+      "nskey": "prov",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Participant"
+      }
+    },
     "contentUrl": {
       "title": "Content URL",
       "readOnly": true,
@@ -525,7 +534,7 @@
         "includeInCitation": {
           "title": "Include Contributor in Citation",
           "description": "A flag to indicate whether a contributor should be included when generating a citation for the item",
-          "default": true,
+          "default": false,
           "nskey": "dandi",
           "type": "boolean"
         },
@@ -557,11 +566,7 @@
             "$ref": "#/definitions/ContactPoint"
           }
         }
-      },
-      "required": [
-        "roleName",
-        "contactPoint"
-      ]
+      }
     },
     "Person": {
       "title": "Person",
@@ -652,8 +657,7 @@
         }
       },
       "required": [
-        "name",
-        "roleName"
+        "name"
       ]
     },
     "Disorder": {
@@ -1199,6 +1203,60 @@
         }
       }
     },
+    "BioSample": {
+      "title": "Bio Sample",
+      "description": "Description about the sample that was studied",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "assayType": {
+          "title": "Assay Type",
+          "description": "OBI based identifier for the assay(s) used",
+          "nskey": "dandi",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AssayType"
+          }
+        },
+        "anatomy": {
+          "title": "Anatomy",
+          "description": "UBERON based identifier for what organ the sample belongs to. Use the most specific descriptor.",
+          "nskey": "dandi",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Anatomy"
+          }
+        },
+        "wasDerivedFrom": {
+          "title": "Was Derived From",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BioSample"
+          }
+        }
+      },
+      "required": [
+        "identifier"
+      ]
+    },
     "StrainType": {
       "title": "Strain Type",
       "description": "Identifier for the strain of the sample",
@@ -1295,8 +1353,8 @@
         }
       }
     },
-    "BioSample": {
-      "title": "Bio Sample",
+    "Participant": {
+      "title": "Participant",
       "description": "Description about the sample that was studied",
       "type": "object",
       "properties": {
@@ -1318,23 +1376,23 @@
             }
           ]
         },
-        "assayType": {
-          "title": "Assay Type",
-          "description": "OBI based identifier for the assay(s) used",
+        "source_id": {
+          "title": "Source Id",
           "nskey": "dandi",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/AssayType"
-          }
-        },
-        "anatomy": {
-          "title": "Anatomy",
-          "description": "UBERON based identifier for the location of the sample",
-          "nskey": "dandi",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Anatomy"
-          }
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536,
+              "format": "uri"
+            },
+            {
+              "$ref": "#/definitions/PropertyValue"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "strain": {
           "title": "Strain",
