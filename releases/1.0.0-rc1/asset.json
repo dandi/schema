@@ -94,13 +94,13 @@
       "items": {
         "anyOf": [
           {
-            "type": "string"
-          },
-          {
             "type": "string",
             "minLength": 1,
             "maxLength": 65536,
             "format": "uri"
+          },
+          {
+            "type": "string"
           }
         ]
       }
@@ -207,13 +207,13 @@
       "nskey": "schema",
       "anyOf": [
         {
-          "type": "string"
-        },
-        {
           "type": "string",
           "minLength": 1,
           "maxLength": 65536,
           "format": "uri"
+        },
+        {
+          "type": "string"
         }
       ]
     },
@@ -344,13 +344,13 @@
           "nskey": "schema",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
+            },
+            {
+              "type": "string"
             }
           ]
         },
@@ -920,13 +920,13 @@
           "nskey": "dandi",
           "anyOf": [
             {
-              "type": "string"
-            },
-            {
               "type": "string",
               "minLength": 1,
               "maxLength": 65536,
               "format": "uri"
+            },
+            {
+              "type": "string"
             }
           ]
         },
