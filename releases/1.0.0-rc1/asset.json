@@ -200,7 +200,7 @@
     "contentSize": {
       "title": "Content Size",
       "nskey": "schema",
-      "type": "string"
+      "type": "integer"
     },
     "encodingFormat": {
       "title": "File Encoding Format",

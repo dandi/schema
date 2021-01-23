@@ -255,11 +255,7 @@
     "name",
     "description",
     "contributor",
-    "license",
-    "citation",
-    "assetsSummary",
-    "manifestLocation",
-    "version"
+    "license"
   ],
   "definitions": {
     "IdentifierType": {
