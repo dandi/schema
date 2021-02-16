@@ -1,21 +1,21 @@
 {
   "title": "Asset Meta",
-  "description": "Metadata used to describe an asset.\n\nDerived from C2M2 (Level 0 and 1) and schema.org",
+  "description": "Metadata used to describe an asset on the server.\n\n    ",
   "type": "object",
   "properties": {
-    "schemaVersion": {
-      "title": "Schema Version",
-      "default": "1.0.0-rc1",
-      "readOnly": true,
-      "nskey": "schema",
-      "type": "string"
-    },
     "identifier": {
       "title": "Identifier",
       "readOnly": true,
       "nskey": "schema",
       "type": "string",
       "format": "uuid4"
+    },
+    "schemaVersion": {
+      "title": "Schema Version",
+      "default": "1.0.0-rc1",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "string"
     },
     "name": {
       "title": "Title",

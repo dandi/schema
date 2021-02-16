@@ -3,18 +3,18 @@
   "description": "A body of structured information describing a DANDI dataset.",
   "type": "object",
   "properties": {
-    "schemaVersion": {
-      "title": "Schema Version",
-      "default": "1.0.0-rc1",
-      "readOnly": true,
-      "nskey": "schema",
-      "type": "string"
-    },
     "identifier": {
       "title": "Dandiset identifier",
       "description": "A Dandiset identifier that can be resolved by identifiers.org",
       "readOnly": true,
       "pattern": "^DANDI\\:\\d{6}$",
+      "nskey": "schema",
+      "type": "string"
+    },
+    "schemaVersion": {
+      "title": "Schema Version",
+      "default": "1.0.0-rc1",
+      "readOnly": true,
       "nskey": "schema",
       "type": "string"
     },
