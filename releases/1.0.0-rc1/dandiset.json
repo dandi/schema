@@ -161,9 +161,12 @@
     },
     "wasGeneratedBy": {
       "title": "Name of the project",
-      "description": "Describe the project that generated this Dandiset",
+      "description": "Describe the project(s) that generated this Dandiset",
       "nskey": "prov",
-      "$ref": "#/definitions/Project"
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Project"
+      }
     },
     "citation": {
       "title": "Citation",
@@ -727,7 +730,7 @@
         },
         "name": {
           "title": "Title",
-          "description": "The name of the project that generated this Dandiset.",
+          "description": "The name of the project that generated this Dandiset or asset.",
           "maxLength": 150,
           "nskey": "schema",
           "type": "string"
@@ -768,10 +771,16 @@
             ],
             "type": "object"
           }
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Project",
+          "readOnly": true,
+          "const": "Project",
+          "type": "string"
         }
       },
       "required": [
-        "identifier",
         "name"
       ]
     },
