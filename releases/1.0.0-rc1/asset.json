@@ -1,6 +1,6 @@
 {
   "title": "Asset Meta",
-  "description": "Metadata used to describe an asset on the server.\n\n    ",
+  "description": "Metadata used to describe an asset on the server.",
   "type": "object",
   "properties": {
     "identifier": {
