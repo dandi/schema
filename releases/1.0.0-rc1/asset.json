@@ -291,7 +291,7 @@
   "definitions": {
     "RoleType": {
       "title": "RoleType",
-      "description": "An enumeration of rols",
+      "description": "An enumeration of roles",
       "enum": [
         "dandi:Author",
         "dandi:Conceptualization",
@@ -345,7 +345,9 @@
           "title": "Schema Key",
           "default": "ContactPoint",
           "readOnly": true,
-          "const": "ContactPoint",
+          "enum": [
+            "ContactPoint"
+          ],
           "type": "string"
         }
       }
@@ -418,7 +420,9 @@
           "title": "Schema Key",
           "default": "Organization",
           "readOnly": true,
-          "const": "Organization",
+          "enum": [
+            "Organization"
+          ],
           "type": "string"
         }
       }
@@ -429,7 +433,7 @@
       "properties": {
         "identifier": {
           "title": "An ORCID Identifier",
-          "description": "An ORCID (orcid.org) identifer for an individual",
+          "description": "An ORCID (orcid.org) identifier for an individual",
           "pattern": "^\\d{4}-\\d{4}-\\d{4}-(\\d{3}X|\\d{4})$",
           "nskey": "schema",
           "type": "string"
@@ -489,7 +493,9 @@
           "title": "Schema Key",
           "default": "Person",
           "readOnly": true,
-          "const": "Person",
+          "enum": [
+            "Person"
+          ],
           "type": "string"
         }
       },
@@ -521,7 +527,9 @@
           "title": "Schema Key",
           "default": "Disorder",
           "readOnly": true,
-          "const": "Disorder",
+          "enum": [
+            "Disorder"
+          ],
           "type": "string"
         },
         "dxdate": {
@@ -561,7 +569,9 @@
           "title": "Schema Key",
           "default": "Anatomy",
           "readOnly": true,
-          "const": "Anatomy",
+          "enum": [
+            "Anatomy"
+          ],
           "type": "string"
         }
       }
@@ -590,7 +600,9 @@
           "title": "Schema Key",
           "default": "GenericType",
           "readOnly": true,
-          "const": "GenericType",
+          "enum": [
+            "GenericType"
+          ],
           "type": "string"
         }
       }
@@ -784,7 +796,9 @@
           "title": "Schema Key",
           "default": "Software",
           "readOnly": true,
-          "const": "Software",
+          "enum": [
+            "Software"
+          ],
           "type": "string"
         }
       },
@@ -851,7 +865,9 @@
           "title": "Schema Key",
           "default": "Session",
           "readOnly": true,
-          "const": "Session",
+          "enum": [
+            "Session"
+          ],
           "type": "string"
         }
       },
@@ -917,7 +933,9 @@
           "title": "Schema Key",
           "default": "Project",
           "readOnly": true,
-          "const": "Project",
+          "enum": [
+            "Project"
+          ],
           "type": "string"
         }
       },
@@ -983,7 +1001,9 @@
           "title": "Schema Key",
           "default": "Activity",
           "readOnly": true,
-          "const": "Activity",
+          "enum": [
+            "Activity"
+          ],
           "type": "string"
         }
       },
@@ -1047,7 +1067,9 @@
           "title": "Schema Key",
           "default": "ModalityType",
           "readOnly": true,
-          "const": "ModalityType",
+          "enum": [
+            "ModalityType"
+          ],
           "type": "string"
         }
       }
@@ -1076,7 +1098,9 @@
           "title": "Schema Key",
           "default": "MeasurementTechniqueType",
           "readOnly": true,
-          "const": "MeasurementTechniqueType",
+          "enum": [
+            "MeasurementTechniqueType"
+          ],
           "type": "string"
         }
       }
@@ -1170,7 +1194,9 @@
           "title": "Schema Key",
           "default": "SampleType",
           "readOnly": true,
-          "const": "SampleType",
+          "enum": [
+            "SampleType"
+          ],
           "type": "string"
         }
       }
@@ -1199,7 +1225,9 @@
           "title": "Schema Key",
           "default": "AssayType",
           "readOnly": true,
-          "const": "AssayType",
+          "enum": [
+            "AssayType"
+          ],
           "type": "string"
         }
       }
@@ -1266,7 +1294,9 @@
           "title": "Schema Key",
           "default": "BioSample",
           "readOnly": true,
-          "const": "BioSample",
+          "enum": [
+            "BioSample"
+          ],
           "type": "string"
         }
       },
@@ -1298,7 +1328,9 @@
           "title": "Schema Key",
           "default": "StrainType",
           "readOnly": true,
-          "const": "StrainType",
+          "enum": [
+            "StrainType"
+          ],
           "type": "string"
         }
       }
@@ -1327,7 +1359,9 @@
           "title": "Schema Key",
           "default": "SexType",
           "readOnly": true,
-          "const": "SexType",
+          "enum": [
+            "SexType"
+          ],
           "type": "string"
         }
       }
@@ -1356,7 +1390,9 @@
           "title": "Schema Key",
           "default": "SpeciesType",
           "readOnly": true,
-          "const": "SpeciesType",
+          "enum": [
+            "SpeciesType"
+          ],
           "type": "string"
         }
       }
@@ -1483,7 +1519,9 @@
           "title": "Schema Key",
           "default": "Participant",
           "readOnly": true,
-          "const": "Participant",
+          "enum": [
+            "Participant"
+          ],
           "type": "string"
         }
       },
