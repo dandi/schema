@@ -345,10 +345,8 @@
           "title": "Schema Key",
           "default": "ContactPoint",
           "readOnly": true,
-          "enum": [
-            "ContactPoint"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "ContactPoint"
         }
       }
     },
@@ -420,10 +418,8 @@
           "title": "Schema Key",
           "default": "Organization",
           "readOnly": true,
-          "enum": [
-            "Organization"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Organization"
         }
       }
     },
@@ -493,10 +489,8 @@
           "title": "Schema Key",
           "default": "Person",
           "readOnly": true,
-          "enum": [
-            "Person"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Person"
         }
       },
       "required": [
@@ -527,10 +521,8 @@
           "title": "Schema Key",
           "default": "Disorder",
           "readOnly": true,
-          "enum": [
-            "Disorder"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Disorder"
         },
         "dxdate": {
           "title": "Dates of diagnosis",
@@ -569,10 +561,8 @@
           "title": "Schema Key",
           "default": "Anatomy",
           "readOnly": true,
-          "enum": [
-            "Anatomy"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Anatomy"
         }
       }
     },
@@ -600,10 +590,8 @@
           "title": "Schema Key",
           "default": "GenericType",
           "readOnly": true,
-          "enum": [
-            "GenericType"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "GenericType"
         }
       }
     },
@@ -796,10 +784,8 @@
           "title": "Schema Key",
           "default": "Software",
           "readOnly": true,
-          "enum": [
-            "Software"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Software"
         }
       },
       "required": [
@@ -865,10 +851,8 @@
           "title": "Schema Key",
           "default": "Session",
           "readOnly": true,
-          "enum": [
-            "Session"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Session"
         }
       },
       "required": [
@@ -933,10 +917,8 @@
           "title": "Schema Key",
           "default": "Project",
           "readOnly": true,
-          "enum": [
-            "Project"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Project"
         }
       },
       "required": [
@@ -1001,10 +983,8 @@
           "title": "Schema Key",
           "default": "Activity",
           "readOnly": true,
-          "enum": [
-            "Activity"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Activity"
         }
       },
       "required": [
@@ -1067,10 +1047,8 @@
           "title": "Schema Key",
           "default": "ModalityType",
           "readOnly": true,
-          "enum": [
-            "ModalityType"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "ModalityType"
         }
       }
     },
@@ -1098,10 +1076,8 @@
           "title": "Schema Key",
           "default": "MeasurementTechniqueType",
           "readOnly": true,
-          "enum": [
-            "MeasurementTechniqueType"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "MeasurementTechniqueType"
         }
       }
     },
@@ -1194,10 +1170,8 @@
           "title": "Schema Key",
           "default": "SampleType",
           "readOnly": true,
-          "enum": [
-            "SampleType"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "SampleType"
         }
       }
     },
@@ -1225,10 +1199,8 @@
           "title": "Schema Key",
           "default": "AssayType",
           "readOnly": true,
-          "enum": [
-            "AssayType"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "AssayType"
         }
       }
     },
@@ -1294,10 +1266,8 @@
           "title": "Schema Key",
           "default": "BioSample",
           "readOnly": true,
-          "enum": [
-            "BioSample"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "BioSample"
         }
       },
       "required": [
@@ -1328,10 +1298,8 @@
           "title": "Schema Key",
           "default": "StrainType",
           "readOnly": true,
-          "enum": [
-            "StrainType"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "StrainType"
         }
       }
     },
@@ -1359,10 +1327,8 @@
           "title": "Schema Key",
           "default": "SexType",
           "readOnly": true,
-          "enum": [
-            "SexType"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "SexType"
         }
       }
     },
@@ -1390,10 +1356,8 @@
           "title": "Schema Key",
           "default": "SpeciesType",
           "readOnly": true,
-          "enum": [
-            "SpeciesType"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "SpeciesType"
         }
       }
     },
@@ -1519,10 +1483,8 @@
           "title": "Schema Key",
           "default": "Participant",
           "readOnly": true,
-          "enum": [
-            "Participant"
-          ],
-          "type": "string"
+          "type": "string",
+          "const": "Participant"
         }
       },
       "required": [
