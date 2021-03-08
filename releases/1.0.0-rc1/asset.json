@@ -201,6 +201,18 @@
       "nskey": "dandi",
       "$ref": "#/definitions/Digest"
     },
+    "dateModified": {
+      "title": "Asset (file or metadata) modification date and time",
+      "nskey": "schema",
+      "type": "string",
+      "format": "date-time"
+    },
+    "blobDateModified": {
+      "title": "Asset file modification date and time",
+      "nskey": "dandi",
+      "type": "string",
+      "format": "date-time"
+    },
     "path": {
       "title": "Path",
       "nskey": "dandi",
