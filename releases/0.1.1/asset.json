@@ -1011,7 +1011,7 @@
       "enum": [
         "dandi:md5",
         "dandi:sha1",
-        "dandi:SHA256",
+        "dandi:sha256",
         "dandi:sha512",
         "dandi:dandi-etag"
       ]
