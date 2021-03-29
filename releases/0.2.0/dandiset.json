@@ -1,0 +1,990 @@
+{
+  "title": "Dandiset Meta",
+  "description": "A body of structured information describing a DANDI dataset.",
+  "type": "object",
+  "properties": {
+    "identifier": {
+      "title": "Dandiset identifier",
+      "description": "A Dandiset identifier that can be resolved by identifiers.org",
+      "readOnly": true,
+      "pattern": "^DANDI\\:\\d{6}$",
+      "nskey": "schema",
+      "type": "string"
+    },
+    "schemaVersion": {
+      "title": "Schema Version",
+      "default": "0.2.0",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "name": {
+      "title": "Dandiset Title",
+      "description": "A title associated with the Dandiset.",
+      "maxLength": 150,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "description": "A description of the Dandiset",
+      "maxLength": 3000,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "contributor": {
+      "title": "Dandiset contributors",
+      "description": "People or Organizations that have contributed to this Dandiset.",
+      "nskey": "schema",
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Person"
+          },
+          {
+            "$ref": "#/definitions/Organization"
+          }
+        ],
+        "type": "object"
+      }
+    },
+    "about": {
+      "title": "Subject Matter",
+      "description": "The subject matter of the content, such as disorders, brain anatomy.",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Disorder"
+          },
+          {
+            "$ref": "#/definitions/Anatomy"
+          },
+          {
+            "$ref": "#/definitions/TypeModel"
+          }
+        ],
+        "type": "object"
+      }
+    },
+    "studyTarget": {
+      "title": "Study Target",
+      "description": "What the study is related to",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "license": {
+      "description": "License of item.",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LicenseType"
+      },
+      "title": "License"
+    },
+    "protocol": {
+      "title": "Protocol",
+      "description": "A list of protocol.io URLs",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2083,
+        "format": "uri"
+      }
+    },
+    "ethicsApproval": {
+      "title": "Ethics Approval",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EthicsApproval"
+      }
+    },
+    "keywords": {
+      "title": "Keywords",
+      "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acknowledgement": {
+      "title": "Acknowledgement",
+      "nskey": "dandi",
+      "type": "string"
+    },
+    "access": {
+      "title": "Access Type",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
+    },
+    "url": {
+      "title": "URL",
+      "description": "permalink to the item",
+      "readOnly": true,
+      "nskey": "schema",
+      "minLength": 1,
+      "maxLength": 2083,
+      "format": "uri",
+      "type": "string"
+    },
+    "repository": {
+      "title": "Repository",
+      "description": "location of the item",
+      "default": "https://dandiarchive.org/",
+      "readOnly": true,
+      "nskey": "dandi",
+      "minLength": 1,
+      "maxLength": 2083,
+      "format": "uri",
+      "type": "string"
+    },
+    "relatedResource": {
+      "title": "Related Resource",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "wasGeneratedBy": {
+      "title": "Name of the project",
+      "description": "Describe the project(s) that generated this Dandiset",
+      "nskey": "prov",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Project"
+      }
+    },
+    "citation": {
+      "title": "Citation",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "assetsSummary": {
+      "title": "Assets Summary",
+      "readOnly": true,
+      "nskey": "dandi",
+      "$ref": "#/definitions/AssetsSummary"
+    },
+    "manifestLocation": {
+      "title": "Manifest Location",
+      "readOnly": true,
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2083,
+        "format": "uri"
+      }
+    },
+    "version": {
+      "title": "Version",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "doi": {
+      "title": "DOI",
+      "readOnly": true,
+      "pattern": "^10\\.[A-Za-z0-9.\\/-]+",
+      "nskey": "dandi",
+      "type": "string"
+    }
+  },
+  "required": [
+    "identifier",
+    "name",
+    "description",
+    "contributor",
+    "license"
+  ],
+  "definitions": {
+    "RoleType": {
+      "title": "RoleType",
+      "description": "An enumeration of roles",
+      "enum": [
+        "dandi:Author",
+        "dandi:Conceptualization",
+        "dandi:ContactPerson",
+        "dandi:DataCollector",
+        "dandi:DataCurator",
+        "dandi:DataManager",
+        "dandi:FormalAnalysis",
+        "dandi:FundingAcquisition",
+        "dandi:Investigation",
+        "dandi:Maintainer",
+        "dandi:Methodology",
+        "dandi:Producer",
+        "dandi:ProjectLeader",
+        "dandi:ProjectManager",
+        "dandi:ProjectMember",
+        "dandi:ProjectAdministration",
+        "dandi:Researcher",
+        "dandi:Resources",
+        "dandi:Software",
+        "dandi:Supervision",
+        "dandi:Validation",
+        "dandi:Visualization",
+        "dandi:Funder",
+        "dandi:Sponsor",
+        "dandi:StudyParticipant",
+        "dandi:Affiliation",
+        "dandi:EthicsApproval",
+        "dandi:Other"
+      ]
+    },
+    "ContactPoint": {
+      "title": "Contact Point",
+      "type": "object",
+      "properties": {
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "ContactPoint",
+          "readOnly": true,
+          "type": "string",
+          "const": "ContactPoint"
+        }
+      }
+    },
+    "Organization": {
+      "title": "Organization",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "A ror.org identifier",
+          "description": "Use an ror.org identifier for institutions",
+          "pattern": "^https://ror.org/[a-z0-9]+$",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "roleName": {
+          "title": "Role",
+          "description": "Role of the contributor",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoleType"
+          }
+        },
+        "includeInCitation": {
+          "title": "Include Contributor in Citation",
+          "description": "A flag to indicate whether a contributor should be included when generating a citation for the item",
+          "default": false,
+          "nskey": "dandi",
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Identifier for an award",
+          "description": "Identifier associated with a sponsored or gift award",
+          "nskey": "dandi",
+          "type": "string"
+        },
+        "contactPoint": {
+          "title": "Contact Point",
+          "description": "Contact for the organization",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContactPoint"
+          }
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Organization",
+          "readOnly": true,
+          "type": "string",
+          "const": "Organization"
+        }
+      }
+    },
+    "Person": {
+      "title": "Person",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "An ORCID Identifier",
+          "description": "An ORCID (orcid.org) identifier for an individual",
+          "pattern": "^\\d{4}-\\d{4}-\\d{4}-(\\d{3}X|\\d{4})$",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "Use the format: familyname, given names ...",
+          "nskey": "schema",
+          "examples": [
+            "Lovelace, Augusta Ada",
+            "Smith, John",
+            "Chan, Kong-sang"
+          ],
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "roleName": {
+          "title": "Role",
+          "description": "Role of the contributor",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoleType"
+          }
+        },
+        "includeInCitation": {
+          "title": "Include Contributor in Citation",
+          "description": "A flag to indicate whether a contributor should be included when generating a citation for the item",
+          "default": true,
+          "nskey": "dandi",
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Identifier for an award",
+          "description": "Identifier associated with a sponsored or gift award",
+          "nskey": "dandi",
+          "type": "string"
+        },
+        "affiliation": {
+          "title": "Affiliation",
+          "description": "An organization that this person is affiliated with.",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Organization"
+          }
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Person",
+          "readOnly": true,
+          "type": "string",
+          "const": "Person"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Disorder": {
+      "title": "Disorder",
+      "description": "Biolink, SNOMED, or other identifier for disorder studied",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Disorder",
+          "readOnly": true,
+          "type": "string",
+          "const": "Disorder"
+        },
+        "dxdate": {
+          "title": "Dates of diagnosis",
+          "description": "Dates of diagnosis",
+          "nskey": "dandi",
+          "rangeIncludes": "schema:Date",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "Anatomy": {
+      "title": "Anatomy",
+      "description": "UBERON or other identifier for anatomical part studied",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Anatomy",
+          "readOnly": true,
+          "type": "string",
+          "const": "Anatomy"
+        }
+      }
+    },
+    "TypeModel": {
+      "title": "Type Model",
+      "description": "Base class for enumerated types",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "GenericType",
+          "readOnly": true,
+          "type": "string",
+          "const": "GenericType"
+        }
+      }
+    },
+    "LicenseType": {
+      "title": "LicenseType",
+      "description": "An enumeration of supported licenses",
+      "enum": [
+        "dandi:CC0",
+        "dandi:CCBY40",
+        "dandi:CCBYNC40"
+      ]
+    },
+    "EthicsApproval": {
+      "title": "Ethics Approval",
+      "description": "Information about ethics committee approval for project",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Approved protocol identifier",
+          "description": "Approved Protocol identifier, often a number or alpha-numeric string.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "contactPoint": {
+          "title": "Contact Point",
+          "description": "Information about the ethics approval committee.",
+          "nskey": "schema",
+          "$ref": "#/definitions/ContactPoint"
+        }
+      },
+      "required": [
+        "identifier",
+        "contactPoint"
+      ]
+    },
+    "AccessType": {
+      "title": "AccessType",
+      "description": "An enumeration of access status options",
+      "enum": [
+        "dandi:Open",
+        "dandi:Embargoed",
+        "dandi:Restricted"
+      ]
+    },
+    "AccessRequirements": {
+      "title": "Access Requirements",
+      "description": "Information about access options for the dataset",
+      "type": "object",
+      "properties": {
+        "status": {
+          "title": "Access status",
+          "description": "The access status of the item",
+          "nskey": "dandi",
+          "$ref": "#/definitions/AccessType"
+        },
+        "contactPoint": {
+          "title": "Contact Point",
+          "description": "Who or where to look for information about access",
+          "nskey": "schema",
+          "$ref": "#/definitions/ContactPoint"
+        },
+        "description": {
+          "title": "Description",
+          "description": "Information about access requirements when embargoed or restricted",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "embargoedUntil": {
+          "title": "Embargo end date",
+          "description": "Date on which embargo ends",
+          "readOnly": true,
+          "nskey": "dandi",
+          "rangeIncludes": "schema:Date",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "RelationType": {
+      "title": "RelationType",
+      "description": "An enumeration of resource relations",
+      "enum": [
+        "dandi:IsCitedBy",
+        "dandi:Cites",
+        "dandi:IsSupplementTo",
+        "dandi:IsSupplementedBy",
+        "dandi:IsContinuedBy",
+        "dandi:Continues",
+        "dandi:Describes",
+        "dandi:IsDescribedBy",
+        "dandi:HasMetadata",
+        "dandi:IsMetadataFor",
+        "dandi:HasVersion",
+        "dandi:IsVersionOf",
+        "dandi:IsNewVersionOf",
+        "dandi:IsPreviousVersionOf",
+        "dandi:IsPartOf",
+        "dandi:HasPart",
+        "dandi:IsReferencedBy",
+        "dandi:References",
+        "dandi:IsDocumentedBy",
+        "dandi:Documents",
+        "dandi:IsCompiledBy",
+        "dandi:Compiles",
+        "dandi:IsVariantFormOf",
+        "dandi:IsOriginalFormOf",
+        "dandi:IsIdenticalTo",
+        "dandi:IsReviewedBy",
+        "dandi:Reviews",
+        "dandi:IsDerivedFrom",
+        "dandi:IsSourceOf",
+        "dandi:IsRequiredBy",
+        "dandi:Requires",
+        "dandi:Obsoletes",
+        "dandi:IsObsoletedBy"
+      ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "A title of the resource",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL of the resource",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "repository": {
+          "title": "Name of the repository",
+          "description": "Name of the repository in which the resource is housed",
+          "nskey": "dandi",
+          "type": "string"
+        },
+        "relation": {
+          "title": "Choose a relation satisfying: Dandiset <relation> Resource",
+          "description": "Indicates how the resource is related to the dataset. This relation should satisfy: dandiset <relation> resource",
+          "nskey": "dandi",
+          "$ref": "#/definitions/RelationType"
+        }
+      },
+      "required": [
+        "relation"
+      ]
+    },
+    "Software": {
+      "title": "Software",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Research Resource Identifier",
+          "description": "RRID of the software from scicrunch.org.",
+          "pattern": "^RRID\\:.*",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Software",
+          "readOnly": true,
+          "type": "string",
+          "const": "Software"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Information about the Project activity",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the project that generated this Dandiset or asset.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "A brief description of the project.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "startDate": {
+          "title": "Start Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "title": "End Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date"
+        },
+        "wasAssociatedWith": {
+          "title": "Was Associated with",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Person"
+              },
+              {
+                "$ref": "#/definitions/Organization"
+              },
+              {
+                "$ref": "#/definitions/Software"
+              }
+            ],
+            "type": "object"
+          }
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Project",
+          "readOnly": true,
+          "type": "string",
+          "const": "Project"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "StandardsType": {
+      "title": "Standards Type",
+      "description": "Identifier for data standard used",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "StandardsType",
+          "readOnly": true,
+          "type": "string",
+          "const": "StandardsType"
+        }
+      }
+    },
+    "ApproachType": {
+      "title": "Approach Type",
+      "description": "Identifier for approach used",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "ApproachType",
+          "readOnly": true,
+          "type": "string",
+          "const": "ApproachType"
+        }
+      }
+    },
+    "MeasurementTechniqueType": {
+      "title": "Measurement Technique Type",
+      "description": "Identifier for measurement technique used",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "MeasurementTechniqueType",
+          "readOnly": true,
+          "type": "string",
+          "const": "MeasurementTechniqueType"
+        }
+      }
+    },
+    "SpeciesType": {
+      "title": "Species Type",
+      "description": "Identifier for species of the sample",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "SpeciesType",
+          "readOnly": true,
+          "type": "string",
+          "const": "SpeciesType"
+        }
+      }
+    },
+    "AssetsSummary": {
+      "title": "Assets Summary",
+      "description": "Summary over assets contained in a dandiset (published or not)",
+      "type": "object",
+      "properties": {
+        "numberOfBytes": {
+          "title": "Number of Bytes",
+          "readOnly": true,
+          "sameas": "schema:contentSize",
+          "type": "integer"
+        },
+        "numberOfFiles": {
+          "title": "Number of Files",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "numberOfSubjects": {
+          "title": "Number of Subjects",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "numberOfSamples": {
+          "title": "Number of Samples",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "numberOfCells": {
+          "title": "Number of Cells",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "dataStandard": {
+          "title": "Data Standard",
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StandardsType"
+          }
+        },
+        "approach": {
+          "title": "Approach",
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApproachType"
+          }
+        },
+        "measurementTechnique": {
+          "title": "Measurement Technique",
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MeasurementTechniqueType"
+          }
+        },
+        "variableMeasured": {
+          "title": "Variable Measured",
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "species": {
+          "title": "Species",
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpeciesType"
+          }
+        }
+      },
+      "required": [
+        "numberOfBytes",
+        "numberOfFiles",
+        "dataStandard",
+        "approach",
+        "measurementTechnique",
+        "species"
+      ]
+    }
+  }
+}
