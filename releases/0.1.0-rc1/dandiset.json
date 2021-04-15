@@ -13,7 +13,7 @@
     },
     "schemaVersion": {
       "title": "Schema Version",
-      "default": "1.0.0-rc1",
+      "default": "0.1.0-rc1",
       "readOnly": true,
       "nskey": "schema",
       "type": "string"
