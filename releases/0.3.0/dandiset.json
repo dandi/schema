@@ -612,7 +612,7 @@
         },
         "identifier": {
           "title": "Approved protocol identifier",
-          "description": "Approved Protocol identifier, often a number or alpha-numeric string.",
+          "description": "Approved Protocol identifier, often a number or alphanumeric string.",
           "nskey": "schema",
           "type": "string"
         },
