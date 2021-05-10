@@ -122,6 +122,9 @@
       "@id": "schema:encodingFormat"
     },
     "digest": "@nest",
+    "dateCreated": {
+      "@id": "schema:dateCreated"
+    },
     "dateModified": {
       "@id": "schema:dateModified"
     },
@@ -196,9 +199,6 @@
       "@id": "dandi:awardNumber"
     },
     "DandisetMeta": "dandi:DandisetMeta",
-    "dateCreated": {
-      "@id": "schema:dateCreated"
-    },
     "citation": {
       "@id": "schema:citation"
     },
@@ -281,8 +281,7 @@
       "@container": "@set"
     },
     "valueReference": {
-      "@id": "schema:valueReference",
-      "@type": "@id"
+      "@id": "schema:valueReference"
     },
     "propertyID": {
       "@id": "schema:propertyID"
