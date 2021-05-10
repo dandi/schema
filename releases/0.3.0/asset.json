@@ -209,12 +209,6 @@
         "type": "string"
       }
     },
-    "dateCreated": {
-      "title": "Asset (file or metadata) creation date and time",
-      "nskey": "schema",
-      "type": "string",
-      "format": "date-time"
-    },
     "dateModified": {
       "title": "Asset (file or metadata) modification date and time",
       "nskey": "schema",
@@ -1226,6 +1220,14 @@
         }
       }
     },
+    "AgeReferenceType": {
+      "title": "AgeReferenceType",
+      "description": "An enumeration of age reference",
+      "enum": [
+        "dandi:BirthReference",
+        "dandi:GestationalReference"
+      ]
+    },
     "IdentifierType": {
       "title": "IdentifierType",
       "description": "An enumeration of identifiers",
@@ -1274,9 +1276,8 @@
           ]
         },
         "valueReference": {
-          "title": "Value Reference",
-          "nskey": "schema",
-          "$ref": "#/definitions/PropertyValue"
+          "$ref": "#/definitions/AgeReferenceType",
+          "title": "Value Reference"
         },
         "propertyID": {
           "title": "Property ID",
