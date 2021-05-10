@@ -209,6 +209,12 @@
         "type": "string"
       }
     },
+    "dateCreated": {
+      "title": "Asset (file or metadata) creation date and time",
+      "nskey": "schema",
+      "type": "string",
+      "format": "date-time"
+    },
     "dateModified": {
       "title": "Asset (file or metadata) modification date and time",
       "nskey": "schema",
