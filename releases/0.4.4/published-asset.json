@@ -1,0 +1,2152 @@
+{
+  "title": "Published Asset",
+  "description": "Metadata used to describe an asset on the server.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "Uniform resource identifier",
+      "pattern": "^dandiasset:[a-f0-9]{8}[-]*[a-f0-9]{4}[-]*[a-f0-9]{4}[-]*[a-f0-9]{4}[-]*[a-f0-9]{12}$",
+      "readOnly": true,
+      "type": "string"
+    },
+    "schemaKey": {
+      "title": "Schema Key",
+      "default": "Asset",
+      "type": "string",
+      "const": "Asset"
+    },
+    "publishedBy": {
+      "title": "Published by",
+      "description": "The URL should contain the provenance of the publishing process.",
+      "readOnly": true,
+      "nskey": "dandi",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri"
+        },
+        {
+          "$ref": "#/definitions/PublishActivity"
+        }
+      ],
+      "type": "object"
+    },
+    "datePublished": {
+      "title": "Date Published",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "string",
+      "format": "date-time"
+    },
+    "schemaVersion": {
+      "title": "Schema Version",
+      "default": "0.4.4",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "name": {
+      "title": "Title",
+      "description": "The name of the item.",
+      "maxLength": 150,
+      "nskey": "schema",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "description": "A description of the item.",
+      "nskey": "schema",
+      "type": "string"
+    },
+    "contributor": {
+      "title": "Contributors",
+      "description": "Contributors to this item.",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Person"
+          },
+          {
+            "$ref": "#/definitions/Organization"
+          }
+        ],
+        "type": "object"
+      }
+    },
+    "about": {
+      "title": "Subject matter of the dataset",
+      "description": "The subject matter of the content, such as disorders, brain anatomy.",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Disorder"
+          },
+          {
+            "$ref": "#/definitions/Anatomy"
+          },
+          {
+            "$ref": "#/definitions/GenericType"
+          }
+        ],
+        "type": "object"
+      }
+    },
+    "studyTarget": {
+      "title": "Study Target",
+      "description": "What the study is related to",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "license": {
+      "description": "Licenses associated with the item.",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LicenseType"
+      },
+      "title": "License"
+    },
+    "protocol": {
+      "title": "Protocol",
+      "description": "A list of protocol.io URLs",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2083,
+        "format": "uri"
+      }
+    },
+    "ethicsApproval": {
+      "title": "Ethics approvals",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EthicsApproval"
+      }
+    },
+    "keywords": {
+      "title": "Keywords",
+      "description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acknowledgement": {
+      "title": "Acknowledgement",
+      "nskey": "dandi",
+      "type": "string"
+    },
+    "access": {
+      "title": "Access information",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AccessRequirements"
+      }
+    },
+    "url": {
+      "title": "URL",
+      "description": "permalink to the item",
+      "readOnly": true,
+      "nskey": "schema",
+      "minLength": 1,
+      "maxLength": 1000,
+      "format": "uri",
+      "type": "string"
+    },
+    "repository": {
+      "title": "Repository",
+      "description": "location of the item",
+      "default": "https://dandiarchive.org/",
+      "readOnly": true,
+      "nskey": "dandi",
+      "minLength": 1,
+      "maxLength": 1000,
+      "format": "uri",
+      "type": "string"
+    },
+    "relatedResource": {
+      "title": "Related Resource",
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Resource"
+      }
+    },
+    "wasGeneratedBy": {
+      "title": "Name of the session, project or activity.",
+      "description": "Describe the session, project or activity that generated this asset",
+      "nskey": "prov",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Session"
+          },
+          {
+            "$ref": "#/definitions/Project"
+          },
+          {
+            "$ref": "#/definitions/Activity"
+          }
+        ],
+        "type": "object"
+      }
+    },
+    "contentSize": {
+      "title": "Content Size",
+      "nskey": "schema",
+      "type": "integer"
+    },
+    "encodingFormat": {
+      "title": "File encoding format",
+      "nskey": "schema",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2083,
+          "format": "uri"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "digest": {
+      "title": "A map of dandi digests to their values",
+      "nskey": "dandi",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "path": {
+      "title": "Path",
+      "nskey": "dandi",
+      "type": "string"
+    },
+    "dateModified": {
+      "title": "Asset (file or metadata) modification date and time",
+      "nskey": "schema",
+      "type": "string",
+      "format": "date-time"
+    },
+    "blobDateModified": {
+      "title": "Asset file modification date and time",
+      "nskey": "dandi",
+      "type": "string",
+      "format": "date-time"
+    },
+    "dataType": {
+      "title": "Data Type",
+      "nskey": "dandi",
+      "minLength": 1,
+      "maxLength": 1000,
+      "format": "uri",
+      "type": "string"
+    },
+    "sameAs": {
+      "title": "Same as",
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2083,
+        "format": "uri"
+      }
+    },
+    "approach": {
+      "title": "Approach",
+      "readOnly": true,
+      "nskey": "dandi",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ApproachType"
+      }
+    },
+    "measurementTechnique": {
+      "title": "Measurement Technique",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/MeasurementTechniqueType"
+      }
+    },
+    "variableMeasured": {
+      "title": "Variable Measured",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PropertyValue"
+      }
+    },
+    "wasDerivedFrom": {
+      "title": "Was Derived From",
+      "nskey": "prov",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/BioSample"
+      }
+    },
+    "wasAttributedTo": {
+      "title": "Was Attributed to",
+      "description": "Participant(s) to which this file belongs to",
+      "nskey": "prov",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Participant"
+      }
+    },
+    "identifier": {
+      "title": "Identifier",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "string",
+      "format": "uuid4"
+    },
+    "contentUrl": {
+      "title": "Content URL",
+      "readOnly": true,
+      "nskey": "schema",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2083,
+        "format": "uri"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "publishedBy",
+    "datePublished",
+    "contentSize",
+    "encodingFormat",
+    "digest",
+    "path",
+    "identifier"
+  ],
+  "definitions": {
+    "RoleType": {
+      "title": "RoleType",
+      "description": "An enumeration of roles",
+      "enum": [
+        "dcite:Author",
+        "dcite:Conceptualization",
+        "dcite:ContactPerson",
+        "dcite:DataCollector",
+        "dcite:DataCurator",
+        "dcite:DataManager",
+        "dcite:FormalAnalysis",
+        "dcite:FundingAcquisition",
+        "dcite:Investigation",
+        "dcite:Maintainer",
+        "dcite:Methodology",
+        "dcite:Producer",
+        "dcite:ProjectLeader",
+        "dcite:ProjectManager",
+        "dcite:ProjectMember",
+        "dcite:ProjectAdministration",
+        "dcite:Researcher",
+        "dcite:Resources",
+        "dcite:Software",
+        "dcite:Supervision",
+        "dcite:Validation",
+        "dcite:Visualization",
+        "dcite:Funder",
+        "dcite:Sponsor",
+        "dcite:StudyParticipant",
+        "dcite:Affiliation",
+        "dcite:EthicsApproval",
+        "dcite:Other"
+      ]
+    },
+    "Affiliation": {
+      "title": "Affiliation",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Affiliation",
+          "type": "string",
+          "const": "Affiliation"
+        },
+        "identifier": {
+          "title": "A ror.org identifier",
+          "description": "Use an ror.org identifier for institutions",
+          "pattern": "^https://ror.org/[a-z0-9]+$",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "Person": {
+      "title": "Person",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Person",
+          "type": "string",
+          "const": "Person"
+        },
+        "identifier": {
+          "title": "An ORCID identifier",
+          "description": "An ORCID (orcid.org) identifier for an individual",
+          "pattern": "^\\d{4}-\\d{4}-\\d{4}-(\\d{3}X|\\d{4})$",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "Use the format: familyname, given names ...",
+          "nskey": "schema",
+          "examples": [
+            "Lovelace, Augusta Ada",
+            "Smith, John",
+            "Chan, Kong-sang"
+          ],
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 1000,
+          "format": "uri",
+          "type": "string"
+        },
+        "roleName": {
+          "title": "Role",
+          "description": "Role of the contributor",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoleType"
+          }
+        },
+        "includeInCitation": {
+          "title": "Include contributor in citation",
+          "description": "A flag to indicate whether a contributor should be included when generating a citation for the item",
+          "default": true,
+          "nskey": "dandi",
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Identifier for an award",
+          "description": "Identifier associated with a sponsored or gift award",
+          "nskey": "dandi",
+          "type": "string"
+        },
+        "affiliation": {
+          "title": "Affiliation",
+          "description": "An organization that this person is affiliated with.",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Affiliation"
+          }
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "ContactPoint": {
+      "title": "Contact Point",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "ContactPoint",
+          "type": "string",
+          "const": "ContactPoint"
+        },
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 1000,
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "Organization": {
+      "title": "Organization",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Organization",
+          "type": "string",
+          "const": "Organization"
+        },
+        "identifier": {
+          "title": "A ror.org identifier",
+          "description": "Use an ror.org identifier for institutions",
+          "pattern": "^https://ror.org/[a-z0-9]+$",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "nskey": "schema",
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 1000,
+          "format": "uri",
+          "type": "string"
+        },
+        "roleName": {
+          "title": "Role",
+          "description": "Role of the contributor",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoleType"
+          }
+        },
+        "includeInCitation": {
+          "title": "Include contributor in citation",
+          "description": "A flag to indicate whether a contributor should be included when generating a citation for the item",
+          "default": false,
+          "nskey": "dandi",
+          "type": "boolean"
+        },
+        "awardNumber": {
+          "title": "Identifier for an award",
+          "description": "Identifier associated with a sponsored or gift award",
+          "nskey": "dandi",
+          "type": "string"
+        },
+        "contactPoint": {
+          "title": "Organization contact information",
+          "description": "Contact for the organization",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContactPoint"
+          }
+        }
+      }
+    },
+    "Software": {
+      "title": "Software",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Software",
+          "type": "string",
+          "const": "Software"
+        },
+        "identifier": {
+          "title": "Research resource identifier",
+          "description": "RRID of the software from scicrunch.org.",
+          "pattern": "^RRID\\:.*",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL",
+          "description": "Web page for the software",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 1000,
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ]
+    },
+    "Agent": {
+      "title": "Agent",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Agent",
+          "type": "string",
+          "const": "Agent"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "Identifier for an agent",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 1000,
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Equipment": {
+      "title": "Equipment",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Equipment",
+          "type": "string",
+          "const": "Equipment"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Title",
+          "description": "A name for the equipment.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the activity.",
+          "nskey": "schema",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "PublishActivity": {
+      "title": "Publish Activity",
+      "description": "Information about the Project activity",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "PublishActivity",
+          "type": "string",
+          "const": "PublishActivity"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the activity.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the activity.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "startDate": {
+          "title": "Start Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "title": "End Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date-time"
+        },
+        "wasAssociatedWith": {
+          "title": "Was Associated with",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Person"
+              },
+              {
+                "$ref": "#/definitions/Organization"
+              },
+              {
+                "$ref": "#/definitions/Software"
+              },
+              {
+                "$ref": "#/definitions/Agent"
+              }
+            ],
+            "type": "object"
+          }
+        },
+        "used": {
+          "title": "Used",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          }
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Disorder": {
+      "title": "Disorder",
+      "description": "Biolink, SNOMED, or other identifier for disorder studied",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Disorder",
+          "type": "string",
+          "const": "Disorder"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "dxdate": {
+          "title": "Dates of diagnosis",
+          "description": "Dates of diagnosis",
+          "nskey": "dandi",
+          "rangeIncludes": "schema:Date",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "Anatomy": {
+      "title": "Anatomy",
+      "description": "UBERON or other identifier for anatomical part studied",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Anatomy",
+          "type": "string",
+          "const": "Anatomy"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "GenericType": {
+      "title": "Generic Type",
+      "description": "An object to capture any type for about",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "GenericType",
+          "type": "string",
+          "const": "GenericType"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "LicenseType": {
+      "title": "LicenseType",
+      "description": "An enumeration of supported licenses",
+      "enum": [
+        "spdx:CC0-1.0",
+        "spdx:CC-BY-4.0",
+        "spdx:CC-BY-NC-4.0"
+      ]
+    },
+    "EthicsApproval": {
+      "title": "Ethics Approval",
+      "description": "Information about ethics committee approval for project",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "EthicsApproval",
+          "type": "string",
+          "const": "EthicsApproval"
+        },
+        "identifier": {
+          "title": "Approved protocol identifier",
+          "description": "Approved Protocol identifier, often a number or alphanumeric string.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "contactPoint": {
+          "title": "Contact Point",
+          "description": "Information about the ethics approval committee.",
+          "nskey": "schema",
+          "$ref": "#/definitions/ContactPoint"
+        }
+      },
+      "required": [
+        "identifier",
+        "contactPoint"
+      ]
+    },
+    "AccessType": {
+      "title": "AccessType",
+      "description": "An enumeration of access status options",
+      "enum": [
+        "dandi:OpenAccess"
+      ]
+    },
+    "AccessRequirements": {
+      "title": "Access Requirements",
+      "description": "Information about access options for the dataset",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "AccessRequirements",
+          "type": "string",
+          "const": "AccessRequirements"
+        },
+        "status": {
+          "title": "Access status",
+          "description": "The access status of the item",
+          "nskey": "dandi",
+          "$ref": "#/definitions/AccessType"
+        },
+        "contactPoint": {
+          "title": "Contact Point",
+          "description": "Who or where to look for information about access",
+          "nskey": "schema",
+          "$ref": "#/definitions/ContactPoint"
+        },
+        "description": {
+          "title": "Description",
+          "description": "Information about access requirements when embargoed or restricted",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "embargoedUntil": {
+          "title": "Embargo end date",
+          "description": "Date on which embargo ends",
+          "readOnly": true,
+          "nskey": "dandi",
+          "rangeIncludes": "schema:Date",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "RelationType": {
+      "title": "RelationType",
+      "description": "An enumeration of resource relations",
+      "enum": [
+        "dcite:IsCitedBy",
+        "dcite:Cites",
+        "dcite:IsSupplementTo",
+        "dcite:IsSupplementedBy",
+        "dcite:IsContinuedBy",
+        "dcite:Continues",
+        "dcite:Describes",
+        "dcite:IsDescribedBy",
+        "dcite:HasMetadata",
+        "dcite:IsMetadataFor",
+        "dcite:HasVersion",
+        "dcite:IsVersionOf",
+        "dcite:IsNewVersionOf",
+        "dcite:IsPreviousVersionOf",
+        "dcite:IsPartOf",
+        "dcite:HasPart",
+        "dcite:IsReferencedBy",
+        "dcite:References",
+        "dcite:IsDocumentedBy",
+        "dcite:Documents",
+        "dcite:IsCompiledBy",
+        "dcite:Compiles",
+        "dcite:IsVariantFormOf",
+        "dcite:IsOriginalFormOf",
+        "dcite:IsIdenticalTo",
+        "dcite:IsReviewedBy",
+        "dcite:Reviews",
+        "dcite:IsDerivedFrom",
+        "dcite:IsSourceOf",
+        "dcite:IsRequiredBy",
+        "dcite:Requires",
+        "dcite:Obsoletes",
+        "dcite:IsObsoletedBy",
+        "dcite:IsPublishedIn"
+      ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Resource",
+          "type": "string",
+          "const": "Resource"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "A title of the resource",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL of the resource",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 1000,
+          "format": "uri",
+          "type": "string"
+        },
+        "repository": {
+          "title": "Name of the repository",
+          "description": "Name of the repository in which the resource is housed",
+          "nskey": "dandi",
+          "type": "string"
+        },
+        "relation": {
+          "title": "Resource relation",
+          "description": "Indicates how the resource is related to the dataset. This relation should satisfy: dandiset <relation> resource",
+          "nskey": "dandi",
+          "$ref": "#/definitions/RelationType"
+        }
+      },
+      "required": [
+        "relation"
+      ]
+    },
+    "Session": {
+      "title": "Session",
+      "description": "Information about the Project activity",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Session",
+          "type": "string",
+          "const": "Session"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name of session",
+          "description": "The name of the logical session associated with the asset.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "A brief description of the session.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "startDate": {
+          "title": "Start Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "title": "End Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date-time"
+        },
+        "wasAssociatedWith": {
+          "title": "Was Associated with",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Person"
+              },
+              {
+                "$ref": "#/definitions/Organization"
+              },
+              {
+                "$ref": "#/definitions/Software"
+              },
+              {
+                "$ref": "#/definitions/Agent"
+              }
+            ],
+            "type": "object"
+          }
+        },
+        "used": {
+          "title": "Used",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          }
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Information about the Project activity",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Project",
+          "type": "string",
+          "const": "Project"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name of project",
+          "description": "The name of the project that generated this Dandiset or asset.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "A brief description of the project.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "startDate": {
+          "title": "Start Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "title": "End Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date-time"
+        },
+        "wasAssociatedWith": {
+          "title": "Was Associated with",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Person"
+              },
+              {
+                "$ref": "#/definitions/Organization"
+              },
+              {
+                "$ref": "#/definitions/Software"
+              },
+              {
+                "$ref": "#/definitions/Agent"
+              }
+            ],
+            "type": "object"
+          }
+        },
+        "used": {
+          "title": "Used",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          }
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Activity": {
+      "title": "Activity",
+      "description": "Information about the Project activity",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Activity",
+          "type": "string",
+          "const": "Activity"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Title",
+          "description": "The name of the activity.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the activity.",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "startDate": {
+          "title": "Start Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "title": "End Date",
+          "nskey": "schema",
+          "type": "string",
+          "format": "date-time"
+        },
+        "wasAssociatedWith": {
+          "title": "Was Associated with",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Person"
+              },
+              {
+                "$ref": "#/definitions/Organization"
+              },
+              {
+                "$ref": "#/definitions/Software"
+              },
+              {
+                "$ref": "#/definitions/Agent"
+              }
+            ],
+            "type": "object"
+          }
+        },
+        "used": {
+          "title": "Used",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          }
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "ApproachType": {
+      "title": "Approach Type",
+      "description": "Identifier for approach used",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "ApproachType",
+          "type": "string",
+          "const": "ApproachType"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "MeasurementTechniqueType": {
+      "title": "Measurement Technique Type",
+      "description": "Identifier for measurement technique used",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "MeasurementTechniqueType",
+          "type": "string",
+          "const": "MeasurementTechniqueType"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "IdentifierType": {
+      "title": "IdentifierType",
+      "description": "An enumeration of identifiers",
+      "enum": [
+        "dandi:doi",
+        "dandi:orcid",
+        "dandi:ror",
+        "dandi:dandi",
+        "dandi:rrid"
+      ]
+    },
+    "PropertyValue": {
+      "title": "Property Value",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "PropertyValue",
+          "type": "string",
+          "const": "PropertyValue"
+        },
+        "maxValue": {
+          "title": "Max Value",
+          "nskey": "schema",
+          "type": "number"
+        },
+        "minValue": {
+          "title": "Min Value",
+          "nskey": "schema",
+          "type": "number"
+        },
+        "unitText": {
+          "title": "Unit Text",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "nskey": "schema",
+          "anyOf": [
+            {},
+            {
+              "type": "array",
+              "items": {}
+            }
+          ]
+        },
+        "valueReference": {
+          "title": "Value Reference",
+          "nskey": "schema",
+          "$ref": "#/definitions/PropertyValue"
+        },
+        "propertyID": {
+          "title": "Property ID",
+          "description": "A commonly used identifier forthe characteristic represented by the property.",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/IdentifierType"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            }
+          ],
+          "type": "object"
+        }
+      }
+    },
+    "SampleType": {
+      "title": "Sample Type",
+      "description": "OBI based identifier for the sample type used",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "SampleType",
+          "type": "string",
+          "const": "SampleType"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "AssayType": {
+      "title": "Assay Type",
+      "description": "OBI based identifier for the assay(s) used",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "AssayType",
+          "type": "string",
+          "const": "AssayType"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "StrainType": {
+      "title": "Strain Type",
+      "description": "Identifier for the strain of the sample",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "StrainType",
+          "type": "string",
+          "const": "StrainType"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "SexType": {
+      "title": "Sex Type",
+      "description": "Identifier for the sex of the sample",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "SexType",
+          "type": "string",
+          "const": "SexType"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "Locus": {
+      "title": "Locus",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Locus",
+          "type": "string",
+          "const": "Locus"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "Identifier for genotyping locus",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "locusType": {
+          "title": "Locus Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier"
+      ]
+    },
+    "Allele": {
+      "title": "Allele",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Allele",
+          "type": "string",
+          "const": "Allele"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "Identifier for genotyping allele",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "alleleSymbol": {
+          "title": "Allele Symbol",
+          "type": "string"
+        },
+        "alleleType": {
+          "title": "Allele Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier"
+      ]
+    },
+    "GenotypeInfo": {
+      "title": "Genotype Info",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "GenotypeInfo",
+          "type": "string",
+          "const": "GenotypeInfo"
+        },
+        "locus": {
+          "title": "Locus",
+          "description": "Locus at which information was extracted",
+          "$ref": "#/definitions/Locus"
+        },
+        "alleles": {
+          "title": "Alleles",
+          "description": "Information about alleles at the locus",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Allele"
+          }
+        },
+        "wasGeneratedBy": {
+          "title": "Was Generated by",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Session"
+          }
+        }
+      },
+      "required": [
+        "locus",
+        "alleles"
+      ]
+    },
+    "SpeciesType": {
+      "title": "Species Type",
+      "description": "Identifier for species of the sample",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "SpeciesType",
+          "type": "string",
+          "const": "SpeciesType"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "description": "The identifier can be any url or a compact URI, preferably supported by identifiers.org",
+          "nskey": "schema",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2083,
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9-/\\._]+$"
+            }
+          ]
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the item.",
+          "maxLength": 150,
+          "nskey": "schema",
+          "type": "string"
+        }
+      }
+    },
+    "ParticipantRelationType": {
+      "title": "ParticipantRelationType",
+      "description": "An enumeration of participant relations",
+      "enum": [
+        "dandi:isChildOf",
+        "dandi:isParentOf",
+        "dandi:isSiblingOf",
+        "dandi:isMonozygoticTwinOf",
+        "dandi:isDizygoticTwinOf"
+      ]
+    },
+    "RelatedParticipant": {
+      "title": "Related Participant",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "RelatedParticipant",
+          "type": "string",
+          "const": "RelatedParticipant"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name of the participant",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL of the related participant",
+          "nskey": "schema",
+          "minLength": 1,
+          "maxLength": 1000,
+          "format": "uri",
+          "type": "string"
+        },
+        "relation": {
+          "title": "Participant relation",
+          "description": "Indicates how the current participant is related to the other participant This relation should satisfy: Participant <relation> relatedParticipant",
+          "nskey": "dandi",
+          "$ref": "#/definitions/ParticipantRelationType"
+        }
+      },
+      "required": [
+        "relation"
+      ]
+    },
+    "Participant": {
+      "title": "Participant",
+      "description": "Description about the sample that was studied",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "Participant",
+          "type": "string",
+          "const": "Participant"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "altName": {
+          "title": "Alt Name",
+          "nskey": "dandi",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "strain": {
+          "title": "Strain",
+          "description": "Identifier for the strain of the sample",
+          "nskey": "dandi",
+          "$ref": "#/definitions/StrainType"
+        },
+        "cellLine": {
+          "title": "Cell Line",
+          "description": "Cell line associated with the sample",
+          "nskey": "dandi",
+          "type": "string"
+        },
+        "vendor": {
+          "title": "Vendor",
+          "nskey": "dandi",
+          "$ref": "#/definitions/Organization"
+        },
+        "age": {
+          "title": "Age",
+          "description": "A representation of age using ISO 8601 duration. This should include a valueReference if anything other than date of birth is used.",
+          "nskey": "dandi",
+          "rangeIncludes": "schema:Duration",
+          "$ref": "#/definitions/PropertyValue"
+        },
+        "sex": {
+          "title": "Sex",
+          "description": "OBI based identifier for sex of the sample if available",
+          "nskey": "dandi",
+          "$ref": "#/definitions/SexType"
+        },
+        "genotype": {
+          "title": "Genotype",
+          "description": "Genotype descriptor of biosample if available",
+          "nskey": "dandi",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GenotypeInfo"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "species": {
+          "title": "Species",
+          "description": "An identifier indicating the taxonomic classification of the biosample",
+          "nskey": "dandi",
+          "$ref": "#/definitions/SpeciesType"
+        },
+        "disorder": {
+          "title": "Disorder",
+          "description": "Any current diagnosed disease or disorder associated with the sample",
+          "nskey": "dandi",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Disorder"
+          }
+        },
+        "relatedParticipant": {
+          "title": "Related Participant",
+          "nskey": "dandi",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParticipant"
+          }
+        },
+        "sameAs": {
+          "title": "Same as",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "BioSample": {
+      "title": "Bio Sample",
+      "description": "Description of the sample that was studied",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "Uniform resource identifier",
+          "readOnly": true,
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "default": "BioSample",
+          "type": "string",
+          "const": "BioSample"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "nskey": "schema",
+          "type": "string"
+        },
+        "sampleType": {
+          "title": "Sample Type",
+          "description": "OBI based identifier for the sample used",
+          "nskey": "dandi",
+          "$ref": "#/definitions/SampleType"
+        },
+        "assayType": {
+          "title": "Assay Type",
+          "description": "OBI based identifier for the assay(s) used",
+          "nskey": "dandi",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AssayType"
+          }
+        },
+        "anatomy": {
+          "title": "Anatomy",
+          "description": "UBERON based identifier for what organ the sample belongs to. Use the most specific descriptor.",
+          "nskey": "dandi",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Anatomy"
+          }
+        },
+        "wasDerivedFrom": {
+          "title": "Was Derived From",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BioSample"
+          }
+        },
+        "wasAttributedTo": {
+          "title": "Was Attributed to",
+          "description": "Participant(s) to which this sample belongs to",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Participant"
+          }
+        },
+        "sameAs": {
+          "title": "Same as",
+          "nskey": "schema",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hasMember": {
+          "title": "Has Member",
+          "nskey": "prov",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
