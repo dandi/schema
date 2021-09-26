@@ -1,0 +1,385 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "dandi": "http://schema.dandiarchive.org/",
+    "dcite": "http://schema.dandiarchive.org/datacite/",
+    "dandiasset": "http://dandiarchive.org/asset/",
+    "DANDI": "http://dandiarchive.org/dandiset/",
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "pav": "http://purl.org/pav/",
+    "nidm": "http://purl.org/nidash/nidm#",
+    "uuid": "http://uuid.repronim.org/",
+    "rs": "http://schema.repronim.org/",
+    "RRID": "https://scicrunch.org/resolver/RRID:",
+    "ORCID": "https://orcid.org/",
+    "ROR": "https://ror.org/",
+    "PATO": "http://purl.obolibrary.org/obo/PATO_",
+    "spdx": "http://spdx.org/licenses/",
+    "AccessRequirements": "dandi:AccessRequirements",
+    "Activity": "dandi:Activity",
+    "Affiliation": "dandi:Affiliation",
+    "Agent": "dandi:Agent",
+    "Allele": "dandi:Allele",
+    "Anatomy": "dandi:Anatomy",
+    "ApproachType": "dandi:ApproachType",
+    "AssayType": "dandi:AssayType",
+    "Asset": "dandi:Asset",
+    "AssetsSummary": "dandi:AssetsSummary",
+    "BareAsset": "dandi:BareAsset",
+    "BaseType": "dandi:BaseType",
+    "BioSample": "dandi:BioSample",
+    "ContactPoint": "schema:ContactPoint",
+    "Dandiset": "dandi:Dandiset",
+    "Disorder": "dandi:Disorder",
+    "Equipment": "dandi:Equipment",
+    "EthicsApproval": "dandi:EthicsApproval",
+    "GenericType": "dandi:GenericType",
+    "GenotypeInfo": "dandi:GenotypeInfo",
+    "Locus": "dandi:Locus",
+    "MeasurementTechniqueType": "dandi:MeasurementTechniqueType",
+    "Organization": "dandi:Organization",
+    "Participant": "dandi:Participant",
+    "Person": "dandi:Person",
+    "Project": "dandi:Project",
+    "PropertyValue": "schema:PropertyValue",
+    "PublishActivity": "dandi:PublishActivity",
+    "PublishedAsset": "dandi:PublishedAsset",
+    "PublishedDandiset": "dandi:PublishedDandiset",
+    "RelatedParticipant": "dandi:RelatedParticipant",
+    "Resource": "dandi:Resource",
+    "SampleType": "dandi:SampleType",
+    "Session": "dandi:Session",
+    "SexType": "dandi:SexType",
+    "Software": "dandi:Software",
+    "SpeciesType": "dandi:SpeciesType",
+    "StandardsType": "dandi:StandardsType",
+    "StrainType": "dandi:StrainType",
+    "about": {
+      "@id": "schema:about",
+      "@container": "@set"
+    },
+    "access": {
+      "@id": "dandi:access",
+      "@container": "@set"
+    },
+    "acknowledgement": {
+      "@id": "dandi:acknowledgement"
+    },
+    "affiliation": {
+      "@id": "schema:affiliation",
+      "@container": "@set"
+    },
+    "age": {
+      "@id": "dandi:age"
+    },
+    "alleleSymbol": {
+      "@id": "dandi:alleleSymbol"
+    },
+    "alleleType": {
+      "@id": "dandi:alleleType"
+    },
+    "alleles": {
+      "@id": "dandi:alleles",
+      "@container": "@set"
+    },
+    "altName": {
+      "@id": "dandi:altName",
+      "@container": "@set"
+    },
+    "anatomy": {
+      "@id": "dandi:anatomy",
+      "@container": "@set"
+    },
+    "approach": {
+      "@id": "dandi:approach",
+      "@container": "@set"
+    },
+    "assayType": {
+      "@id": "dandi:assayType",
+      "@container": "@set"
+    },
+    "assetsSummary": {
+      "@id": "dandi:assetsSummary"
+    },
+    "awardNumber": {
+      "@id": "dandi:awardNumber"
+    },
+    "blobDateModified": {
+      "@id": "dandi:blobDateModified"
+    },
+    "cellLine": {
+      "@id": "dandi:cellLine"
+    },
+    "citation": {
+      "@id": "schema:citation"
+    },
+    "contactPoint": {
+      "@id": "schema:contactPoint"
+    },
+    "contentSize": {
+      "@id": "schema:contentSize"
+    },
+    "contentUrl": {
+      "@id": "schema:contentUrl",
+      "@container": "@set"
+    },
+    "contributor": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "dandi:blake2b-256": {
+      "@id": "dandi:blake2b-256",
+      "@nest": "digest"
+    },
+    "dandi:blake3": {
+      "@id": "dandi:blake3",
+      "@nest": "digest"
+    },
+    "dandi:dandi-etag": {
+      "@id": "dandi:dandi-etag",
+      "@nest": "digest"
+    },
+    "dandi:md5": {
+      "@id": "dandi:md5",
+      "@nest": "digest"
+    },
+    "dandi:sha1": {
+      "@id": "dandi:sha1",
+      "@nest": "digest"
+    },
+    "dandi:sha2-256": {
+      "@id": "dandi:sha2-256",
+      "@nest": "digest"
+    },
+    "dandi:sha3-256": {
+      "@id": "dandi:sha3-256",
+      "@nest": "digest"
+    },
+    "dataStandard": {
+      "@id": "dandi:dataStandard",
+      "@container": "@set"
+    },
+    "dataType": {
+      "@id": "dandi:dataType"
+    },
+    "dateCreated": {
+      "@id": "schema:dateCreated"
+    },
+    "dateModified": {
+      "@id": "schema:dateModified"
+    },
+    "datePublished": {
+      "@id": "schema:datePublished"
+    },
+    "description": {
+      "@id": "schema:description"
+    },
+    "digest": "@nest",
+    "disorder": {
+      "@id": "dandi:disorder",
+      "@container": "@set"
+    },
+    "doi": {
+      "@id": "dandi:doi"
+    },
+    "dxdate": {
+      "@id": "dandi:dxdate",
+      "@container": "@set"
+    },
+    "email": {
+      "@id": "schema:email"
+    },
+    "embargoedUntil": {
+      "@id": "dandi:embargoedUntil"
+    },
+    "encodingFormat": {
+      "@id": "schema:encodingFormat"
+    },
+    "endDate": {
+      "@id": "schema:endDate"
+    },
+    "ethicsApproval": {
+      "@id": "dandi:ethicsApproval",
+      "@container": "@set"
+    },
+    "genotype": {
+      "@id": "dandi:genotype",
+      "@container": "@set"
+    },
+    "hasMember": {
+      "@id": "prov:hasMember",
+      "@container": "@set"
+    },
+    "id": "@id",
+    "identifier": {
+      "@id": "schema:identifier"
+    },
+    "includeInCitation": {
+      "@id": "dandi:includeInCitation"
+    },
+    "keywords": {
+      "@id": "schema:keywords",
+      "@container": "@set"
+    },
+    "license": {
+      "@id": "schema:license",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "locus": {
+      "@id": "dandi:locus"
+    },
+    "locusType": {
+      "@id": "dandi:locusType"
+    },
+    "manifestLocation": {
+      "@id": "dandi:manifestLocation",
+      "@container": "@set"
+    },
+    "maxValue": {
+      "@id": "schema:maxValue"
+    },
+    "measurementTechnique": {
+      "@id": "schema:measurementTechnique",
+      "@container": "@set"
+    },
+    "minValue": {
+      "@id": "schema:minValue"
+    },
+    "name": {
+      "@id": "schema:name"
+    },
+    "numberOfBytes": {
+      "@id": "dandi:numberOfBytes"
+    },
+    "numberOfCells": {
+      "@id": "dandi:numberOfCells"
+    },
+    "numberOfFiles": {
+      "@id": "dandi:numberOfFiles"
+    },
+    "numberOfSamples": {
+      "@id": "dandi:numberOfSamples"
+    },
+    "numberOfSubjects": {
+      "@id": "dandi:numberOfSubjects"
+    },
+    "path": {
+      "@id": "dandi:path"
+    },
+    "propertyID": {
+      "@id": "schema:propertyID"
+    },
+    "protocol": {
+      "@id": "dandi:protocol",
+      "@container": "@set"
+    },
+    "publishedBy": {
+      "@id": "dandi:publishedBy"
+    },
+    "relatedParticipant": {
+      "@id": "dandi:relatedParticipant",
+      "@container": "@set"
+    },
+    "relatedResource": {
+      "@id": "dandi:relatedResource",
+      "@container": "@set"
+    },
+    "relation": {
+      "@id": "dandi:relation",
+      "@type": "@id"
+    },
+    "repository": {
+      "@id": "dandi:repository"
+    },
+    "roleName": {
+      "@id": "schema:roleName",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "sameAs": {
+      "@id": "schema:sameAs",
+      "@container": "@set"
+    },
+    "sampleType": {
+      "@id": "dandi:sampleType"
+    },
+    "schemaKey": "@type",
+    "schemaVersion": {
+      "@id": "schema:schemaVersion"
+    },
+    "sex": {
+      "@id": "dandi:sex"
+    },
+    "species": {
+      "@id": "dandi:species",
+      "@container": "@set"
+    },
+    "startDate": {
+      "@id": "schema:startDate"
+    },
+    "status": {
+      "@id": "dandi:status",
+      "@type": "@id"
+    },
+    "strain": {
+      "@id": "dandi:strain"
+    },
+    "studyTarget": {
+      "@id": "dandi:studyTarget",
+      "@container": "@set"
+    },
+    "unitText": {
+      "@id": "schema:unitText"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@container": "@set"
+    },
+    "value": {
+      "@id": "schema:value",
+      "@container": "@set"
+    },
+    "valueReference": {
+      "@id": "schema:valueReference"
+    },
+    "variableMeasured": {
+      "@id": "schema:variableMeasured",
+      "@container": "@set"
+    },
+    "vendor": {
+      "@id": "dandi:vendor"
+    },
+    "version": {
+      "@id": "schema:version"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@container": "@set"
+    },
+    "wasAttributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@container": "@set"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@container": "@set"
+    },
+    "wasGeneratedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@container": "@set"
+    }
+  }
+}
