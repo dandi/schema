@@ -1,6 +1,6 @@
 # Schemas associated with the DANDI archive
 
-Core repository for just the schema associated with dandisets and assets. All files are released under a CC-BY-4.0 license.
+Core repository for just the schema associated with dandisets and assets. All files are released under a [CC-BY-4.0 license](https://creativecommons.org/licenses/by/4.0/).
 
 Each release contains the following files:
 
