@@ -216,7 +216,8 @@
     },
     "hasMember": {
       "@id": "prov:hasMember",
-      "@container": "@set"
+      "@container": "@set",
+      "@type": "@id"
     },
     "id": "@id",
     "identifier": {
