@@ -20,8 +20,8 @@ This [online schema viewing application](https://json-schema.app/) can be used t
 
 #### Examples: 
 
-1. [Dandiset version 0.6.0](https://json-schema.app/view/%23?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdandi%2Fschema%2Fmaster%2Freleases%2F0.6.0%2Fdandiset.json)
-1. [Asset version 0.6.0](https://json-schema.app/view/%23?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdandi%2Fschema%2Fmaster%2Freleases%2F0.6.0%2Fasset.json)
+1. [Dandiset version 0.6.3](https://json-schema.app/view/%23?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdandi%2Fschema%2Fmaster%2Freleases%2F0.6.3%2Fdandiset.json)
+1. [Asset version 0.6.3](https://json-schema.app/view/%23?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdandi%2Fschema%2Fmaster%2Freleases%2F0.6.3%2Fasset.json)
 
 Simply replacing the version number should provide access to a specific schema version. For example:
 
